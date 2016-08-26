@@ -1,0 +1,748 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		19B8B12F1D7040B6002F3FEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B8B12E1D7040B6002F3FEC /* AppDelegate.swift */; };
+		19B8B1371D7040B6002F3FEC /* LazyFlashCards.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 19B8B1351D7040B6002F3FEC /* LazyFlashCards.xcdatamodeld */; };
+		19B8B1391D7040B6002F3FEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19B8B1381D7040B6002F3FEC /* Assets.xcassets */; };
+		19B8B13C1D7040B6002F3FEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19B8B13A1D7040B6002F3FEC /* LaunchScreen.storyboard */; };
+		19B8B1471D7040B6002F3FEC /* LazyFlashCardsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B8B1461D7040B6002F3FEC /* LazyFlashCardsTests.swift */; };
+		19B8B1521D7040B6002F3FEC /* LazyFlashCardsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B8B1511D7040B6002F3FEC /* LazyFlashCardsUITests.swift */; };
+		19B8B1661D704258002F3FEC /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B8B15F1D704258002F3FEC /* HeaderView.swift */; };
+		19B8B1671D704258002F3FEC /* HeaderViewDefaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B8B1601D704258002F3FEC /* HeaderViewDefaultView.swift */; };
+		19B8B1681D704258002F3FEC /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19B8B1611D704258002F3FEC /* HeaderView.xib */; };
+		19B8B1691D704258002F3FEC /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B8B1621D704258002F3FEC /* DetailView.swift */; };
+		19B8B16A1D704258002F3FEC /* DetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19B8B1631D704258002F3FEC /* DetailView.xib */; };
+		19B8B16B1D704258002F3FEC /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B8B1641D704258002F3FEC /* CustomTableViewCell.swift */; };
+		19B8B16C1D704258002F3FEC /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19B8B1651D704258002F3FEC /* CustomTableViewCell.xib */; };
+		19B8B1721D7043E4002F3FEC /* ViewDecksController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B8B16E1D7043E4002F3FEC /* ViewDecksController.swift */; };
+		19B8B1731D7043E4002F3FEC /* LiquidButtonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B8B16F1D7043E4002F3FEC /* LiquidButtonHelper.swift */; };
+		19B8B1741D7043E4002F3FEC /* AddDeckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B8B1701D7043E4002F3FEC /* AddDeckViewController.swift */; };
+		19B8B1751D7043E4002F3FEC /* AddDeckViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19B8B1711D7043E4002F3FEC /* AddDeckViewController.xib */; };
+		19B8B1781D704402002F3FEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19B8B1771D704402002F3FEC /* Main.storyboard */; };
+		19B8B1821D704699002F3FEC /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B8B17D1D704699002F3FEC /* TFHpple.m */; };
+		19B8B1831D704699002F3FEC /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B8B17F1D704699002F3FEC /* TFHppleElement.m */; };
+		19B8B1841D704699002F3FEC /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B8B1811D704699002F3FEC /* XPathQuery.m */; };
+		19B8B1881D70470F002F3FEC /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 19B8B1861D70470F002F3FEC /* libxml2.2.tbd */; };
+		19B8B1891D70470F002F3FEC /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 19B8B1871D70470F002F3FEC /* libxml2.tbd */; };
+		BD1CA86C4C183B6EA83D7184 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1747660E56C8847495FB6C6C /* Pods.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		19B8B1431D7040B6002F3FEC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 19B8B1231D7040B6002F3FEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 19B8B12A1D7040B6002F3FEC;
+			remoteInfo = LazyFlashCards;
+		};
+		19B8B14E1D7040B6002F3FEC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 19B8B1231D7040B6002F3FEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 19B8B12A1D7040B6002F3FEC;
+			remoteInfo = LazyFlashCards;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0DFE532A7A642991048FB109 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		1747660E56C8847495FB6C6C /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		19B8B12B1D7040B6002F3FEC /* LazyFlashCards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LazyFlashCards.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		19B8B12E1D7040B6002F3FEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		19B8B1361D7040B6002F3FEC /* LazyFlashCards.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LazyFlashCards.xcdatamodel; sourceTree = "<group>"; };
+		19B8B1381D7040B6002F3FEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		19B8B13B1D7040B6002F3FEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		19B8B13D1D7040B6002F3FEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		19B8B1421D7040B6002F3FEC /* LazyFlashCardsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LazyFlashCardsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		19B8B1461D7040B6002F3FEC /* LazyFlashCardsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyFlashCardsTests.swift; sourceTree = "<group>"; };
+		19B8B1481D7040B6002F3FEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		19B8B14D1D7040B6002F3FEC /* LazyFlashCardsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LazyFlashCardsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		19B8B1511D7040B6002F3FEC /* LazyFlashCardsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyFlashCardsUITests.swift; sourceTree = "<group>"; };
+		19B8B1531D7040B6002F3FEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		19B8B15F1D704258002F3FEC /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		19B8B1601D704258002F3FEC /* HeaderViewDefaultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderViewDefaultView.swift; sourceTree = "<group>"; };
+		19B8B1611D704258002F3FEC /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
+		19B8B1621D704258002F3FEC /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		19B8B1631D704258002F3FEC /* DetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailView.xib; sourceTree = "<group>"; };
+		19B8B1641D704258002F3FEC /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		19B8B1651D704258002F3FEC /* CustomTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
+		19B8B16E1D7043E4002F3FEC /* ViewDecksController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewDecksController.swift; sourceTree = "<group>"; };
+		19B8B16F1D7043E4002F3FEC /* LiquidButtonHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiquidButtonHelper.swift; sourceTree = "<group>"; };
+		19B8B1701D7043E4002F3FEC /* AddDeckViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDeckViewController.swift; sourceTree = "<group>"; };
+		19B8B1711D7043E4002F3FEC /* AddDeckViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddDeckViewController.xib; sourceTree = "<group>"; };
+		19B8B1771D704402002F3FEC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		19B8B17B1D704698002F3FEC /* LazyFlashCards-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "LazyFlashCards-Bridging-Header.h"; path = "LazyFlashCards/LazyFlashCards-Bridging-Header.h"; sourceTree = "<group>"; };
+		19B8B17C1D704699002F3FEC /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
+		19B8B17D1D704699002F3FEC /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHpple.m; sourceTree = "<group>"; };
+		19B8B17E1D704699002F3FEC /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHppleElement.h; sourceTree = "<group>"; };
+		19B8B17F1D704699002F3FEC /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHppleElement.m; sourceTree = "<group>"; };
+		19B8B1801D704699002F3FEC /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
+		19B8B1811D704699002F3FEC /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
+		19B8B1861D70470F002F3FEC /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
+		19B8B1871D70470F002F3FEC /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		7297621F63D1BF85A3137C0B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		19B8B1281D7040B6002F3FEC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19B8B1881D70470F002F3FEC /* libxml2.2.tbd in Frameworks */,
+				19B8B1891D70470F002F3FEC /* libxml2.tbd in Frameworks */,
+				BD1CA86C4C183B6EA83D7184 /* Pods.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19B8B13F1D7040B6002F3FEC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19B8B14A1D7040B6002F3FEC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		19B8B1221D7040B6002F3FEC = {
+			isa = PBXGroup;
+			children = (
+				19B8B17B1D704698002F3FEC /* LazyFlashCards-Bridging-Header.h */,
+				19B8B12D1D7040B6002F3FEC /* LazyFlashCards */,
+				19B8B1451D7040B6002F3FEC /* LazyFlashCardsTests */,
+				19B8B1501D7040B6002F3FEC /* LazyFlashCardsUITests */,
+				19B8B12C1D7040B6002F3FEC /* Products */,
+				CA569992AB67256194631FA0 /* Pods */,
+				FC01B2C2D4DEDA5A61A9FB19 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		19B8B12C1D7040B6002F3FEC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				19B8B12B1D7040B6002F3FEC /* LazyFlashCards.app */,
+				19B8B1421D7040B6002F3FEC /* LazyFlashCardsTests.xctest */,
+				19B8B14D1D7040B6002F3FEC /* LazyFlashCardsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		19B8B12D1D7040B6002F3FEC /* LazyFlashCards */ = {
+			isa = PBXGroup;
+			children = (
+				19B8B1851D7046AF002F3FEC /* TFHpple */,
+				19B8B16D1D704268002F3FEC /* ExpandingTableViewCell */,
+				19B8B1761D7043EA002F3FEC /* DeckViewController */,
+				19B8B12E1D7040B6002F3FEC /* AppDelegate.swift */,
+				19B8B1771D704402002F3FEC /* Main.storyboard */,
+				19B8B1381D7040B6002F3FEC /* Assets.xcassets */,
+				19B8B13A1D7040B6002F3FEC /* LaunchScreen.storyboard */,
+				19B8B13D1D7040B6002F3FEC /* Info.plist */,
+				19B8B1351D7040B6002F3FEC /* LazyFlashCards.xcdatamodeld */,
+			);
+			path = LazyFlashCards;
+			sourceTree = "<group>";
+		};
+		19B8B1451D7040B6002F3FEC /* LazyFlashCardsTests */ = {
+			isa = PBXGroup;
+			children = (
+				19B8B1461D7040B6002F3FEC /* LazyFlashCardsTests.swift */,
+				19B8B1481D7040B6002F3FEC /* Info.plist */,
+			);
+			path = LazyFlashCardsTests;
+			sourceTree = "<group>";
+		};
+		19B8B1501D7040B6002F3FEC /* LazyFlashCardsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				19B8B1511D7040B6002F3FEC /* LazyFlashCardsUITests.swift */,
+				19B8B1531D7040B6002F3FEC /* Info.plist */,
+			);
+			path = LazyFlashCardsUITests;
+			sourceTree = "<group>";
+		};
+		19B8B16D1D704268002F3FEC /* ExpandingTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				19B8B15F1D704258002F3FEC /* HeaderView.swift */,
+				19B8B1601D704258002F3FEC /* HeaderViewDefaultView.swift */,
+				19B8B1611D704258002F3FEC /* HeaderView.xib */,
+				19B8B1621D704258002F3FEC /* DetailView.swift */,
+				19B8B1631D704258002F3FEC /* DetailView.xib */,
+				19B8B1641D704258002F3FEC /* CustomTableViewCell.swift */,
+				19B8B1651D704258002F3FEC /* CustomTableViewCell.xib */,
+			);
+			name = ExpandingTableViewCell;
+			sourceTree = "<group>";
+		};
+		19B8B1761D7043EA002F3FEC /* DeckViewController */ = {
+			isa = PBXGroup;
+			children = (
+				19B8B16E1D7043E4002F3FEC /* ViewDecksController.swift */,
+				19B8B16F1D7043E4002F3FEC /* LiquidButtonHelper.swift */,
+				19B8B1701D7043E4002F3FEC /* AddDeckViewController.swift */,
+				19B8B1711D7043E4002F3FEC /* AddDeckViewController.xib */,
+			);
+			name = DeckViewController;
+			sourceTree = "<group>";
+		};
+		19B8B1851D7046AF002F3FEC /* TFHpple */ = {
+			isa = PBXGroup;
+			children = (
+				19B8B17C1D704699002F3FEC /* TFHpple.h */,
+				19B8B17D1D704699002F3FEC /* TFHpple.m */,
+				19B8B17E1D704699002F3FEC /* TFHppleElement.h */,
+				19B8B17F1D704699002F3FEC /* TFHppleElement.m */,
+				19B8B1801D704699002F3FEC /* XPathQuery.h */,
+				19B8B1811D704699002F3FEC /* XPathQuery.m */,
+			);
+			name = TFHpple;
+			sourceTree = "<group>";
+		};
+		CA569992AB67256194631FA0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7297621F63D1BF85A3137C0B /* Pods.debug.xcconfig */,
+				0DFE532A7A642991048FB109 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FC01B2C2D4DEDA5A61A9FB19 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				19B8B1861D70470F002F3FEC /* libxml2.2.tbd */,
+				19B8B1871D70470F002F3FEC /* libxml2.tbd */,
+				1747660E56C8847495FB6C6C /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		19B8B12A1D7040B6002F3FEC /* LazyFlashCards */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 19B8B1561D7040B6002F3FEC /* Build configuration list for PBXNativeTarget "LazyFlashCards" */;
+			buildPhases = (
+				122F870B9349F9875FB5D8D9 /* Check Pods Manifest.lock */,
+				19B8B1271D7040B6002F3FEC /* Sources */,
+				19B8B1281D7040B6002F3FEC /* Frameworks */,
+				19B8B1291D7040B6002F3FEC /* Resources */,
+				FC82A136A63C4D5D72230A6B /* Embed Pods Frameworks */,
+				1EF3E61C63FCA28D2897EBFC /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LazyFlashCards;
+			productName = LazyFlashCards;
+			productReference = 19B8B12B1D7040B6002F3FEC /* LazyFlashCards.app */;
+			productType = "com.apple.product-type.application";
+		};
+		19B8B1411D7040B6002F3FEC /* LazyFlashCardsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 19B8B1591D7040B6002F3FEC /* Build configuration list for PBXNativeTarget "LazyFlashCardsTests" */;
+			buildPhases = (
+				19B8B13E1D7040B6002F3FEC /* Sources */,
+				19B8B13F1D7040B6002F3FEC /* Frameworks */,
+				19B8B1401D7040B6002F3FEC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				19B8B1441D7040B6002F3FEC /* PBXTargetDependency */,
+			);
+			name = LazyFlashCardsTests;
+			productName = LazyFlashCardsTests;
+			productReference = 19B8B1421D7040B6002F3FEC /* LazyFlashCardsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		19B8B14C1D7040B6002F3FEC /* LazyFlashCardsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 19B8B15C1D7040B6002F3FEC /* Build configuration list for PBXNativeTarget "LazyFlashCardsUITests" */;
+			buildPhases = (
+				19B8B1491D7040B6002F3FEC /* Sources */,
+				19B8B14A1D7040B6002F3FEC /* Frameworks */,
+				19B8B14B1D7040B6002F3FEC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				19B8B14F1D7040B6002F3FEC /* PBXTargetDependency */,
+			);
+			name = LazyFlashCardsUITests;
+			productName = LazyFlashCardsUITests;
+			productReference = 19B8B14D1D7040B6002F3FEC /* LazyFlashCardsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		19B8B1231D7040B6002F3FEC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Kevin Lu";
+				TargetAttributes = {
+					19B8B12A1D7040B6002F3FEC = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 75W8CPN6HK;
+					};
+					19B8B1411D7040B6002F3FEC = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 75W8CPN6HK;
+						TestTargetID = 19B8B12A1D7040B6002F3FEC;
+					};
+					19B8B14C1D7040B6002F3FEC = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 75W8CPN6HK;
+						TestTargetID = 19B8B12A1D7040B6002F3FEC;
+					};
+				};
+			};
+			buildConfigurationList = 19B8B1261D7040B6002F3FEC /* Build configuration list for PBXProject "LazyFlashCards" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 19B8B1221D7040B6002F3FEC;
+			productRefGroup = 19B8B12C1D7040B6002F3FEC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				19B8B12A1D7040B6002F3FEC /* LazyFlashCards */,
+				19B8B1411D7040B6002F3FEC /* LazyFlashCardsTests */,
+				19B8B14C1D7040B6002F3FEC /* LazyFlashCardsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		19B8B1291D7040B6002F3FEC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19B8B1781D704402002F3FEC /* Main.storyboard in Resources */,
+				19B8B1681D704258002F3FEC /* HeaderView.xib in Resources */,
+				19B8B16A1D704258002F3FEC /* DetailView.xib in Resources */,
+				19B8B13C1D7040B6002F3FEC /* LaunchScreen.storyboard in Resources */,
+				19B8B1751D7043E4002F3FEC /* AddDeckViewController.xib in Resources */,
+				19B8B16C1D704258002F3FEC /* CustomTableViewCell.xib in Resources */,
+				19B8B1391D7040B6002F3FEC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19B8B1401D7040B6002F3FEC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19B8B14B1D7040B6002F3FEC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		122F870B9349F9875FB5D8D9 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		1EF3E61C63FCA28D2897EBFC /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC82A136A63C4D5D72230A6B /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		19B8B1271D7040B6002F3FEC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19B8B16B1D704258002F3FEC /* CustomTableViewCell.swift in Sources */,
+				19B8B1741D7043E4002F3FEC /* AddDeckViewController.swift in Sources */,
+				19B8B1371D7040B6002F3FEC /* LazyFlashCards.xcdatamodeld in Sources */,
+				19B8B1661D704258002F3FEC /* HeaderView.swift in Sources */,
+				19B8B1671D704258002F3FEC /* HeaderViewDefaultView.swift in Sources */,
+				19B8B1821D704699002F3FEC /* TFHpple.m in Sources */,
+				19B8B1691D704258002F3FEC /* DetailView.swift in Sources */,
+				19B8B12F1D7040B6002F3FEC /* AppDelegate.swift in Sources */,
+				19B8B1721D7043E4002F3FEC /* ViewDecksController.swift in Sources */,
+				19B8B1731D7043E4002F3FEC /* LiquidButtonHelper.swift in Sources */,
+				19B8B1841D704699002F3FEC /* XPathQuery.m in Sources */,
+				19B8B1831D704699002F3FEC /* TFHppleElement.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19B8B13E1D7040B6002F3FEC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19B8B1471D7040B6002F3FEC /* LazyFlashCardsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19B8B1491D7040B6002F3FEC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19B8B1521D7040B6002F3FEC /* LazyFlashCardsUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		19B8B1441D7040B6002F3FEC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 19B8B12A1D7040B6002F3FEC /* LazyFlashCards */;
+			targetProxy = 19B8B1431D7040B6002F3FEC /* PBXContainerItemProxy */;
+		};
+		19B8B14F1D7040B6002F3FEC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 19B8B12A1D7040B6002F3FEC /* LazyFlashCards */;
+			targetProxy = 19B8B14E1D7040B6002F3FEC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		19B8B13A1D7040B6002F3FEC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				19B8B13B1D7040B6002F3FEC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		19B8B1541D7040B6002F3FEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		19B8B1551D7040B6002F3FEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		19B8B1571D7040B6002F3FEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7297621F63D1BF85A3137C0B /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				"HEADER_SEARCH_PATHS[arch=*]" = "$(SDKROOT)/usr/include/libxml2";
+				INFOPLIST_FILE = LazyFlashCards/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"AEAccordion\"",
+					"-framework",
+					"\"AEXibceptionView\"",
+					"-framework",
+					"\"HidingNavigationBar\"",
+					"-framework",
+					"\"JOEmojiableBtn\"",
+					"-framework",
+					"\"LiquidFloatingActionButton\"",
+					"-framework",
+					"\"PopupDialog\"",
+					"-framework",
+					"\"PureLayout\"",
+					"-framework",
+					"\"SkyFloatingLabelTextField\"",
+					"-framework",
+					"\"SnapKit\"",
+					"-framework",
+					"\"SwiftyButton\"",
+					"-framework",
+					"\"TZStackView\"",
+					"-lxml2",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kevinlu.LazyFlashCards;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LazyFlashCards/LazyFlashCards-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		19B8B1581D7040B6002F3FEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0DFE532A7A642991048FB109 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				"HEADER_SEARCH_PATHS[arch=*]" = "$(SDKROOT)/usr/include/libxml2";
+				INFOPLIST_FILE = LazyFlashCards/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"AEAccordion\"",
+					"-framework",
+					"\"AEXibceptionView\"",
+					"-framework",
+					"\"HidingNavigationBar\"",
+					"-framework",
+					"\"JOEmojiableBtn\"",
+					"-framework",
+					"\"LiquidFloatingActionButton\"",
+					"-framework",
+					"\"PopupDialog\"",
+					"-framework",
+					"\"PureLayout\"",
+					"-framework",
+					"\"SkyFloatingLabelTextField\"",
+					"-framework",
+					"\"SnapKit\"",
+					"-framework",
+					"\"SwiftyButton\"",
+					"-framework",
+					"\"TZStackView\"",
+					"-lxml2",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kevinlu.LazyFlashCards;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LazyFlashCards/LazyFlashCards-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		19B8B15A1D7040B6002F3FEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = LazyFlashCardsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kevinlu.LazyFlashCardsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LazyFlashCards.app/LazyFlashCards";
+			};
+			name = Debug;
+		};
+		19B8B15B1D7040B6002F3FEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = LazyFlashCardsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kevinlu.LazyFlashCardsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LazyFlashCards.app/LazyFlashCards";
+			};
+			name = Release;
+		};
+		19B8B15D1D7040B6002F3FEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = LazyFlashCardsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kevinlu.LazyFlashCardsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = LazyFlashCards;
+			};
+			name = Debug;
+		};
+		19B8B15E1D7040B6002F3FEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = LazyFlashCardsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kevinlu.LazyFlashCardsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = LazyFlashCards;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		19B8B1261D7040B6002F3FEC /* Build configuration list for PBXProject "LazyFlashCards" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19B8B1541D7040B6002F3FEC /* Debug */,
+				19B8B1551D7040B6002F3FEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		19B8B1561D7040B6002F3FEC /* Build configuration list for PBXNativeTarget "LazyFlashCards" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19B8B1571D7040B6002F3FEC /* Debug */,
+				19B8B1581D7040B6002F3FEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		19B8B1591D7040B6002F3FEC /* Build configuration list for PBXNativeTarget "LazyFlashCardsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19B8B15A1D7040B6002F3FEC /* Debug */,
+				19B8B15B1D7040B6002F3FEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		19B8B15C1D7040B6002F3FEC /* Build configuration list for PBXNativeTarget "LazyFlashCardsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19B8B15D1D7040B6002F3FEC /* Debug */,
+				19B8B15E1D7040B6002F3FEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		19B8B1351D7040B6002F3FEC /* LazyFlashCards.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				19B8B1361D7040B6002F3FEC /* LazyFlashCards.xcdatamodel */,
+			);
+			currentVersion = 19B8B1361D7040B6002F3FEC /* LazyFlashCards.xcdatamodel */;
+			path = LazyFlashCards.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 19B8B1231D7040B6002F3FEC /* Project object */;
+}

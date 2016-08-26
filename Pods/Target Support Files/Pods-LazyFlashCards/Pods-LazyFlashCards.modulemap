@@ -1,0 +1,6 @@
+framework module Pods_LazyFlashCards {
+  umbrella header "Pods-LazyFlashCards-umbrella.h"
+
+  export *
+  module * { export * }
+}

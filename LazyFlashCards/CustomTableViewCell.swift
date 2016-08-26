@@ -1,0 +1,89 @@
+//
+//  CustomTableViewCell.swift
+//  AEAccordion
+//
+//  Created by Marko Tadic on 6/26/15.
+//  Copyright © 2015 AE. All rights reserved.
+//
+
+import UIKit
+import AEAccordion
+
+
+class CustomTableViewCell: AEAccordionTableViewCell {
+    
+    // MARK: - Outlets
+    
+    @IBOutlet weak var headerView: HeaderView! {
+        didSet {
+            headerView.imageView.tintColor = UIColor.whiteColor()
+        }
+    }
+    @IBOutlet weak var detailView: DetailView!
+    
+    // MARK: - Override
+    
+    override func setExpanded(expanded: Bool, animated: Bool) {
+        super.setExpanded(expanded, animated: animated)
+        
+        if !animated {
+            toggleCell()
+        } else {
+            let alwaysOptions: UIViewAnimationOptions = [.AllowUserInteraction, .BeginFromCurrentState, .TransitionCrossDissolve]
+            let expandedOptions: UIViewAnimationOptions = [.TransitionFlipFromTop, .CurveEaseOut]
+            let collapsedOptions: UIViewAnimationOptions = [.TransitionFlipFromBottom, .CurveEaseIn]
+            let options: UIViewAnimationOptions = expanded ? alwaysOptions.union(expandedOptions) : alwaysOptions.union(collapsedOptions)
+            
+            UIView.transitionWithView(detailView, duration: 0.3, options: options, animations: { () -> Void in
+                self.toggleCell()
+                }, completion: nil)
+        }
+    }
+    
+    // MARK: - Helpers
+    
+    private func toggleCell() {
+        detailView.hidden = !expanded
+        headerView.imageView.transform = expanded ? CGAffineTransformMakeRotation(CGFloat(M_PI)) : CGAffineTransformIdentity
+    }
+    
+}
+
+// MARK: - Overriding responder chain
+extension CustomTableViewCell{
+    
+    // Redirect which view is supposed to recieve the touch notification
+    override func hitTest(point: CGPoint, withEvent event: UIEvent?) -> UIView? {
+        print("---------- CustomTableViewCell hitTest ----------")
+
+        print("My superview is \(self.superview)")
+        
+        let hitView = super.hitTest(point, withEvent: event)
+        print("The class that this method is called from is \(NSStringFromClass(self.dynamicType))")
+
+        // if the hitView is the viewCell then don't return it as it will be the view is passed down the chain responder
+        if (hitView == self) {
+            print("The hitview is self")
+            return nil
+        }
+        else {
+            if let hitView = hitView {
+                print("The class that this method is called from is \(NSStringFromClass(self.dynamicType))")
+                print("The hitView is: \(NSStringFromClass(hitView.dynamicType))")
+                print("The hitView tag is: \(hitView.tag)")
+                print("The hitView pointer address is: \(hitView.description)")
+                
+                if (hitView.isKindOfClass(UIButton) || hitView.isKindOfClass(HeaderViewDefaultView)) {
+                    return hitView
+                }
+                else {
+                    return nil
+                }
+            }
+            else {
+                print("There are no subviews under this view")
+                return nil
+            }
+        }
+    }
+}

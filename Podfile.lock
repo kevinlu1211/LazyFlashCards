@@ -1,0 +1,42 @@
+PODS:
+  - AEAccordion (1.0.3)
+  - AEXibceptionView (1.0.3)
+  - HidingNavigationBar (0.3.0)
+  - JOEmojiableBtn (0.1.0)
+  - LiquidFloatingActionButton (1.2.0)
+  - PopupDialog (0.4.0):
+    - TZStackView
+  - PureLayout (3.0.2)
+  - SkyFloatingLabelTextField (1.2.1)
+  - SnapKit (0.15.0)
+  - SwiftyButton (0.4.0):
+    - SwiftyButton/CustomContent (= 0.4.0)
+  - SwiftyButton/CustomContent (0.4.0):
+    - PureLayout (~> 3.0)
+  - TZStackView (1.2.0)
+
+DEPENDENCIES:
+  - AEAccordion
+  - AEXibceptionView
+  - HidingNavigationBar (~> 0.3)
+  - JOEmojiableBtn
+  - LiquidFloatingActionButton
+  - PopupDialog (~> 0.4)
+  - SkyFloatingLabelTextField (~> 1.0)
+  - SnapKit (~> 0.15.0)
+  - SwiftyButton
+
+SPEC CHECKSUMS:
+  AEAccordion: 4a6b3b938fc9abe8a20d7e9e238a50a5eae02572
+  AEXibceptionView: cb1e5696c2cf1283a8d083406928222c9b59608e
+  HidingNavigationBar: 6378af14cea27bfef8be73470b081a36d45b87c4
+  JOEmojiableBtn: 7e3ca82bbb6b909ffb1f2ba26d9ea4fdfb3aadd4
+  LiquidFloatingActionButton: 9c28961915754e08cf596ea6bdd60f9cd949f172
+  PopupDialog: 5f87c0c97af1cf5f2eee6e5a83421c3fc0d22fb5
+  PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
+  SkyFloatingLabelTextField: 3f6610aded18e778df5cfab3b9e12a11b3e014e9
+  SnapKit: 4962eed2ee18e48cbd2b2292fffc57efe7235f87
+  SwiftyButton: fffcc0d82b2b5f9ec1681f20ee9c67bed0d5c73b
+  TZStackView: 4b82373b4aabe4d99adf739a34e1bc6755149272
+
+COCOAPODS: 0.39.0
