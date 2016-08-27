@@ -30,6 +30,9 @@
 		19B8B1841D704699002F3FEC /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B8B1811D704699002F3FEC /* XPathQuery.m */; };
 		19B8B1881D70470F002F3FEC /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 19B8B1861D70470F002F3FEC /* libxml2.2.tbd */; };
 		19B8B1891D70470F002F3FEC /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 19B8B1871D70470F002F3FEC /* libxml2.tbd */; };
+		19B8B18D1D711A0D002F3FEC /* CoreDataStackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B8B18C1D711A0D002F3FEC /* CoreDataStackManager.swift */; };
+		19B8B18F1D711B41002F3FEC /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B8B18E1D711B41002F3FEC /* Deck.swift */; };
+		19B8B1911D711B47002F3FEC /* FlashCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B8B1901D711B47002F3FEC /* FlashCard.swift */; };
 		BD1CA86C4C183B6EA83D7184 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1747660E56C8847495FB6C6C /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +89,9 @@
 		19B8B1811D704699002F3FEC /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
 		19B8B1861D70470F002F3FEC /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
 		19B8B1871D70470F002F3FEC /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		19B8B18C1D711A0D002F3FEC /* CoreDataStackManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStackManager.swift; sourceTree = "<group>"; };
+		19B8B18E1D711B41002F3FEC /* Deck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
+		19B8B1901D711B47002F3FEC /* FlashCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashCard.swift; sourceTree = "<group>"; };
 		7297621F63D1BF85A3137C0B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -147,11 +153,11 @@
 				19B8B16D1D704268002F3FEC /* ExpandingTableViewCell */,
 				19B8B1761D7043EA002F3FEC /* DeckViewController */,
 				19B8B12E1D7040B6002F3FEC /* AppDelegate.swift */,
+				19B8B1921D711B64002F3FEC /* CoreData */,
 				19B8B1771D704402002F3FEC /* Main.storyboard */,
 				19B8B1381D7040B6002F3FEC /* Assets.xcassets */,
 				19B8B13A1D7040B6002F3FEC /* LaunchScreen.storyboard */,
 				19B8B13D1D7040B6002F3FEC /* Info.plist */,
-				19B8B1351D7040B6002F3FEC /* LazyFlashCards.xcdatamodeld */,
 			);
 			path = LazyFlashCards;
 			sourceTree = "<group>";
@@ -210,6 +216,17 @@
 				19B8B1811D704699002F3FEC /* XPathQuery.m */,
 			);
 			name = TFHpple;
+			sourceTree = "<group>";
+		};
+		19B8B1921D711B64002F3FEC /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				19B8B18C1D711A0D002F3FEC /* CoreDataStackManager.swift */,
+				19B8B18E1D711B41002F3FEC /* Deck.swift */,
+				19B8B1901D711B47002F3FEC /* FlashCard.swift */,
+				19B8B1351D7040B6002F3FEC /* LazyFlashCards.xcdatamodeld */,
+			);
+			name = CoreData;
 			sourceTree = "<group>";
 		};
 		CA569992AB67256194631FA0 /* Pods */ = {
@@ -420,6 +437,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19B8B18F1D711B41002F3FEC /* Deck.swift in Sources */,
 				19B8B16B1D704258002F3FEC /* CustomTableViewCell.swift in Sources */,
 				19B8B1741D7043E4002F3FEC /* AddDeckViewController.swift in Sources */,
 				19B8B1371D7040B6002F3FEC /* LazyFlashCards.xcdatamodeld in Sources */,
@@ -428,7 +446,9 @@
 				19B8B1821D704699002F3FEC /* TFHpple.m in Sources */,
 				19B8B1691D704258002F3FEC /* DetailView.swift in Sources */,
 				19B8B12F1D7040B6002F3FEC /* AppDelegate.swift in Sources */,
+				19B8B1911D711B47002F3FEC /* FlashCard.swift in Sources */,
 				19B8B1721D7043E4002F3FEC /* ViewDecksController.swift in Sources */,
+				19B8B18D1D711A0D002F3FEC /* CoreDataStackManager.swift in Sources */,
 				19B8B1731D7043E4002F3FEC /* LiquidButtonHelper.swift in Sources */,
 				19B8B1841D704699002F3FEC /* XPathQuery.m in Sources */,
 				19B8B1831D704699002F3FEC /* TFHppleElement.m in Sources */,

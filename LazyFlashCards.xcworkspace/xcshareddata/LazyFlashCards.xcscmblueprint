@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "C65F3DE1B448AD39D8AFB4BBCE91FFDBAC946D0F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "A447477AEBAEA225B9B77A4CF6F73E05092960DD" : 0,
+    "C65F3DE1B448AD39D8AFB4BBCE91FFDBAC946D0F" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "398149E9-198D-4019-86A1-4B57E8312D96",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "A447477AEBAEA225B9B77A4CF6F73E05092960DD" : "TiltTheTeacher\/",
+    "C65F3DE1B448AD39D8AFB4BBCE91FFDBAC946D0F" : "LazyFlashCards\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "LazyFlashCards",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "LazyFlashCards.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/kevinlu1211\/Flashcards2.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A447477AEBAEA225B9B77A4CF6F73E05092960DD"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/kevinlu1211\/LazyFlashCards.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C65F3DE1B448AD39D8AFB4BBCE91FFDBAC946D0F"
+    }
+  ]
+}
