@@ -1,9 +1,9 @@
 //
-//  SampleTableViewController.swift
-//  AEAccordion
+//  DetailDeckViewController.swift
+//  LazyFlashCards
 //
-//  Created by Marko Tadic on 6/26/15.
-//  Copyright © 2015 AE. All rights reserved.
+//  Created by Kevin Lu on 27/08/2016.
+//  Copyright © 2016 Kevin Lu. All rights reserved.
 //
 
 import UIKit
@@ -14,77 +14,60 @@ import AEAccordion
 import AEXibceptionView
 import CoreData
 
-class ViewDecksController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class DetailDeckViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
     
     // MARK: - Properties
     
+    // Table View
     private let cellIdentifier = "CustomTableViewCell"
-    private let ADD_DECK_BUTTON_INDEX = 0
-    var liquidFloatingCells: [LiquidFloatingCell] = []
     var tableView: UITableView!
-    
-    // Core Data
-    private var decks = [Deck]()
-    lazy var sharedContext = {
-        return CoreDataStackManager.sharedInstance().managedObjectContext
-    }()
-    
-    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-    
-    
-    /// Array of `NSIndexPath` objects for all of the expanded cells.
     internal var expandedIndexPaths = [NSIndexPath]()
     
-    // MARK: - Lifecycle
-    
+    // Floating liquid cells
+    private let ADD_CARD_BUTTON_INDEX = 0
+    var liquidFloatingCells: [LiquidFloatingCell] = []
+
+    // Core Data
+    lazy var sharedContext : NSManagedObjectContext = {
+        return CoreDataStackManager.sharedInstance().managedObjectContext
+    }()
+    var deck : Deck!
+    var flashCards : [FlashCard] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Decks"
-        // Setup Tab
-
-        
-        
         tableViewSetup()
-        expandFirstCell()
+        deck.createFlashCards()
+        if let useableFlashCards = deck.useableFlashCards {
+            flashCards = useableFlashCards
+        }
         liquidButtonSetup()
-        decks = fetchAllDecks()
-        if let navController = navigationController {
-            styleNavigationController(navController)
-        }
-//        hidingNavBarManager?.delegate = self
-
-
+        
+        // Do any additional setup after loading the view.
     }
 
-    func styleNavigationController(navigationController: UINavigationController){
-        navigationController.navigationBar.translucent = true
-        navigationController.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-        navigationController.navigationBar.tintColor = UIColor.whiteColor()
-        navigationController.navigationBar.barTintColor = UIColor(red: 41/255, green: 141/255, blue: 250/255, alpha: 1)
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
+    
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
 
 }
-
-// MARK: -Core Data
-
-extension ViewDecksController {
-    func fetchAllDecks() -> [Deck] {
-        let fetchRequest = NSFetchRequest(entityName: "Deck")
-        do {
-            let decks = try sharedContext.executeFetchRequest(fetchRequest) as! [Deck]
-            return decks
-        }
-        catch {
-            print("Error")
-            return [Deck]()
-        }
-    }
-}
-
 
 // MARK: - UITableView methods
 
-extension ViewDecksController {
+extension DetailDeckViewController {
     
     // MARK: - Helpers
     
@@ -110,15 +93,16 @@ extension ViewDecksController {
     // MARK: - UITableViewDataSource
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return decks.count
+        return flashCards.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! CustomTableViewCell
         //        cell.contentView.hidden = true
-        cell.headerView.deckNameLabel.text = decks[indexPath.row].name
-        cell.detailView.delegate = self
+            cell.headerView.deckNameLabel.text = flashCards[indexPath.row].phrase
+       
+        
         return cell
     }
     
@@ -128,7 +112,7 @@ extension ViewDecksController {
         return expandedIndexPaths.contains(indexPath) ? 200.0 : 50.0
     }
     
-
+    
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         if let cell = cell as? AEAccordionTableViewCell {
             let expanded = expandedIndexPaths.contains(indexPath)
@@ -149,13 +133,11 @@ extension ViewDecksController {
             collapseCell(cell, animated: animated)
         }
     }
-    
-    
 }
 
 // MARK: - Helpers
 // TODO: - Separate this out into another class
-extension ViewDecksController {
+extension DetailDeckViewController {
     
     private func expandCell(cell: AEAccordionTableViewCell, animated: Bool) {
         if let indexPath = tableView.indexPathForCell(cell) {
@@ -212,10 +194,9 @@ extension ViewDecksController {
             self.expandedIndexPaths.removeAtIndex(index)
         }
     }
-
 }
 
-extension ViewDecksController : LiquidFloatingActionButtonDataSource, LiquidFloatingActionButtonDelegate{
+extension DetailDeckViewController : LiquidFloatingActionButtonDataSource, LiquidFloatingActionButtonDelegate{
     func liquidButtonSetup () {
         
         let createButton: (CGRect, LiquidFloatingActionButtonAnimateStyle) -> LiquidFloatingActionButton = { (frame, style) in
@@ -233,19 +214,19 @@ extension ViewDecksController : LiquidFloatingActionButtonDataSource, LiquidFloa
         
         
         // Setup bottom right button
-        liquidFloatingCells.append(customCellFactory("ic_brush", "Add Deck"))
+        liquidFloatingCells.append(customCellFactory("ic_brush", "Add Card"))
         
-        // Setup the frame 
+        // Setup the frame
         
-//        let statusBarHeight = UIApplication.sharedApplication().statusBarFrame.size.height
-//        let navigationBarHeight = self.navigationController!.navigationBar.frame.height
+        //        let statusBarHeight = UIApplication.sharedApplication().statusBarFrame.size.height
+        //        let navigationBarHeight = self.navigationController!.navigationBar.frame.height
         let buttonHeight = CGFloat(56)
         let floatingFrame = CGRect(x: 0, y: 0 , width: buttonHeight, height: buttonHeight)
         let bottomRightButton = createButton(floatingFrame, .Up)
         self.view.addSubview(bottomRightButton)
-//        bottomRightButton.center = CGPointMake(self.view.bounds.width - 56 - 16, self.view.bounds.height - 56 - 16 - statusBarHeight - navigationBarHeight)
+        //        bottomRightButton.center = CGPointMake(self.view.bounds.width - 56 - 16, self.view.bounds.height - 56 - 16 - statusBarHeight - navigationBarHeight)
         bottomRightButton.center = CGPointMake(self.view.bounds.width - buttonHeight, self.view.bounds.height - buttonHeight)
-    
+        
     }
     
     func numberOfCells(liquidFloatingActionButton: LiquidFloatingActionButton) -> Int {
@@ -258,47 +239,39 @@ extension ViewDecksController : LiquidFloatingActionButtonDataSource, LiquidFloa
     
     func liquidFloatingActionButton(liquidFloatingActionButton: LiquidFloatingActionButton, didSelectItemAtIndex index: Int) {
         print("did Tapped! \(index)")
-        if index == ADD_DECK_BUTTON_INDEX {
-            deckSetupPopup()
+        if index == ADD_CARD_BUTTON_INDEX {
+            cardSetupPopup()
         }
         liquidFloatingActionButton.close()
     }
     
-    func deckSetupPopup() {
-        let deckSetupVC = AddDeckViewController(nibName: "AddDeckViewController", bundle: nil)
-        let popup = PopupDialog(viewController: deckSetupVC, transitionStyle: .BounceDown, buttonAlignment: .Horizontal, gestureDismissal: true)
-        deckSetupVC.delegate = self
+    func cardSetupPopup() {
+        let cardSetupVC = AddCardViewController(nibName: "AddCardViewController", bundle: nil)
+        let popup = PopupDialog(viewController: cardSetupVC, transitionStyle: .BounceDown, buttonAlignment: .Horizontal, gestureDismissal: true)
+        cardSetupVC.delegate = self
         presentViewController(popup, animated: true, completion: nil)
         
     }
     
 }
-extension ViewDecksController : DetailViewProtocol {
-    func handleButton(detailView: DetailView) {
-        let detailTableViewController = self.storyboard?.instantiateViewControllerWithIdentifier("DetailDeckViewController") as! DetailDeckViewController
-        let indexPath = tableView.indexPathForCell(detailView.getParentTableViewCell())
-        if let indexPath = indexPath {
-            detailTableViewController.deck = decks[indexPath.row]
-        }
-        self.navigationController!.pushViewController(detailTableViewController, animated: true)
 
-        print("handled the button woohoo")
-    }
-}
-
-extension ViewDecksController : AddDeckViewControllerDelegate {
-    func handleAddDeck(deckName : String) {
-        // First add the things required to update the data source
-        let deck = Deck(context: sharedContext, name: deckName, detail: nil)
-        decks.append(deck)
+extension DetailDeckViewController : AddCardViewControllerDelegate {
+    func handleAddCard(addCardViewController : AddCardViewController, phrase: String?, pronunication: String?, definition: String?) {
+        print("creating new card")
+        // Create the new flashCard
+        let flashCard = FlashCard(context: sharedContext, phrase: phrase!, pronunciation: pronunication!, definition: definition!)
         
-        // Save it to CoreData
+        print("saving new card")
+        // Save make the association for flashCards and deck and then flashCard into CoreData
+        flashCard.deck = self.deck
         CoreDataStackManager.sharedInstance().saveContext()
         
-        // Reload the tableView
+        print("reloading data")
+        // Now update the data source and reload the tableView
+        flashCards.append(flashCard)
         tableView.reloadData()
         
-        // Now dismiss the popup view controller
-        self.dismissViewControllerAnimated(false, completion: nil)
+        // Now clear the text fields so that the user can add another card
+        addCardViewController.clearTextFields()
     }
 }

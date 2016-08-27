@@ -14,7 +14,7 @@ class HeaderView: AEXibceptionView {
     
     // MARK: - Outlets
     
-    @IBOutlet weak var dayLabel: UILabel!
+    @IBOutlet weak var deckNameLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     
 }

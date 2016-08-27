@@ -8,7 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeaderView" customModule="LazyFlashCards" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="6Ep-Z6-g8T"/>
-                <outlet property="dayLabel" destination="xVn-Vd-cKo" id="JzW-IR-aMX"/>
+                <outlet property="deckNameLabel" destination="xVn-Vd-cKo" id="0VW-ZP-xjG"/>
                 <outlet property="imageView" destination="fb4-3A-ox8" id="efd-7G-jwv"/>
             </connections>
         </placeholder>
@@ -17,8 +17,8 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xVn-Vd-cKo">
-                    <rect key="frame" x="8" y="15" width="30" height="20"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deck Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xVn-Vd-cKo" userLabel="Deck Name Label">
+                    <rect key="frame" x="8" y="15" width="532" height="20"/>
                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
@@ -34,6 +34,7 @@
             </subviews>
             <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
+                <constraint firstItem="fb4-3A-ox8" firstAttribute="leading" secondItem="xVn-Vd-cKo" secondAttribute="trailing" constant="8" id="8hq-dw-yJA"/>
                 <constraint firstItem="fb4-3A-ox8" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="WAK-1y-GVX"/>
                 <constraint firstItem="xVn-Vd-cKo" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="bXX-Y6-wwL"/>
                 <constraint firstAttribute="trailing" secondItem="fb4-3A-ox8" secondAttribute="trailing" constant="8" id="pG3-Sf-uYN"/>

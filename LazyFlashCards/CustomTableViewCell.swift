@@ -73,6 +73,7 @@ extension CustomTableViewCell{
                 print("The hitView tag is: \(hitView.tag)")
                 print("The hitView pointer address is: \(hitView.description)")
                 
+                // By not returning the view attached to the CustomTableViewCell, we avoid hiding the cell everytime it's tapped. So we only return a view if it is the top bar view, or if it's the button.
                 if (hitView.isKindOfClass(UIButton) || hitView.isKindOfClass(HeaderViewDefaultView)) {
                     return hitView
                 }

@@ -8,7 +8,7 @@
     <entity name="FlashCard" representedClassName=".FlashCard" syncable="YES">
         <attribute name="definition" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="phrase" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="pronuniciation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pronunciation" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="deck" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Deck" inverseName="flashCards" inverseEntity="Deck" syncable="YES"/>
     </entity>
     <elements>
