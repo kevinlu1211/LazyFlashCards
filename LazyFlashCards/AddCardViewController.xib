@@ -9,21 +9,23 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddCardViewController" customModule="LazyFlashCards" customModuleProvider="target">
             <connections>
                 <outlet property="definitionTextField" destination="hqB-1T-27a" id="uV8-3p-MI5"/>
+                <outlet property="nextButton" destination="Gxf-BC-Pqr" id="38F-4M-IZt"/>
                 <outlet property="phraseTextField" destination="mbK-V8-LYI" id="3Tx-GQ-OCF"/>
+                <outlet property="previousButton" destination="T8j-hQ-TGt" id="14J-Lt-QY1"/>
                 <outlet property="pronunicationTextField" destination="Lm0-la-kG0" id="MfO-5o-fGQ"/>
                 <outlet property="view" destination="fOH-Bh-YDp" id="yeq-3B-9Rg"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="fOH-Bh-YDp">
-            <rect key="frame" x="0.0" y="0.0" width="340" height="282"/>
+            <rect key="frame" x="0.0" y="0.0" width="340" height="289"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pr0-jb-a3B">
-                    <rect key="frame" x="0.0" y="0.0" width="340" height="282"/>
+                    <rect key="frame" x="0.0" y="0.0" width="340" height="289"/>
                     <subviews>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hqB-1T-27a" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                            <rect key="frame" x="8" y="151" width="324" height="44"/>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hqB-1T-27a" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                            <rect key="frame" x="8" y="155" width="324" height="44"/>
                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                             <textInputTraits key="textInputTraits"/>
                             <userDefinedRuntimeAttributes>
@@ -44,39 +46,14 @@
                             </userDefinedRuntimeAttributes>
                         </textField>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MfB-XM-QL5">
-                            <rect key="frame" x="0.0" y="220" width="332" height="54"/>
+                            <rect key="frame" x="8" y="227" width="324" height="54"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJD-IS-lI5" customClass="SwiftyButton" customModule="SwiftyButton">
-                                    <rect key="frame" x="8" y="0.0" width="155" height="54"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="155" id="iiL-kV-X3f"/>
-                                    </constraints>
-                                    <state key="normal" title="Search">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                    </state>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
-                                            <color key="value" red="0.082232492830000004" green="0.84440020319999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                            <real key="value" value="5"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="highlightedColor">
-                                            <color key="value" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="buttonPressDepth">
-                                            <real key="value" value="0.0"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                    <connections>
-                                        <action selector="handleSearch:" destination="-1" eventType="touchUpInside" id="4hP-uO-cGM"/>
-                                    </connections>
-                                </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="waY-mC-z6I" customClass="SwiftyButton" customModule="SwiftyButton">
-                                    <rect key="frame" x="177" y="0.0" width="155" height="54"/>
+                                    <rect key="frame" x="254" y="0.0" width="70" height="54"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="54" id="bIk-lt-fS7"/>
+                                        <constraint firstAttribute="width" constant="70" id="efA-zU-Qg5"/>
+                                    </constraints>
                                     <state key="normal" title="Add Card">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     </state>
@@ -101,18 +78,114 @@
                                         <action selector="handleAddCard:" destination="-1" eventType="touchUpInside" id="4KS-eX-B8q"/>
                                     </connections>
                                 </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gxf-BC-Pqr" customClass="SwiftyButton" customModule="SwiftyButton">
+                                    <rect key="frame" x="169" y="0.0" width="70" height="54"/>
+                                    <state key="normal" title="Next">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                            <color key="value" red="0.082232492830000004" green="0.84440020319999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="5"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="highlightedColor">
+                                            <color key="value" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="buttonPressDepth">
+                                            <real key="value" value="0.0"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="disabledButtonColor">
+                                            <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="disabledShadowColor">
+                                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="handleNextResult:" destination="-1" eventType="touchUpInside" id="Ebv-Wl-b21"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJD-IS-lI5" customClass="SwiftyButton" customModule="SwiftyButton">
+                                    <rect key="frame" x="0.0" y="0.0" width="70" height="54"/>
+                                    <state key="normal" title="Search">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                            <color key="value" red="0.082232492830000004" green="0.84440020319999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="5"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="highlightedColor">
+                                            <color key="value" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="buttonPressDepth">
+                                            <real key="value" value="0.0"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="handleSearch:" destination="-1" eventType="touchUpInside" id="4hP-uO-cGM"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T8j-hQ-TGt" customClass="SwiftyButton" customModule="SwiftyButton">
+                                    <rect key="frame" x="85" y="0.0" width="70" height="54"/>
+                                    <state key="normal" title="Previous">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                            <color key="value" red="0.082232492830000004" green="0.84440020319999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="5"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="highlightedColor">
+                                            <color key="value" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="buttonPressDepth">
+                                            <real key="value" value="0.0"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="disabledButtonColor">
+                                            <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="disabledShadowColor">
+                                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="handlePreviousResult:" destination="-1" eventType="touchUpInside" id="8rn-m4-Zir"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstItem="iJD-IS-lI5" firstAttribute="centerY" secondItem="MfB-XM-QL5" secondAttribute="centerY" id="2yJ-AF-5NQ"/>
                                 <constraint firstAttribute="height" constant="54" id="4gT-pV-Fn7"/>
-                                <constraint firstAttribute="bottom" secondItem="waY-mC-z6I" secondAttribute="bottom" id="DOf-Im-tnF"/>
-                                <constraint firstItem="waY-mC-z6I" firstAttribute="height" secondItem="iJD-IS-lI5" secondAttribute="height" id="Hxe-3B-3Hn"/>
-                                <constraint firstItem="iJD-IS-lI5" firstAttribute="leading" secondItem="MfB-XM-QL5" secondAttribute="leadingMargin" id="K0d-An-FAg"/>
-                                <constraint firstItem="waY-mC-z6I" firstAttribute="width" secondItem="iJD-IS-lI5" secondAttribute="width" id="Rnt-fg-Yea"/>
-                                <constraint firstAttribute="trailing" secondItem="waY-mC-z6I" secondAttribute="trailing" id="Ucd-Sf-Q7p"/>
-                                <constraint firstItem="iJD-IS-lI5" firstAttribute="height" secondItem="MfB-XM-QL5" secondAttribute="height" id="Vvg-bs-tjS"/>
+                                <constraint firstItem="iJD-IS-lI5" firstAttribute="width" secondItem="T8j-hQ-TGt" secondAttribute="width" id="8Rf-uX-09r"/>
+                                <constraint firstItem="Gxf-BC-Pqr" firstAttribute="width" secondItem="waY-mC-z6I" secondAttribute="width" id="BW0-h9-cF4"/>
+                                <constraint firstItem="Gxf-BC-Pqr" firstAttribute="height" secondItem="waY-mC-z6I" secondAttribute="height" id="CIb-fp-jL5"/>
+                                <constraint firstItem="Gxf-BC-Pqr" firstAttribute="leading" secondItem="T8j-hQ-TGt" secondAttribute="trailing" constant="14" id="JYX-0p-cHq"/>
+                                <constraint firstItem="T8j-hQ-TGt" firstAttribute="leading" secondItem="iJD-IS-lI5" secondAttribute="trailing" constant="15" id="KNM-B7-JfV"/>
+                                <constraint firstItem="Gxf-BC-Pqr" firstAttribute="centerY" secondItem="MfB-XM-QL5" secondAttribute="centerY" id="P2t-lF-yss"/>
+                                <constraint firstAttribute="bottom" secondItem="waY-mC-z6I" secondAttribute="bottom" id="aZ4-iC-lPc"/>
+                                <constraint firstItem="iJD-IS-lI5" firstAttribute="height" secondItem="T8j-hQ-TGt" secondAttribute="height" id="hWZ-hj-QmQ"/>
+                                <constraint firstItem="waY-mC-z6I" firstAttribute="leading" secondItem="Gxf-BC-Pqr" secondAttribute="trailing" constant="15" id="kxn-2M-5eF"/>
+                                <constraint firstItem="T8j-hQ-TGt" firstAttribute="height" secondItem="Gxf-BC-Pqr" secondAttribute="height" id="nk0-Ln-41m"/>
                                 <constraint firstItem="iJD-IS-lI5" firstAttribute="top" secondItem="MfB-XM-QL5" secondAttribute="top" constant="5" id="oQz-Ml-Nvj"/>
+                                <constraint firstItem="iJD-IS-lI5" firstAttribute="centerY" secondItem="MfB-XM-QL5" secondAttribute="centerY" id="qOR-1G-OA9"/>
+                                <constraint firstItem="T8j-hQ-TGt" firstAttribute="width" secondItem="Gxf-BC-Pqr" secondAttribute="width" id="vSn-mn-RAy"/>
+                                <constraint firstItem="T8j-hQ-TGt" firstAttribute="centerY" secondItem="MfB-XM-QL5" secondAttribute="centerY" id="xEv-H3-kEV"/>
                             </constraints>
                             <variation key="default">
                                 <mask key="constraints">
@@ -120,8 +193,8 @@
                                 </mask>
                             </variation>
                         </view>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mbK-V8-LYI" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                            <rect key="frame" x="8" y="13" width="324" height="44"/>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mbK-V8-LYI" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                            <rect key="frame" x="8" y="11" width="324" height="44"/>
                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                             <textInputTraits key="textInputTraits"/>
                             <userDefinedRuntimeAttributes>
@@ -141,8 +214,8 @@
                                 <userDefinedRuntimeAttribute type="string" keyPath="selectedTitle" value="Phrase"/>
                             </userDefinedRuntimeAttributes>
                         </textField>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lm0-la-kG0" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                            <rect key="frame" x="8" y="82" width="324" height="44"/>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lm0-la-kG0" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                            <rect key="frame" x="8" y="83" width="324" height="44"/>
                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                             <textInputTraits key="textInputTraits"/>
                             <userDefinedRuntimeAttributes>
@@ -165,13 +238,15 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="MfB-XM-QL5" firstAttribute="top" secondItem="hqB-1T-27a" secondAttribute="bottom" constant="25" id="0cV-O9-LfY"/>
+                        <constraint firstItem="MfB-XM-QL5" firstAttribute="top" secondItem="hqB-1T-27a" secondAttribute="bottom" constant="28" id="0cV-O9-LfY"/>
                         <constraint firstItem="MfB-XM-QL5" firstAttribute="trailing" secondItem="hqB-1T-27a" secondAttribute="trailing" id="3lr-p7-8t8"/>
+                        <constraint firstAttribute="height" constant="289" id="7IR-va-CQy"/>
+                        <constraint firstAttribute="trailing" secondItem="waY-mC-z6I" secondAttribute="trailing" constant="8" id="AQj-dB-59l"/>
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="340" id="Ei6-bA-312"/>
                         <constraint firstAttribute="bottom" secondItem="MfB-XM-QL5" secondAttribute="bottom" constant="8" id="H2i-xV-DqA"/>
-                        <constraint firstItem="Lm0-la-kG0" firstAttribute="top" secondItem="mbK-V8-LYI" secondAttribute="bottom" constant="25" id="I6w-LH-wbM"/>
-                        <constraint firstItem="MfB-XM-QL5" firstAttribute="leading" secondItem="pr0-jb-a3B" secondAttribute="leading" id="Mgd-c6-d2j"/>
-                        <constraint firstItem="hqB-1T-27a" firstAttribute="top" secondItem="Lm0-la-kG0" secondAttribute="bottom" constant="25" id="Nck-DQ-qK8"/>
+                        <constraint firstItem="Lm0-la-kG0" firstAttribute="top" secondItem="mbK-V8-LYI" secondAttribute="bottom" constant="28" id="I6w-LH-wbM"/>
+                        <constraint firstItem="MfB-XM-QL5" firstAttribute="leading" secondItem="pr0-jb-a3B" secondAttribute="leading" constant="8" id="Mgd-c6-d2j"/>
+                        <constraint firstItem="hqB-1T-27a" firstAttribute="top" secondItem="Lm0-la-kG0" secondAttribute="bottom" constant="28" id="Nck-DQ-qK8"/>
                         <constraint firstAttribute="height" constant="282" id="RqR-YE-34U"/>
                         <constraint firstAttribute="height" constant="130" id="UY4-8Q-HQZ"/>
                         <constraint firstItem="MfB-XM-QL5" firstAttribute="trailing" secondItem="mbK-V8-LYI" secondAttribute="trailing" id="Vq9-JP-gzk"/>
@@ -179,10 +254,12 @@
                         <constraint firstItem="MfB-XM-QL5" firstAttribute="bottom" secondItem="pr0-jb-a3B" secondAttribute="bottomMargin" id="cyp-5E-51R"/>
                         <constraint firstAttribute="width" constant="340" id="opN-JW-w7P"/>
                         <constraint firstItem="MfB-XM-QL5" firstAttribute="trailing" secondItem="Lm0-la-kG0" secondAttribute="trailing" id="qrm-U1-cRW"/>
+                        <constraint firstAttribute="trailing" secondItem="MfB-XM-QL5" secondAttribute="trailing" constant="8" id="xVP-Yn-ENn"/>
                     </constraints>
                     <variation key="default">
                         <mask key="constraints">
                             <exclude reference="Ei6-bA-312"/>
+                            <exclude reference="RqR-YE-34U"/>
                             <exclude reference="UY4-8Q-HQZ"/>
                             <exclude reference="cyp-5E-51R"/>
                         </mask>
@@ -207,7 +284,7 @@
                     <exclude reference="gDF-zc-fNM"/>
                 </mask>
             </variation>
-            <point key="canvasLocation" x="364" y="357"/>
+            <point key="canvasLocation" x="364" y="360.5"/>
         </view>
     </objects>
 </document>

@@ -10,6 +10,7 @@ pod 'SwiftyButton'
 pod 'HidingNavigationBar', '~> 0.3'
 pod 'AEAccordion'
 pod 'AEXibceptionView'
+pod 'SSBouncyButton', '~> 1.0'
 
 pod "LiquidFloatingActionButton"
 

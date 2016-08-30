@@ -7,9 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		191C40FF1D73F8E90003AED9 /* DetailCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191C40FE1D73F8E90003AED9 /* DetailCardView.swift */; };
+		191C41011D73F93F0003AED9 /* DetailCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 191C41001D73F93F0003AED9 /* DetailCardView.xib */; };
+		19263CC81D74FFAC00F0259F /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19263CC61D74FFAC00F0259F /* CardTableViewCell.swift */; };
+		19263CC91D74FFAC00F0259F /* CardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19263CC71D74FFAC00F0259F /* CardTableViewCell.xib */; };
 		193383E81D7129D400CCF703 /* AddCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193383E61D7129D400CCF703 /* AddCardViewController.swift */; };
 		193383E91D7129D400CCF703 /* AddCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 193383E71D7129D400CCF703 /* AddCardViewController.xib */; };
 		193383EB1D713B1B00CCF703 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193383EA1D713B1B00CCF703 /* UIViewExtensions.swift */; };
+		193383EF1D72735F00CCF703 /* CardLanguageStrategyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193383EC1D72735E00CCF703 /* CardLanguageStrategyFactory.swift */; };
+		193383F01D72735F00CCF703 /* CardLanguageStrategyEnglish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193383ED1D72735E00CCF703 /* CardLanguageStrategyEnglish.swift */; };
+		193383F11D72735F00CCF703 /* CardLanguageStrategyChinese.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193383EE1D72735E00CCF703 /* CardLanguageStrategyChinese.swift */; };
+		193383F41D72736A00CCF703 /* PearsonClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193383F21D72736A00CCF703 /* PearsonClient.swift */; };
+		193383F51D72736A00CCF703 /* PearsonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193383F31D72736A00CCF703 /* PearsonData.swift */; };
+		193383F81D72737C00CCF703 /* MDBGScraper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193383F61D72737C00CCF703 /* MDBGScraper.swift */; };
+		193383F91D72737C00CCF703 /* MDBGData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193383F71D72737C00CCF703 /* MDBGData.swift */; };
 		19B8B12F1D7040B6002F3FEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B8B12E1D7040B6002F3FEC /* AppDelegate.swift */; };
 		19B8B1371D7040B6002F3FEC /* LazyFlashCards.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 19B8B1351D7040B6002F3FEC /* LazyFlashCards.xcdatamodeld */; };
 		19B8B1391D7040B6002F3FEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19B8B1381D7040B6002F3FEC /* Assets.xcassets */; };
@@ -19,10 +30,10 @@
 		19B8B1661D704258002F3FEC /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B8B15F1D704258002F3FEC /* HeaderView.swift */; };
 		19B8B1671D704258002F3FEC /* HeaderViewDefaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B8B1601D704258002F3FEC /* HeaderViewDefaultView.swift */; };
 		19B8B1681D704258002F3FEC /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19B8B1611D704258002F3FEC /* HeaderView.xib */; };
-		19B8B1691D704258002F3FEC /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B8B1621D704258002F3FEC /* DetailView.swift */; };
-		19B8B16A1D704258002F3FEC /* DetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19B8B1631D704258002F3FEC /* DetailView.xib */; };
-		19B8B16B1D704258002F3FEC /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B8B1641D704258002F3FEC /* CustomTableViewCell.swift */; };
-		19B8B16C1D704258002F3FEC /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19B8B1651D704258002F3FEC /* CustomTableViewCell.xib */; };
+		19B8B1691D704258002F3FEC /* DetailDeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B8B1621D704258002F3FEC /* DetailDeckView.swift */; };
+		19B8B16A1D704258002F3FEC /* DetailDeckView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19B8B1631D704258002F3FEC /* DetailDeckView.xib */; };
+		19B8B16B1D704258002F3FEC /* DeckTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B8B1641D704258002F3FEC /* DeckTableViewCell.swift */; };
+		19B8B16C1D704258002F3FEC /* DeckTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19B8B1651D704258002F3FEC /* DeckTableViewCell.xib */; };
 		19B8B1721D7043E4002F3FEC /* ViewDecksController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B8B16E1D7043E4002F3FEC /* ViewDecksController.swift */; };
 		19B8B1731D7043E4002F3FEC /* LiquidButtonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B8B16F1D7043E4002F3FEC /* LiquidButtonHelper.swift */; };
 		19B8B1741D7043E4002F3FEC /* AddDeckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B8B1701D7043E4002F3FEC /* AddDeckViewController.swift */; };
@@ -60,9 +71,20 @@
 /* Begin PBXFileReference section */
 		0DFE532A7A642991048FB109 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		1747660E56C8847495FB6C6C /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		191C40FE1D73F8E90003AED9 /* DetailCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCardView.swift; sourceTree = "<group>"; };
+		191C41001D73F93F0003AED9 /* DetailCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailCardView.xib; sourceTree = "<group>"; };
+		19263CC61D74FFAC00F0259F /* CardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
+		19263CC71D74FFAC00F0259F /* CardTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardTableViewCell.xib; sourceTree = "<group>"; };
 		193383E61D7129D400CCF703 /* AddCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCardViewController.swift; sourceTree = "<group>"; };
 		193383E71D7129D400CCF703 /* AddCardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddCardViewController.xib; sourceTree = "<group>"; };
 		193383EA1D713B1B00CCF703 /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		193383EC1D72735E00CCF703 /* CardLanguageStrategyFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardLanguageStrategyFactory.swift; sourceTree = "<group>"; };
+		193383ED1D72735E00CCF703 /* CardLanguageStrategyEnglish.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardLanguageStrategyEnglish.swift; sourceTree = "<group>"; };
+		193383EE1D72735E00CCF703 /* CardLanguageStrategyChinese.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardLanguageStrategyChinese.swift; sourceTree = "<group>"; };
+		193383F21D72736A00CCF703 /* PearsonClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PearsonClient.swift; sourceTree = "<group>"; };
+		193383F31D72736A00CCF703 /* PearsonData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PearsonData.swift; sourceTree = "<group>"; };
+		193383F61D72737C00CCF703 /* MDBGScraper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDBGScraper.swift; sourceTree = "<group>"; };
+		193383F71D72737C00CCF703 /* MDBGData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDBGData.swift; sourceTree = "<group>"; };
 		19B8B12B1D7040B6002F3FEC /* LazyFlashCards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LazyFlashCards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19B8B12E1D7040B6002F3FEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19B8B1361D7040B6002F3FEC /* LazyFlashCards.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LazyFlashCards.xcdatamodel; sourceTree = "<group>"; };
@@ -78,10 +100,10 @@
 		19B8B15F1D704258002F3FEC /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		19B8B1601D704258002F3FEC /* HeaderViewDefaultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderViewDefaultView.swift; sourceTree = "<group>"; };
 		19B8B1611D704258002F3FEC /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
-		19B8B1621D704258002F3FEC /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
-		19B8B1631D704258002F3FEC /* DetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailView.xib; sourceTree = "<group>"; };
-		19B8B1641D704258002F3FEC /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
-		19B8B1651D704258002F3FEC /* CustomTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
+		19B8B1621D704258002F3FEC /* DetailDeckView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailDeckView.swift; sourceTree = "<group>"; };
+		19B8B1631D704258002F3FEC /* DetailDeckView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailDeckView.xib; sourceTree = "<group>"; };
+		19B8B1641D704258002F3FEC /* DeckTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckTableViewCell.swift; sourceTree = "<group>"; };
+		19B8B1651D704258002F3FEC /* DeckTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeckTableViewCell.xib; sourceTree = "<group>"; };
 		19B8B16E1D7043E4002F3FEC /* ViewDecksController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewDecksController.swift; sourceTree = "<group>"; };
 		19B8B16F1D7043E4002F3FEC /* LiquidButtonHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiquidButtonHelper.swift; sourceTree = "<group>"; };
 		19B8B1701D7043E4002F3FEC /* AddDeckViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDeckViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +153,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		19263CC51D74FD6D00F0259F /* ExpandingCardViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				191C40FE1D73F8E90003AED9 /* DetailCardView.swift */,
+				191C41001D73F93F0003AED9 /* DetailCardView.xib */,
+				19263CC61D74FFAC00F0259F /* CardTableViewCell.swift */,
+				19263CC71D74FFAC00F0259F /* CardTableViewCell.xib */,
+			);
+			name = ExpandingCardViewCell;
+			sourceTree = "<group>";
+		};
+		193383FA1D72738800CCF703 /* Chinese API */ = {
+			isa = PBXGroup;
+			children = (
+				193383F61D72737C00CCF703 /* MDBGScraper.swift */,
+				193383F71D72737C00CCF703 /* MDBGData.swift */,
+			);
+			name = "Chinese API";
+			sourceTree = "<group>";
+		};
+		193383FB1D72738E00CCF703 /* English API */ = {
+			isa = PBXGroup;
+			children = (
+				193383F21D72736A00CCF703 /* PearsonClient.swift */,
+				193383F31D72736A00CCF703 /* PearsonData.swift */,
+			);
+			name = "English API";
+			sourceTree = "<group>";
+		};
+		193383FC1D7273A200CCF703 /* DetailDeckViewHelper */ = {
+			isa = PBXGroup;
+			children = (
+				193383EC1D72735E00CCF703 /* CardLanguageStrategyFactory.swift */,
+				193383ED1D72735E00CCF703 /* CardLanguageStrategyEnglish.swift */,
+				193383EE1D72735E00CCF703 /* CardLanguageStrategyChinese.swift */,
+			);
+			name = DetailDeckViewHelper;
+			sourceTree = "<group>";
+		};
 		19B8B1221D7040B6002F3FEC = {
 			isa = PBXGroup;
 			children = (
@@ -159,7 +220,6 @@
 			children = (
 				19B8B12E1D7040B6002F3FEC /* AppDelegate.swift */,
 				19B8B1851D7046AF002F3FEC /* TFHpple */,
-				19B8B16D1D704268002F3FEC /* ExpandingTableViewCell */,
 				19B8B1761D7043EA002F3FEC /* DeckViewController */,
 				19B8B1921D711B64002F3FEC /* CoreData */,
 				19B8B1971D712123002F3FEC /* DetailDeckViewController */,
@@ -196,10 +256,10 @@
 				19B8B15F1D704258002F3FEC /* HeaderView.swift */,
 				19B8B1601D704258002F3FEC /* HeaderViewDefaultView.swift */,
 				19B8B1611D704258002F3FEC /* HeaderView.xib */,
-				19B8B1621D704258002F3FEC /* DetailView.swift */,
-				19B8B1631D704258002F3FEC /* DetailView.xib */,
-				19B8B1641D704258002F3FEC /* CustomTableViewCell.swift */,
-				19B8B1651D704258002F3FEC /* CustomTableViewCell.xib */,
+				19B8B1621D704258002F3FEC /* DetailDeckView.swift */,
+				19B8B1631D704258002F3FEC /* DetailDeckView.xib */,
+				19B8B1641D704258002F3FEC /* DeckTableViewCell.swift */,
+				19B8B1651D704258002F3FEC /* DeckTableViewCell.xib */,
 			);
 			name = ExpandingTableViewCell;
 			sourceTree = "<group>";
@@ -211,6 +271,7 @@
 				19B8B16F1D7043E4002F3FEC /* LiquidButtonHelper.swift */,
 				19B8B1701D7043E4002F3FEC /* AddDeckViewController.swift */,
 				19B8B1711D7043E4002F3FEC /* AddDeckViewController.xib */,
+				19B8B16D1D704268002F3FEC /* ExpandingTableViewCell */,
 			);
 			name = DeckViewController;
 			sourceTree = "<group>";
@@ -245,6 +306,10 @@
 				19B8B1951D712114002F3FEC /* DetailDeckViewController.swift */,
 				193383E61D7129D400CCF703 /* AddCardViewController.swift */,
 				193383E71D7129D400CCF703 /* AddCardViewController.xib */,
+				19263CC51D74FD6D00F0259F /* ExpandingCardViewCell */,
+				193383FB1D72738E00CCF703 /* English API */,
+				193383FA1D72738800CCF703 /* Chinese API */,
+				193383FC1D7273A200CCF703 /* DetailDeckViewHelper */,
 			);
 			name = DetailDeckViewController;
 			sourceTree = "<group>";
@@ -378,13 +443,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				191C41011D73F93F0003AED9 /* DetailCardView.xib in Resources */,
 				19B8B1781D704402002F3FEC /* Main.storyboard in Resources */,
 				19B8B1681D704258002F3FEC /* HeaderView.xib in Resources */,
-				19B8B16A1D704258002F3FEC /* DetailView.xib in Resources */,
+				19B8B16A1D704258002F3FEC /* DetailDeckView.xib in Resources */,
 				19B8B13C1D7040B6002F3FEC /* LaunchScreen.storyboard in Resources */,
 				193383E91D7129D400CCF703 /* AddCardViewController.xib in Resources */,
 				19B8B1751D7043E4002F3FEC /* AddDeckViewController.xib in Resources */,
-				19B8B16C1D704258002F3FEC /* CustomTableViewCell.xib in Resources */,
+				19263CC91D74FFAC00F0259F /* CardTableViewCell.xib in Resources */,
+				19B8B16C1D704258002F3FEC /* DeckTableViewCell.xib in Resources */,
 				19B8B1391D7040B6002F3FEC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -458,15 +525,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				193383F91D72737C00CCF703 /* MDBGData.swift in Sources */,
 				19B8B18F1D711B41002F3FEC /* Deck.swift in Sources */,
-				19B8B16B1D704258002F3FEC /* CustomTableViewCell.swift in Sources */,
+				193383F01D72735F00CCF703 /* CardLanguageStrategyEnglish.swift in Sources */,
+				191C40FF1D73F8E90003AED9 /* DetailCardView.swift in Sources */,
+				19B8B16B1D704258002F3FEC /* DeckTableViewCell.swift in Sources */,
+				193383F11D72735F00CCF703 /* CardLanguageStrategyChinese.swift in Sources */,
 				19B8B1961D712114002F3FEC /* DetailDeckViewController.swift in Sources */,
+				19263CC81D74FFAC00F0259F /* CardTableViewCell.swift in Sources */,
 				19B8B1741D7043E4002F3FEC /* AddDeckViewController.swift in Sources */,
+				193383F51D72736A00CCF703 /* PearsonData.swift in Sources */,
 				19B8B1371D7040B6002F3FEC /* LazyFlashCards.xcdatamodeld in Sources */,
 				19B8B1661D704258002F3FEC /* HeaderView.swift in Sources */,
 				19B8B1671D704258002F3FEC /* HeaderViewDefaultView.swift in Sources */,
+				193383EF1D72735F00CCF703 /* CardLanguageStrategyFactory.swift in Sources */,
 				19B8B1821D704699002F3FEC /* TFHpple.m in Sources */,
-				19B8B1691D704258002F3FEC /* DetailView.swift in Sources */,
+				19B8B1691D704258002F3FEC /* DetailDeckView.swift in Sources */,
 				19B8B12F1D7040B6002F3FEC /* AppDelegate.swift in Sources */,
 				19B8B1911D711B47002F3FEC /* FlashCard.swift in Sources */,
 				19B8B1721D7043E4002F3FEC /* ViewDecksController.swift in Sources */,
@@ -476,6 +550,8 @@
 				19B8B1841D704699002F3FEC /* XPathQuery.m in Sources */,
 				193383EB1D713B1B00CCF703 /* UIViewExtensions.swift in Sources */,
 				19B8B1831D704699002F3FEC /* TFHppleElement.m in Sources */,
+				193383F81D72737C00CCF703 /* MDBGScraper.swift in Sources */,
+				193383F41D72736A00CCF703 /* PearsonClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>BRYSerialAnimationQueue.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>HidingNavigationBar.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -64,6 +69,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SSBouncyButton.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SkyFloatingLabelTextField.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -84,15 +94,25 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>UIColor-Hex.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>UIImage+BetterAdditions.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>014C64E5B7A24A05664918761E065919</key>
+		<key>14509F4DA5E910FE03A8448CE0C39601</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>0C8700D45ECC0D7F0DF89B48D387A757</key>
+		<key>29F837B8323B55EFA2A29E72F4AC0984</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -107,7 +127,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>321B4B70EECB3EB1C27788D09F218564</key>
+		<key>37CF1E95C0B6A5C70B5E0D281A08222E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -122,22 +142,37 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>63F8AF9EC45E6445464E3B76334B388D</key>
+		<key>4FE952A6C96E083F4718AE1F0B04191F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6610534191AD9F1D541D7F95D7FA6FE5</key>
+		<key>5491C90E695B9A55E9566A25182C579C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>736166802A3CCBAE06187F85CAD72380</key>
+		<key>54DCA86669A6B67E56668DDF34115A6D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>784ACF9230554CFCFCBC2340F092B575</key>
+		<key>578947245B995B9E225FBC038B9C6127</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>637989F88A6C5D9824F1C9D88706FA23</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6A8AAA9D47312A54F11E1CDA700B1761</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>74C97981BBCB2A9F21A9B200870BE053</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -147,22 +182,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7D75F0533E2AFC6EC049486FE6E11F5B</key>
+		<key>914DE3A9606DC7EC830C7713DB8C75E9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BD74B493C35D04BF845A6F245C107492</key>
+		<key>9F2174328DA40A1D6BB47A98693B1046</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DAD1B5775E33B3352491E68C270B1D4D</key>
+		<key>A959D12C11BFFE1BFDC61ACDD11DBAC9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>F2BF5E77CE71CA889B85714FBBD21AA6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F6BD88E067644696029ADFF0628E7A62</key>
 		<dict>
 			<key>primary</key>
 			<true/>

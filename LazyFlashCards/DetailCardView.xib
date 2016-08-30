@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailCardView" customModule="LazyFlashCards" customModuleProvider="target">
+            <connections>
+                <outlet property="definitionTextView" destination="ECi-nV-mg2" id="2dt-mB-Feh"/>
+                <outlet property="phraseLabel" destination="w6R-qJ-QIJ" id="2Te-Wz-gfd"/>
+                <outlet property="pronunciationLabel" destination="Zdb-YH-Vze" id="wHt-7g-eqz"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="150"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phrase Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w6R-qJ-QIJ">
+                    <rect key="frame" x="8" y="8" width="99" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pronunciation Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zdb-YH-Vze">
+                    <rect key="frame" x="115" y="8" width="152" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sLh-VF-xRO">
+                    <rect key="frame" x="8" y="112" width="30" height="30"/>
+                    <state key="normal" title="Edit"/>
+                    <connections>
+                        <action selector="editButtonAction:" destination="-1" eventType="touchUpInside" id="VcX-eg-H3p"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V8I-9t-j5x">
+                    <rect key="frame" x="547" y="112" width="45" height="30"/>
+                    <state key="normal" title="Delete"/>
+                    <connections>
+                        <action selector="deleteButtonAction:" destination="-1" eventType="touchUpInside" id="jcS-Jf-xO4"/>
+                    </connections>
+                </button>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ECi-nV-mg2">
+                    <rect key="frame" x="8" y="37" width="584" height="67"/>
+                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="0.92549937149999995" blue="0.053677742430000001" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="Zdb-YH-Vze" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="1RF-Mz-6XA"/>
+                <constraint firstAttribute="bottom" secondItem="sLh-VF-xRO" secondAttribute="bottom" constant="8" id="4HY-wC-UuF"/>
+                <constraint firstAttribute="bottom" secondItem="V8I-9t-j5x" secondAttribute="bottom" constant="8" id="5KO-tg-Rcf"/>
+                <constraint firstAttribute="trailing" secondItem="V8I-9t-j5x" secondAttribute="trailing" constant="8" id="B3C-Yl-Bhj"/>
+                <constraint firstItem="ECi-nV-mg2" firstAttribute="top" secondItem="w6R-qJ-QIJ" secondAttribute="bottom" constant="8" id="BJP-Ue-oEp"/>
+                <constraint firstItem="w6R-qJ-QIJ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="DqP-nq-EeX"/>
+                <constraint firstItem="sLh-VF-xRO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="EN6-qG-nxr"/>
+                <constraint firstItem="ECi-nV-mg2" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="JPh-K8-xtQ"/>
+                <constraint firstItem="ECi-nV-mg2" firstAttribute="leading" secondItem="w6R-qJ-QIJ" secondAttribute="leading" id="Nrc-Hr-IjG"/>
+                <constraint firstItem="sLh-VF-xRO" firstAttribute="top" secondItem="ECi-nV-mg2" secondAttribute="bottom" constant="8" id="RKq-sA-tal"/>
+                <constraint firstItem="ECi-nV-mg2" firstAttribute="trailing" secondItem="V8I-9t-j5x" secondAttribute="trailing" id="bXx-lf-xyY"/>
+                <constraint firstItem="w6R-qJ-QIJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="qpv-aT-h9c"/>
+                <constraint firstItem="Zdb-YH-Vze" firstAttribute="leading" secondItem="w6R-qJ-QIJ" secondAttribute="trailing" constant="8" id="v4l-uw-TF3"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="473" y="231.5"/>
+        </view>
+    </objects>
+</document>

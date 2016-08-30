@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'F7BB56E1C20B5C722C360BD8'
+               BlueprintIdentifier = '34016C4535E599CBC7D28962'
                BlueprintName = 'JOEmojiableBtn-JOEmojiableBtn'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'JOEmojiableBtn.bundle'>

@@ -10,7 +10,7 @@ import UIKit
 import AEAccordion
 
 
-class CustomTableViewCell: AEAccordionTableViewCell {
+class DeckTableViewCell: AEAccordionTableViewCell {
     
     // MARK: - Outlets
     
@@ -19,7 +19,7 @@ class CustomTableViewCell: AEAccordionTableViewCell {
             headerView.imageView.tintColor = UIColor.whiteColor()
         }
     }
-    @IBOutlet weak var detailView: DetailView!
+    @IBOutlet weak var detailView: DetailDeckView!
     
     // MARK: - Override
     
@@ -50,7 +50,7 @@ class CustomTableViewCell: AEAccordionTableViewCell {
 }
 
 // MARK: - Overriding responder chain
-extension CustomTableViewCell{
+extension DeckTableViewCell{
     
     // Redirect which view is supposed to recieve the touch notification
     override func hitTest(point: CGPoint, withEvent event: UIEvent?) -> UIView? {

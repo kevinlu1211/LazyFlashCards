@@ -10,7 +10,7 @@ import UIKit
 import AEXibceptionView
 import AEAccordion
 
-class DetailView: AEXibceptionView {
+class DetailDeckView: AEXibceptionView {
     var delegate : ViewDecksController?
 
     // MARK: - Outlets
@@ -21,11 +21,11 @@ class DetailView: AEXibceptionView {
 }
 
 protocol DetailViewProtocol : class {
-    func handleButton(detailView : DetailView)
+    func handleButton(detailView : DetailDeckView)
 }
 
-extension DetailView {
-    internal func getParentTableViewCell() -> CustomTableViewCell {
-        return (self.superview?.superview as! CustomTableViewCell)
+extension DetailDeckView {
+    internal func getParentTableViewCell() -> DeckTableViewCell {
+        return (self.superview?.superview as! DeckTableViewCell)
     }
 }

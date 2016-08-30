@@ -18,7 +18,7 @@ class ViewDecksController: UIViewController, UITableViewDataSource, UITableViewD
     
     // MARK: - Properties
     
-    private let cellIdentifier = "CustomTableViewCell"
+    private let cellIdentifier = "DeckTableViewCell"
     private let ADD_DECK_BUTTON_INDEX = 0
     var liquidFloatingCells: [LiquidFloatingCell] = []
     var tableView: UITableView!
@@ -115,8 +115,8 @@ extension ViewDecksController {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! CustomTableViewCell
-        //        cell.contentView.hidden = true
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! DeckTableViewCell
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
         cell.headerView.deckNameLabel.text = decks[indexPath.row].name
         cell.detailView.delegate = self
         return cell
@@ -274,9 +274,9 @@ extension ViewDecksController : LiquidFloatingActionButtonDataSource, LiquidFloa
     
 }
 extension ViewDecksController : DetailViewProtocol {
-    func handleButton(detailView: DetailView) {
+    func handleButton(detailDeckView: DetailDeckView) {
         let detailTableViewController = self.storyboard?.instantiateViewControllerWithIdentifier("DetailDeckViewController") as! DetailDeckViewController
-        let indexPath = tableView.indexPathForCell(detailView.getParentTableViewCell())
+        let indexPath = tableView.indexPathForCell(detailDeckView.getParentTableViewCell())
         if let indexPath = indexPath {
             detailTableViewController.deck = decks[indexPath.row]
         }

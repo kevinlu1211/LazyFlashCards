@@ -20,7 +20,7 @@ class DetailDeckViewController: UIViewController, UITableViewDataSource, UITable
     // MARK: - Properties
     
     // Table View
-    private let cellIdentifier = "CustomTableViewCell"
+    private let cellIdentifier = "CardTableViewCell"
     var tableView: UITableView!
     internal var expandedIndexPaths = [NSIndexPath]()
     
@@ -43,7 +43,7 @@ class DetailDeckViewController: UIViewController, UITableViewDataSource, UITable
             flashCards = useableFlashCards
         }
         liquidButtonSetup()
-        
+
         // Do any additional setup after loading the view.
     }
 
@@ -97,12 +97,13 @@ extension DetailDeckViewController {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! CustomTableViewCell
-        //        cell.contentView.hidden = true
-            cell.headerView.deckNameLabel.text = flashCards[indexPath.row].phrase
-       
-        
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! CardTableViewCell
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
+        let fc = flashCards[indexPath.row]
+        cell.headerView.deckNameLabel.text = fc.phrase
+        cell.detailView.phraseLabel.text = fc.phrase
+        cell.detailView.pronunciationLabel.text = fc.pronunciation
+        cell.detailView.definitionTextView.text = fc.definition
         return cell
     }
     
@@ -271,7 +272,5 @@ extension DetailDeckViewController : AddCardViewControllerDelegate {
         flashCards.append(flashCard)
         tableView.reloadData()
         
-        // Now clear the text fields so that the user can add another card
-        addCardViewController.clearTextFields()
     }
 }
