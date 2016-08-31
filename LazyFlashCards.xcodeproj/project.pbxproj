@@ -21,6 +21,9 @@
 		193383F51D72736A00CCF703 /* PearsonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193383F31D72736A00CCF703 /* PearsonData.swift */; };
 		193383F81D72737C00CCF703 /* MDBGScraper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193383F61D72737C00CCF703 /* MDBGScraper.swift */; };
 		193383F91D72737C00CCF703 /* MDBGData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193383F71D72737C00CCF703 /* MDBGData.swift */; };
+		19B4E2CE1D7669AF0047ED50 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B4E2CD1D7669AF0047ED50 /* TestViewController.swift */; };
+		19B4E2D11D76721A0047ED50 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19B4E2D01D76721A0047ED50 /* CardView.xib */; };
+		19B4E2D31D7672AA0047ED50 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B4E2D21D7672AA0047ED50 /* CardView.swift */; };
 		19B8B12F1D7040B6002F3FEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B8B12E1D7040B6002F3FEC /* AppDelegate.swift */; };
 		19B8B1371D7040B6002F3FEC /* LazyFlashCards.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 19B8B1351D7040B6002F3FEC /* LazyFlashCards.xcdatamodeld */; };
 		19B8B1391D7040B6002F3FEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19B8B1381D7040B6002F3FEC /* Assets.xcassets */; };
@@ -85,6 +88,9 @@
 		193383F31D72736A00CCF703 /* PearsonData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PearsonData.swift; sourceTree = "<group>"; };
 		193383F61D72737C00CCF703 /* MDBGScraper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDBGScraper.swift; sourceTree = "<group>"; };
 		193383F71D72737C00CCF703 /* MDBGData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDBGData.swift; sourceTree = "<group>"; };
+		19B4E2CD1D7669AF0047ED50 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		19B4E2D01D76721A0047ED50 /* CardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
+		19B4E2D21D7672AA0047ED50 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		19B8B12B1D7040B6002F3FEC /* LazyFlashCards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LazyFlashCards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19B8B12E1D7040B6002F3FEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19B8B1361D7040B6002F3FEC /* LazyFlashCards.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LazyFlashCards.xcdatamodel; sourceTree = "<group>"; };
@@ -192,6 +198,16 @@
 			name = DetailDeckViewHelper;
 			sourceTree = "<group>";
 		};
+		19B4E2CF1D7669B80047ED50 /* TestViewController */ = {
+			isa = PBXGroup;
+			children = (
+				19B4E2CD1D7669AF0047ED50 /* TestViewController.swift */,
+				19B4E2D01D76721A0047ED50 /* CardView.xib */,
+				19B4E2D21D7672AA0047ED50 /* CardView.swift */,
+			);
+			name = TestViewController;
+			sourceTree = "<group>";
+		};
 		19B8B1221D7040B6002F3FEC = {
 			isa = PBXGroup;
 			children = (
@@ -219,9 +235,9 @@
 			isa = PBXGroup;
 			children = (
 				19B8B12E1D7040B6002F3FEC /* AppDelegate.swift */,
+				19B8B1921D711B64002F3FEC /* CoreData */,
 				19B8B1851D7046AF002F3FEC /* TFHpple */,
 				19B8B1761D7043EA002F3FEC /* DeckViewController */,
-				19B8B1921D711B64002F3FEC /* CoreData */,
 				19B8B1971D712123002F3FEC /* DetailDeckViewController */,
 				19B8B1381D7040B6002F3FEC /* Assets.xcassets */,
 				193383EA1D713B1B00CCF703 /* UIViewExtensions.swift */,
@@ -310,6 +326,7 @@
 				193383FB1D72738E00CCF703 /* English API */,
 				193383FA1D72738800CCF703 /* Chinese API */,
 				193383FC1D7273A200CCF703 /* DetailDeckViewHelper */,
+				19B4E2CF1D7669B80047ED50 /* TestViewController */,
 			);
 			name = DetailDeckViewController;
 			sourceTree = "<group>";
@@ -450,6 +467,7 @@
 				19B8B13C1D7040B6002F3FEC /* LaunchScreen.storyboard in Resources */,
 				193383E91D7129D400CCF703 /* AddCardViewController.xib in Resources */,
 				19B8B1751D7043E4002F3FEC /* AddDeckViewController.xib in Resources */,
+				19B4E2D11D76721A0047ED50 /* CardView.xib in Resources */,
 				19263CC91D74FFAC00F0259F /* CardTableViewCell.xib in Resources */,
 				19B8B16C1D704258002F3FEC /* DeckTableViewCell.xib in Resources */,
 				19B8B1391D7040B6002F3FEC /* Assets.xcassets in Resources */,
@@ -539,6 +557,8 @@
 				19B8B1661D704258002F3FEC /* HeaderView.swift in Sources */,
 				19B8B1671D704258002F3FEC /* HeaderViewDefaultView.swift in Sources */,
 				193383EF1D72735F00CCF703 /* CardLanguageStrategyFactory.swift in Sources */,
+				19B4E2CE1D7669AF0047ED50 /* TestViewController.swift in Sources */,
+				19B4E2D31D7672AA0047ED50 /* CardView.swift in Sources */,
 				19B8B1821D704699002F3FEC /* TFHpple.m in Sources */,
 				19B8B1691D704258002F3FEC /* DetailDeckView.swift in Sources */,
 				19B8B12F1D7040B6002F3FEC /* AppDelegate.swift in Sources */,
@@ -686,6 +706,7 @@
 			baseConfigurationReference = 7297621F63D1BF85A3137C0B /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				"HEADER_SEARCH_PATHS[arch=*]" = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = LazyFlashCards/Info.plist;
@@ -728,6 +749,7 @@
 			baseConfigurationReference = 0DFE532A7A642991048FB109 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				"HEADER_SEARCH_PATHS[arch=*]" = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = LazyFlashCards/Info.plist;

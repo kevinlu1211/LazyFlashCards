@@ -274,15 +274,25 @@ extension ViewDecksController : LiquidFloatingActionButtonDataSource, LiquidFloa
     
 }
 extension ViewDecksController : DetailViewProtocol {
-    func handleButton(detailDeckView: DetailDeckView) {
-        let detailTableViewController = self.storyboard?.instantiateViewControllerWithIdentifier("DetailDeckViewController") as! DetailDeckViewController
+    func handleViewDeck(detailDeckView: DetailDeckView) {
+        let detailDeckViewController = self.storyboard?.instantiateViewControllerWithIdentifier("DetailDeckViewController") as! DetailDeckViewController
         let indexPath = tableView.indexPathForCell(detailDeckView.getParentTableViewCell())
         if let indexPath = indexPath {
-            detailTableViewController.deck = decks[indexPath.row]
+            detailDeckViewController.deck = decks[indexPath.row]
         }
-        self.navigationController!.pushViewController(detailTableViewController, animated: true)
+        self.navigationController!.pushViewController(detailDeckViewController, animated: true)
 
         print("handled the button woohoo")
+    }
+    
+    func handleTest(detailDeckView: DetailDeckView) {
+        let testViewController = self.storyboard?.instantiateViewControllerWithIdentifier("TestViewController") as! TestViewController
+        let indexPath = tableView.indexPathForCell(detailDeckView.getParentTableViewCell())
+        if let indexPath = indexPath {
+            testViewController.deck = decks[indexPath.row]
+        }
+
+        self.navigationController!.pushViewController(testViewController, animated: true)
     }
 }
 

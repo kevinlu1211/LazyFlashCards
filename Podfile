@@ -10,12 +10,9 @@ pod 'SwiftyButton'
 pod 'HidingNavigationBar', '~> 0.3'
 pod 'AEAccordion'
 pod 'AEXibceptionView'
-pod 'SSBouncyButton', '~> 1.0'
-
+pod 'Koloda', '~> 3.1.2'
 pod "LiquidFloatingActionButton"
-
 pod 'PopupDialog', '~> 0.4'
-
 pod 'SkyFloatingLabelTextField', '~> 1.0'
 
 target 'LazyFlashCards' do

@@ -38,10 +38,9 @@ class DetailDeckViewController: UIViewController, UITableViewDataSource, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         tableViewSetup()
-        deck.createFlashCards()
-        if let useableFlashCards = deck.useableFlashCards {
-            flashCards = useableFlashCards
-        }
+        
+        
+        
         liquidButtonSetup()
 
         // Do any additional setup after loading the view.
@@ -52,7 +51,12 @@ class DetailDeckViewController: UIViewController, UITableViewDataSource, UITable
         // Dispose of any resources that can be recreated.
     }
     
-
+    func setupDeck() {
+        deck.createFlashCards()
+        if let useableFlashCards = deck.useableFlashCards {
+            flashCards = useableFlashCards
+        }
+    }
     /*
     // MARK: - Navigation
 

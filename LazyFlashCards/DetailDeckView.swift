@@ -14,14 +14,18 @@ class DetailDeckView: AEXibceptionView {
     var delegate : ViewDecksController?
 
     // MARK: - Outlets
-    @IBAction func handleButton(sender: AnyObject) {
-        delegate?.handleButton(self)
+    @IBAction func handleViewDeck(sender: AnyObject) {
+        delegate?.handleViewDeck(self)
+    }
+    @IBAction func handleTest(sender: AnyObject) {
+        delegate?.handleTest(self)
     }
     
 }
 
 protocol DetailViewProtocol : class {
-    func handleButton(detailView : DetailDeckView)
+    func handleViewDeck(detailDeckView : DetailDeckView)
+    func handleTest(detailDeckView : DetailDeckView)
 }
 
 extension DetailDeckView {

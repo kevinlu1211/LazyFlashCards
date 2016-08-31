@@ -44,6 +44,7 @@
                 <outlet property="detailView" destination="3bT-io-e08" id="08q-cM-aGa"/>
                 <outlet property="headerView" destination="XQh-zO-XCN" id="lRj-vS-INk"/>
             </connections>
+            <point key="canvasLocation" x="214" y="418"/>
         </tableViewCell>
     </objects>
 </document>

@@ -5,6 +5,33 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
+        <!--Test View Controller-->
+        <scene sceneID="ZCf-kQ-r2d">
+            <objects>
+                <viewController storyboardIdentifier="TestViewController" id="uCd-bf-je7" customClass="TestViewController" customModule="LazyFlashCards" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5Ju-Ha-H7b"/>
+                        <viewControllerLayoutGuide type="bottom" id="oQt-Pu-fTW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wma-Fi-ZlS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wWO-hm-hXQ" customClass="KolodaView" customModule="Koloda">
+                                <rect key="frame" x="180" y="201" width="240" height="128"/>
+                                <color key="backgroundColor" red="0.53181970450000005" green="0.26521259629999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="deckView" destination="wWO-hm-hXQ" id="Qbk-G0-5sv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JG6-gY-5Ka" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1386" y="-209"/>
+        </scene>
         <!--View Decks Controller-->
         <scene sceneID="HPx-oj-P3W">
             <objects>

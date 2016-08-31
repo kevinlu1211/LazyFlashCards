@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '5AA81BCD88D84D55ACD779B6'
+               BlueprintIdentifier = 'FFCB3934ED71F64A988E5980'
                BlueprintName = 'Pods-LazyFlashCardsUITests'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods_LazyFlashCardsUITests.framework'>
