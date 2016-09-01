@@ -38,7 +38,7 @@ class DetailDeckViewController: UIViewController, UITableViewDataSource, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         tableViewSetup()
-        
+        setupDeck()
         
         
         liquidButtonSetup()
@@ -46,10 +46,6 @@ class DetailDeckViewController: UIViewController, UITableViewDataSource, UITable
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     func setupDeck() {
         deck.createFlashCards()

@@ -43,6 +43,15 @@ class ViewDecksController: UIViewController, UITableViewDataSource, UITableViewD
         // Setup Tab
 
         
+
+        for family: String in UIFont.familyNames()
+        {
+            print("\(family)")
+            for names: String in UIFont.fontNamesForFamilyName(family)
+            {
+                print("== \(names)")
+            }
+        }
         
         tableViewSetup()
         expandFirstCell()

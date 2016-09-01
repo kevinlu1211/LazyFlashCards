@@ -24,6 +24,11 @@
 		19B4E2CE1D7669AF0047ED50 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B4E2CD1D7669AF0047ED50 /* TestViewController.swift */; };
 		19B4E2D11D76721A0047ED50 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19B4E2D01D76721A0047ED50 /* CardView.xib */; };
 		19B4E2D31D7672AA0047ED50 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B4E2D21D7672AA0047ED50 /* CardView.swift */; };
+		19B4E2D71D7792D40047ED50 /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = 19B4E2D61D7792D10047ED50 /* FontAwesome.otf */; };
+		19B4E2DA1D77CA140047ED50 /* CardFront.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19B4E2D91D77CA140047ED50 /* CardFront.xib */; };
+		19B4E2DC1D77CA1B0047ED50 /* CardBack.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19B4E2DB1D77CA1B0047ED50 /* CardBack.xib */; };
+		19B4E2DE1D77CA630047ED50 /* CardFront.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B4E2DD1D77CA630047ED50 /* CardFront.swift */; };
+		19B4E2E01D77CA690047ED50 /* CardBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B4E2DF1D77CA690047ED50 /* CardBack.swift */; };
 		19B8B12F1D7040B6002F3FEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B8B12E1D7040B6002F3FEC /* AppDelegate.swift */; };
 		19B8B1371D7040B6002F3FEC /* LazyFlashCards.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 19B8B1351D7040B6002F3FEC /* LazyFlashCards.xcdatamodeld */; };
 		19B8B1391D7040B6002F3FEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19B8B1381D7040B6002F3FEC /* Assets.xcassets */; };
@@ -91,6 +96,11 @@
 		19B4E2CD1D7669AF0047ED50 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		19B4E2D01D76721A0047ED50 /* CardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
 		19B4E2D21D7672AA0047ED50 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		19B4E2D61D7792D10047ED50 /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.otf; sourceTree = "<group>"; };
+		19B4E2D91D77CA140047ED50 /* CardFront.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardFront.xib; sourceTree = "<group>"; };
+		19B4E2DB1D77CA1B0047ED50 /* CardBack.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardBack.xib; sourceTree = "<group>"; };
+		19B4E2DD1D77CA630047ED50 /* CardFront.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardFront.swift; sourceTree = "<group>"; };
+		19B4E2DF1D77CA690047ED50 /* CardBack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardBack.swift; sourceTree = "<group>"; };
 		19B8B12B1D7040B6002F3FEC /* LazyFlashCards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LazyFlashCards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19B8B12E1D7040B6002F3FEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19B8B1361D7040B6002F3FEC /* LazyFlashCards.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LazyFlashCards.xcdatamodel; sourceTree = "<group>"; };
@@ -204,8 +214,20 @@
 				19B4E2CD1D7669AF0047ED50 /* TestViewController.swift */,
 				19B4E2D01D76721A0047ED50 /* CardView.xib */,
 				19B4E2D21D7672AA0047ED50 /* CardView.swift */,
+				19B4E2D91D77CA140047ED50 /* CardFront.xib */,
+				19B4E2DD1D77CA630047ED50 /* CardFront.swift */,
+				19B4E2DB1D77CA1B0047ED50 /* CardBack.xib */,
+				19B4E2DF1D77CA690047ED50 /* CardBack.swift */,
 			);
 			name = TestViewController;
+			sourceTree = "<group>";
+		};
+		19B4E2D81D7792DC0047ED50 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				19B4E2D61D7792D10047ED50 /* FontAwesome.otf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 		19B8B1221D7040B6002F3FEC = {
@@ -237,9 +259,11 @@
 				19B8B12E1D7040B6002F3FEC /* AppDelegate.swift */,
 				19B8B1921D711B64002F3FEC /* CoreData */,
 				19B8B1851D7046AF002F3FEC /* TFHpple */,
+				19B4E2CF1D7669B80047ED50 /* TestViewController */,
 				19B8B1761D7043EA002F3FEC /* DeckViewController */,
 				19B8B1971D712123002F3FEC /* DetailDeckViewController */,
 				19B8B1381D7040B6002F3FEC /* Assets.xcassets */,
+				19B4E2D81D7792DC0047ED50 /* Fonts */,
 				193383EA1D713B1B00CCF703 /* UIViewExtensions.swift */,
 				19B8B1771D704402002F3FEC /* Main.storyboard */,
 				19B8B13A1D7040B6002F3FEC /* LaunchScreen.storyboard */,
@@ -326,7 +350,6 @@
 				193383FB1D72738E00CCF703 /* English API */,
 				193383FA1D72738800CCF703 /* Chinese API */,
 				193383FC1D7273A200CCF703 /* DetailDeckViewHelper */,
-				19B4E2CF1D7669B80047ED50 /* TestViewController */,
 			);
 			name = DetailDeckViewController;
 			sourceTree = "<group>";
@@ -462,9 +485,12 @@
 			files = (
 				191C41011D73F93F0003AED9 /* DetailCardView.xib in Resources */,
 				19B8B1781D704402002F3FEC /* Main.storyboard in Resources */,
+				19B4E2DC1D77CA1B0047ED50 /* CardBack.xib in Resources */,
+				19B4E2D71D7792D40047ED50 /* FontAwesome.otf in Resources */,
 				19B8B1681D704258002F3FEC /* HeaderView.xib in Resources */,
 				19B8B16A1D704258002F3FEC /* DetailDeckView.xib in Resources */,
 				19B8B13C1D7040B6002F3FEC /* LaunchScreen.storyboard in Resources */,
+				19B4E2DA1D77CA140047ED50 /* CardFront.xib in Resources */,
 				193383E91D7129D400CCF703 /* AddCardViewController.xib in Resources */,
 				19B8B1751D7043E4002F3FEC /* AddDeckViewController.xib in Resources */,
 				19B4E2D11D76721A0047ED50 /* CardView.xib in Resources */,
@@ -545,6 +571,7 @@
 			files = (
 				193383F91D72737C00CCF703 /* MDBGData.swift in Sources */,
 				19B8B18F1D711B41002F3FEC /* Deck.swift in Sources */,
+				19B4E2E01D77CA690047ED50 /* CardBack.swift in Sources */,
 				193383F01D72735F00CCF703 /* CardLanguageStrategyEnglish.swift in Sources */,
 				191C40FF1D73F8E90003AED9 /* DetailCardView.swift in Sources */,
 				19B8B16B1D704258002F3FEC /* DeckTableViewCell.swift in Sources */,
@@ -554,6 +581,7 @@
 				19B8B1741D7043E4002F3FEC /* AddDeckViewController.swift in Sources */,
 				193383F51D72736A00CCF703 /* PearsonData.swift in Sources */,
 				19B8B1371D7040B6002F3FEC /* LazyFlashCards.xcdatamodeld in Sources */,
+				19B4E2DE1D77CA630047ED50 /* CardFront.swift in Sources */,
 				19B8B1661D704258002F3FEC /* HeaderView.swift in Sources */,
 				19B8B1671D704258002F3FEC /* HeaderViewDefaultView.swift in Sources */,
 				193383EF1D72735F00CCF703 /* CardLanguageStrategyFactory.swift in Sources */,

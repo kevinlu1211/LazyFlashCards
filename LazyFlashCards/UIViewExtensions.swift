@@ -47,4 +47,10 @@ extension UIView {
         self.addSubview(imageViewBackground)
         self.sendSubviewToBack(imageViewBackground)
     }
+    class func loadFromNibNamed(nibNamed: String, bundle : NSBundle? = nil) -> UIView? {
+        return UINib(
+            nibName: nibNamed,
+            bundle: bundle
+            ).instantiateWithOwner(nil, options: nil)[0] as? UIView
+    }
 }

@@ -7,7 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddDeckViewController" customModule="LazyFlashCards" customModuleProvider="target">
             <connections>
-                <outlet property="deckNameTextField" destination="uX5-ZV-32J" id="cdk-6p-fIv"/>
+                <outlet property="deckNameTextField" destination="uX5-ZV-32J" id="dsI-dw-TTx"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -45,7 +45,7 @@
                                 <action selector="addDeckButton:" destination="-1" eventType="touchUpInside" id="mmD-CW-AZn"/>
                             </connections>
                         </button>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uX5-ZV-32J" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uX5-ZV-32J" customClass="SkyFloatingLabelTextFieldWithIcon" customModule="SkyFloatingLabelTextField">
                             <rect key="frame" x="8" y="8" width="324" height="44"/>
                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                             <textInputTraits key="textInputTraits"/>

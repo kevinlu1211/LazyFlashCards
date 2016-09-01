@@ -15,6 +15,7 @@ class TestViewController: UIViewController {
 
     var deck : Deck!
     var flashCards : [FlashCard] = []
+    var swipedLeftFlashCards : [FlashCard] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,11 +43,35 @@ class TestViewController: UIViewController {
 extension TestViewController: KolodaViewDelegate {
     func kolodaDidRunOutOfCards(koloda: KolodaView) {
         // TODO: Reset flashCards
+        
     }
     
     func koloda(koloda: KolodaView, didSelectCardAtIndex index: UInt) {
         print("selected card \(index)")
     }
+    
+    func koloda(koloda: KolodaView, didSwipeCardAtIndex index: UInt, inDirection direction: SwipeResultDirection) {
+        let currentCard = flashCards[Int(index)]
+        if(direction == .Left) {
+            print("swiped card \(index) left ")
+            swipedLeftFlashCards.append(currentCard)
+
+        }
+        else if (direction == .Right) {
+            print("swiped card \(index) right")
+        }
+    }
+    
+    func koloda(koloda: KolodaView, draggedCardWithPercentage finishPercentage: CGFloat, inDirection direction: SwipeResultDirection) {
+        if (direction == .Left) {
+            print(koloda.currentCardIndex)
+            print(finishPercentage)
+        }
+        
+    }
+
+
+
 }
 
 extension TestViewController: KolodaViewDataSource {
@@ -56,13 +81,18 @@ extension TestViewController: KolodaViewDataSource {
     }
     
     func koloda(koloda: KolodaView, viewForCardAtIndex index: UInt) -> UIView {
-        print("hi") 
-        return NSBundle.mainBundle().loadNibNamed("CardView", owner: self, options: nil)[0] as! UIView
+        print("hi")
+        let cardView = UINib(nibName: "CardView", bundle: nil).instantiateWithOwner(nil, options: nil).first as! CardView
+        cardView.phraseLabel.text = flashCards[Int(index)].phrase
+        cardView.layer.cornerRadius = 10
+//        return cardView
+        return cardView
     }
     
-    func koloda(koloda: KolodaView, viewForCardOverlayAtIndex index: UInt) -> OverlayView? {
-        print("hihi")
-        return NSBundle.mainBundle().loadNibNamed("OverlayView",
-                                                  owner: self, options: nil)[0] as? OverlayView
-    }
+    
+//    func koloda(koloda: KolodaView, viewForCardOverlayAtIndex index: UInt) -> OverlayView? {
+//        print("hihi")
+//        return NSBundle.mainBundle().loadNibNamed("OverlayView",
+//                                                  owner: self, options: nil)[0] as? OverlayView
+//    }
 }

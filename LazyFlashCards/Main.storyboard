@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Test View Controller-->
@@ -17,12 +18,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wWO-hm-hXQ" customClass="KolodaView" customModule="Koloda">
-                                <rect key="frame" x="180" y="201" width="240" height="128"/>
-                                <color key="backgroundColor" red="0.53181970450000005" green="0.26521259629999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wWO-hm-hXQ" customClass="KolodaView" customModule="Koloda">
+                                <rect key="frame" x="70" y="100" width="460" height="400"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="drH-f1-fW8"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wWO-hm-hXQ" firstAttribute="leading" secondItem="wma-Fi-ZlS" secondAttribute="leadingMargin" constant="50" id="FTc-qz-jD5"/>
+                            <constraint firstItem="wWO-hm-hXQ" firstAttribute="centerX" secondItem="wma-Fi-ZlS" secondAttribute="centerX" id="PWz-pU-bTK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wWO-hm-hXQ" secondAttribute="trailing" constant="50" id="uf5-YX-U1b"/>
+                            <constraint firstItem="wWO-hm-hXQ" firstAttribute="centerY" secondItem="wma-Fi-ZlS" secondAttribute="centerY" id="yTM-ps-4H8"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="deckView" destination="wWO-hm-hXQ" id="Qbk-G0-5sv"/>

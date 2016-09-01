@@ -11,7 +11,7 @@ import SkyFloatingLabelTextField
 
 class AddDeckViewController: UIViewController {
     
-    @IBOutlet weak var deckNameTextField: SkyFloatingLabelTextField!
+    @IBOutlet weak var deckNameTextField: SkyFloatingLabelTextFieldWithIcon!
     var delegate : AddDeckViewControllerDelegate?
     
     override func viewDidLoad() {
@@ -19,6 +19,10 @@ class AddDeckViewController: UIViewController {
         print("AddDeckViewController is loaded")
         print(self.view.frame)
         // Do any additional setup after loading the view.
+        deckNameTextField.iconText = "\u{f072}"
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
