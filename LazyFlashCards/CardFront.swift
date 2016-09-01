@@ -10,6 +10,7 @@ import UIKit
 
 class CardFront: UIView {
 
+    @IBOutlet weak var phraseLabel: UILabel!
     /*
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.

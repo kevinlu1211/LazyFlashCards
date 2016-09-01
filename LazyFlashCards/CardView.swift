@@ -10,6 +10,6 @@ import UIKit
 
 class CardView: UIView {
 
-    @IBOutlet weak var phraseLabel: UILabel!
+    @IBOutlet weak var front: CardFront!
 
 }

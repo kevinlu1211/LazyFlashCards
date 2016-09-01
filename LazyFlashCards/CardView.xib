@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10117"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -11,21 +11,20 @@
             <rect key="frame" x="0.0" y="0.0" width="250" height="300"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phrase Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HZ0-Hh-Dz0">
-                    <rect key="frame" x="76" y="139" width="99" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Xn-iA-4wR" customClass="CardFront" customModule="LazyFlashCards" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="250" height="300"/>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="0.92549937149999995" blue="0.053677742430000001" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="HZ0-Hh-Dz0" firstAttribute="centerY" secondItem="VRh-9X-EHP" secondAttribute="centerY" id="R6W-XQ-F5e"/>
-                <constraint firstItem="HZ0-Hh-Dz0" firstAttribute="centerX" secondItem="VRh-9X-EHP" secondAttribute="centerX" id="zzK-tx-JD6"/>
+                <constraint firstAttribute="trailing" secondItem="7Xn-iA-4wR" secondAttribute="trailing" id="LFs-MU-yjT"/>
+                <constraint firstItem="7Xn-iA-4wR" firstAttribute="leading" secondItem="VRh-9X-EHP" secondAttribute="leading" id="h8l-ve-Yas"/>
+                <constraint firstItem="7Xn-iA-4wR" firstAttribute="top" secondItem="VRh-9X-EHP" secondAttribute="top" id="k8t-w9-LNX"/>
+                <constraint firstAttribute="bottom" secondItem="7Xn-iA-4wR" secondAttribute="bottom" id="swp-0i-ese"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="phraseLabel" destination="HZ0-Hh-Dz0" id="gVH-hL-l8U"/>
+                <outlet property="front" destination="7Xn-iA-4wR" id="cVH-I3-X8l"/>
             </connections>
             <point key="canvasLocation" x="408" y="220"/>
         </view>

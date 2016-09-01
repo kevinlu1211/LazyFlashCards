@@ -83,7 +83,10 @@ extension TestViewController: KolodaViewDataSource {
     func koloda(koloda: KolodaView, viewForCardAtIndex index: UInt) -> UIView {
         print("hi")
         let cardView = UINib(nibName: "CardView", bundle: nil).instantiateWithOwner(nil, options: nil).first as! CardView
-        cardView.phraseLabel.text = flashCards[Int(index)].phrase
+//        cardView.phraseLabel.text = flashCards[Int(index)].phrase
+        cardView.front.alpha = 1
+//        cardView.front.phraseLabel.text = "HI"
+//        cardView.back.alpha = 0
         cardView.layer.cornerRadius = 10
 //        return cardView
         return cardView
