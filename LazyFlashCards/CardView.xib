@@ -24,10 +24,15 @@
                 <constraint firstItem="HZ0-Hh-Dz0" firstAttribute="centerX" secondItem="VRh-9X-EHP" secondAttribute="centerX" id="zzK-tx-JD6"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                    <real key="value" value="100"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="phraseLabel" destination="HZ0-Hh-Dz0" id="gVH-hL-l8U"/>
             </connections>
-            <point key="canvasLocation" x="408" y="220"/>
+            <point key="canvasLocation" x="457" y="179"/>
         </view>
     </objects>
 </document>

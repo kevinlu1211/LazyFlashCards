@@ -11,5 +11,6 @@ import UIKit
 class CardView: UIView {
 
     @IBOutlet weak var phraseLabel: UILabel!
-
+    
+    
 }
