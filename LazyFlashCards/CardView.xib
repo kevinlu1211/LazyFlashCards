@@ -35,7 +35,6 @@
                 <constraint firstItem="JFh-qd-Spb" firstAttribute="leading" secondItem="VRh-9X-EHP" secondAttribute="leading" id="tBd-fm-oDf"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-<<<<<<< HEAD
             <userDefinedRuntimeAttributes>
                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                     <real key="value" value="100"/>
@@ -45,9 +44,7 @@
                 <outlet property="phraseLabel" destination="HZ0-Hh-Dz0" id="gVH-hL-l8U"/>
             </connections>
             <point key="canvasLocation" x="457" y="179"/>
-=======
             <point key="canvasLocation" x="578" y="162"/>
->>>>>>> NestedCardView
         </view>
     </objects>
 </document>

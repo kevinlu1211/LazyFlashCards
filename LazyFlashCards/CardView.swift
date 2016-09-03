@@ -35,7 +35,6 @@ class CardView: UIView {
     
     required init?(coder aDecoder: NSCoder) {
         // 1. setup any properties here
-
         // 2. call super.init(coder:)
         super.init(coder: aDecoder)
         
