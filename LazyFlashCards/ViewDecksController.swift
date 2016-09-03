@@ -43,16 +43,8 @@ class ViewDecksController: UIViewController, UITableViewDataSource, UITableViewD
         // Setup Tab
 
         
-
-        for family: String in UIFont.familyNames()
-        {
-            print("\(family)")
-            for names: String in UIFont.fontNamesForFamilyName(family)
-            {
-                print("== \(names)")
-            }
-        }
-        
+        print(String("其他".dataUsingEncoding(NSUTF8StringEncoding)!))
+        print("其他".componentsSeparatedByString(" "))
         tableViewSetup()
         expandFirstCell()
         liquidButtonSetup()

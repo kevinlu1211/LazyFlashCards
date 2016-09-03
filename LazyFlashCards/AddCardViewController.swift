@@ -80,6 +80,7 @@ extension AddCardViewController {
     @IBAction func handleSearch(sender: AnyObject) {
         // TODO: Delegate this to the factory methods so that we don't need to have a big switch block
 //        showLeftandRightButtons()
+
         cardLanguageStrategy?.searchPhrase(self)
         
     }
@@ -165,6 +166,14 @@ extension AddCardViewController {
     }
     
     
+}
+
+extension String {
+    func language() -> String? {
+        let tagger = NSLinguisticTagger(tagSchemes: [NSLinguisticTagSchemeLanguage], options: 0)
+        tagger.string = self
+        return tagger.tagAtIndex(0, scheme: NSLinguisticTagSchemeLanguage, tokenRange: nil, sentenceRange: nil)
+    }
 }
 
 protocol AddCardViewControllerDelegate : class {
