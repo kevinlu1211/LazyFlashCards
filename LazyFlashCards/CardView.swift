@@ -10,11 +10,8 @@ import UIKit
 
 class CardView: UIView {
 
-<<<<<<< HEAD
     @IBOutlet weak var phraseLabel: UILabel!
     
-    
-=======
     
     // Our custom view from the XIB file
     var view: UIView!
@@ -75,5 +72,4 @@ class CardView: UIView {
         return view
     }
 
->>>>>>> NestedCardView
 }
