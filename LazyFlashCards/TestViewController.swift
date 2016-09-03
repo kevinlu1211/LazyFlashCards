@@ -38,6 +38,13 @@ class TestViewController: UIViewController {
             flashCards = useableFlashCards
         }
     }
+    
+    override func viewDidLayoutSubviews() {
+        print("viewDidLayoutSubviews cardView.frame before reloading data is: \(deckView.frame)")
+//        deckView.reloadData()
+//        deckView.reloadData()
+//        print("viewDidLayoutSubviews cardView.frame after reloading data is: \(deckView.frame)")
+    }
 
 }
 extension TestViewController: KolodaViewDelegate {
@@ -63,14 +70,26 @@ extension TestViewController: KolodaViewDelegate {
     }
     
     func koloda(koloda: KolodaView, draggedCardWithPercentage finishPercentage: CGFloat, inDirection direction: SwipeResultDirection) {
+        print(finishPercentage)
         if (direction == .Left) {
-            print(koloda.currentCardIndex)
-            print(finishPercentage)
+            
+            let cardView = koloda.viewForCardAtIndex(koloda.currentCardIndex) as! CardView
+            let decimalFinishPercentage = finishPercentage/100
+            
+            // -TODO: Don't use linear alpha change use exponential, so slow at the start but fast at the end
+            cardView.front.alpha = 1-decimalFinishPercentage
+            cardView.back.alpha = decimalFinishPercentage
+//            print(koloda.currentCardIndex)
+//            print(finishPercentage)
         }
         
     }
-
-
+    
+    func kolodaDidResetCard(koloda: KolodaView) {
+        let cardView = koloda.viewForCardAtIndex(koloda.currentCardIndex) as! CardView    
+        cardView.front.alpha = 1
+        cardView.back.alpha = 0
+    }
 
 }
 
@@ -81,15 +100,26 @@ extension TestViewController: KolodaViewDataSource {
     }
     
     func koloda(koloda: KolodaView, viewForCardAtIndex index: UInt) -> UIView {
-        print("hi")
-        let cardView = UINib(nibName: "CardView", bundle: nil).instantiateWithOwner(nil, options: nil).first as! CardView
-//        cardView.phraseLabel.text = flashCards[Int(index)].phrase
-        cardView.front.alpha = 1
-//        cardView.front.phraseLabel.text = "HI"
-//        cardView.back.alpha = 0
-        cardView.layer.cornerRadius = 10
+        // Note that the commented out code below worked because our top level view of the CardView.xib was of class CardView, but now that we have changed it into a UIView it won't work this is because UINib(...)[0] will always get the top level view in the hierarchy
+//        let cardView = UINib(nibName: "CardView", bundle: nil).instantiateWithOwner(nil, options: nil).first as! CardView
 //        return cardView
-        return cardView
+//        print("koloda frame is: \(koloda.frame)")
+//        let view = UIView(frame:koloda.frame)
+//        view.backgroundColor = UIColor.blueColor()
+        let view = CardView(frame : koloda.bounds)
+        let card = flashCards[Int(index)]
+        // Setup card front
+        view.front.alpha = 1
+        view.front.phraseLabel.text = card.phrase
+        view.userInteractionEnabled = false
+        
+        // Set card back
+        view.back.alpha = 0
+        view.back.pronunciationLabel.text = card.pronunciation
+        view.back.definitionTextField.text = card.definition
+        view.userInteractionEnabled = false
+        
+        return view
     }
     
     

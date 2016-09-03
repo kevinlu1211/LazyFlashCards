@@ -5,28 +5,37 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10117"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CardView" customModule="LazyFlashCards" customModuleProvider="target">
+            <connections>
+                <outlet property="back" destination="JFh-qd-Spb" id="EcE-aK-e5F"/>
+                <outlet property="front" destination="7Xn-iA-4wR" id="3Yb-My-0wx"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="VRh-9X-EHP" customClass="CardView" customModule="LazyFlashCards" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="VRh-9X-EHP">
             <rect key="frame" x="0.0" y="0.0" width="250" height="300"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JFh-qd-Spb" userLabel="Back" customClass="CardBack" customModule="LazyFlashCards" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="250" height="300"/>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Xn-iA-4wR" customClass="CardFront" customModule="LazyFlashCards" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="250" height="300"/>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="0.92549937149999995" blue="0.053677742430000001" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="7Xn-iA-4wR" secondAttribute="trailing" id="LFs-MU-yjT"/>
-                <constraint firstItem="7Xn-iA-4wR" firstAttribute="leading" secondItem="VRh-9X-EHP" secondAttribute="leading" id="h8l-ve-Yas"/>
-                <constraint firstItem="7Xn-iA-4wR" firstAttribute="top" secondItem="VRh-9X-EHP" secondAttribute="top" id="k8t-w9-LNX"/>
-                <constraint firstAttribute="bottom" secondItem="7Xn-iA-4wR" secondAttribute="bottom" id="swp-0i-ese"/>
+                <constraint firstItem="7Xn-iA-4wR" firstAttribute="top" secondItem="VRh-9X-EHP" secondAttribute="top" id="17J-fe-Ypp"/>
+                <constraint firstAttribute="bottom" secondItem="7Xn-iA-4wR" secondAttribute="bottom" id="Abx-te-q55"/>
+                <constraint firstItem="7Xn-iA-4wR" firstAttribute="leading" secondItem="VRh-9X-EHP" secondAttribute="leading" id="DB4-ya-BH7"/>
+                <constraint firstAttribute="trailing" secondItem="JFh-qd-Spb" secondAttribute="trailing" id="S2t-z2-cYT"/>
+                <constraint firstAttribute="bottom" secondItem="JFh-qd-Spb" secondAttribute="bottom" id="YSr-Fn-6kE"/>
+                <constraint firstItem="JFh-qd-Spb" firstAttribute="top" secondItem="VRh-9X-EHP" secondAttribute="top" id="oRO-zf-o8D"/>
+                <constraint firstAttribute="trailing" secondItem="7Xn-iA-4wR" secondAttribute="trailing" id="s4I-a3-I8d"/>
+                <constraint firstItem="JFh-qd-Spb" firstAttribute="leading" secondItem="VRh-9X-EHP" secondAttribute="leading" id="tBd-fm-oDf"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <connections>
-                <outlet property="front" destination="7Xn-iA-4wR" id="cVH-I3-X8l"/>
-            </connections>
-            <point key="canvasLocation" x="408" y="220"/>
+            <point key="canvasLocation" x="578" y="162"/>
         </view>
     </objects>
 </document>
