@@ -13,7 +13,7 @@
   1. ~~Create the ViewController for Testing the users in NestedCardView branch~~ 3/9/16
     * ~~Read about XIB files~~ 1/9/16
     * ~~Figure out how to create nested XIB files~~ 2/9/16
-    * ~~Figure out the purpose of File's Owner and it's relationship with the XIB file~~2/9/16
+    * ~~Figure out the purpose of File's Owner and it's relationship with the XIB file~~ 2/9/16
   2. Find a colour scheme for the app
   3. Create the delete buttons for the Deck and Card View Controllers in CreateButtons branch
 
