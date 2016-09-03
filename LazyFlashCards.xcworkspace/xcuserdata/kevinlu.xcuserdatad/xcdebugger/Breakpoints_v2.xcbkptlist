@@ -154,13 +154,107 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LazyFlashCards/TestViewController.swift"
-            timestampString = "494389378.868451"
+            timestampString = "494560100.672495"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
-            landmarkName = "kolodaNumberOfCards(_:)"
-            landmarkType = "5">
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "TestViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LazyFlashCards/CardView.swift"
+            timestampString = "494522573.130974"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "CardView"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LazyFlashCards.CardView.view.getter : Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UIView&gt;"
+                  moduleName = "LazyFlashCards"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kevinlu/Documents/iOS/LazyFlashCards/LazyFlashCards/CardView.swift"
+                  timestampString = "494522301.935137"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "35">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LazyFlashCards.CardView.view.setter : Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UIView&gt;"
+                  moduleName = "LazyFlashCards"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kevinlu/Documents/iOS/LazyFlashCards/LazyFlashCards/CardView.swift"
+                  timestampString = "494522301.941147"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "65">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LazyFlashCards.CardView.init (frame : __C.CGRect) -&gt; LazyFlashCards.CardView"
+                  moduleName = "LazyFlashCards"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kevinlu/Documents/iOS/LazyFlashCards/LazyFlashCards/CardView.swift"
+                  timestampString = "494522301.941305"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "155">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LazyFlashCards.CardView.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;LazyFlashCards.CardView&gt;"
+                  moduleName = "LazyFlashCards"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kevinlu/Documents/iOS/LazyFlashCards/LazyFlashCards/CardView.swift"
+                  timestampString = "494522301.941404"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "88">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LazyFlashCards/TestViewController.swift"
+            timestampString = "494559695.789621"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "TestViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
