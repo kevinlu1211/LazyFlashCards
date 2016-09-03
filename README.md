@@ -10,10 +10,11 @@
 
 ## TODO
 
-  1. ~~Create the ViewController for Testing the users in NestedCardView branch~~ 3/9/16
+  1. Create the ViewController for Testing the users in NestedCardView branch
     * ~~Read about XIB files~~ 1/9/16
     * ~~Figure out how to create nested XIB files~~ 2/9/16
     * ~~Figure out the purpose of File's Owner and it's relationship with the XIB file~~ 2/9/16
+    * Create a queue data structure for the flash cards and make it work with Koloda, purpose of this is to add card that are swiped left (the card that the user doesn't know) to the end of the queue so that they will be retested
   2. Find a colour scheme for the app
   3. Create the delete buttons for the Deck and Card View Controllers in CreateButtons branch
 
