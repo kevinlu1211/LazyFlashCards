@@ -55,3 +55,4 @@ class CardLanguageStrategyEnglish : NSObject, CardLanguageStrategy {
         addCardViewController.definitionTextField.text = currentResult.definition
     }
 }
+

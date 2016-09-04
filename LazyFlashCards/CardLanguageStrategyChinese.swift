@@ -13,7 +13,7 @@ class CardLanguageStrategyChinese : NSObject, CardLanguageStrategy {
 
     func searchPhrase(addCardViewController : AddCardViewController) -> Void {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)) {
-            PearsonClient.sharedInstance().retrieveData(addCardViewController.phraseTextField.text!) {
+            MDBGScraper.sharedInstance().retrieveData(addCardViewController.phraseTextField.text!) {
                 success, MDBGResults, errorString in
                 
                 if success {
@@ -21,8 +21,12 @@ class CardLanguageStrategyChinese : NSObject, CardLanguageStrategy {
                         addCardViewController.results = results
                         addCardViewController.maxIndex = results.count - 1
                         // Update UI
-                        if addCardViewController.maxIndex > -1 {
+                        if addCardViewController.maxIndex >= 0 {
                             dispatch_async(dispatch_get_main_queue()) {
+                                addCardViewController.showLeftandRightButtons()
+                                addCardViewController.resultIndex = 0
+                                self.updateTextFields(addCardViewController)
+
                                 print("There are "  + String(results.count) + "results")
                                 for result in results {
                                     let result = result
@@ -30,7 +34,6 @@ class CardLanguageStrategyChinese : NSObject, CardLanguageStrategy {
                                     print(result.pronunciation)
                                     print(result.definition)
                                 }
-                                self.updateTextFields(addCardViewController)
                                 
                                 // If there is more than one result then show the previous and next button for the user to be able to switch between the different definitions
                             }
@@ -57,3 +60,4 @@ class CardLanguageStrategyChinese : NSObject, CardLanguageStrategy {
         addCardViewController.definitionTextField.text = currentResult.definition
     }
 }
+

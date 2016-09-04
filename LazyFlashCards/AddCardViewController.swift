@@ -59,7 +59,7 @@ class AddCardViewController: UIViewController {
     
     
     private func updateCardLanguageStrategy() {
-        print("setting card strategy")
+        print("setting card strategy to \(currentLanguage)")
         cardLanguageStrategy = CardLanguageStrategyFactory.sharedInstance().getStrategy(self.currentLanguage)
     }
 
@@ -80,7 +80,25 @@ extension AddCardViewController {
     @IBAction func handleSearch(sender: AnyObject) {
         // TODO: Delegate this to the factory methods so that we don't need to have a big switch block
 //        showLeftandRightButtons()
+        let phraseText = phraseTextField.text
+        if let phrase = phraseText {
+            
+            // See if transliteration changes the string, as it will change for Chinese but not english
+            let mutableString = NSMutableString(string: phrase) as CFMutableStringRef
+            CFStringTransform(mutableString, nil, kCFStringTransformToLatin, Bool(0))
+            
+            // If the mutableString after transliteration is the same as the original string then it must be english
+            if(mutableString as String == phrase) {
+                currentLanguage = .English
+            }
+            else {
+                currentLanguage = .Chinese
+            }
 
+        }
+        else {
+            currentLanguage = .English
+        }
         cardLanguageStrategy?.searchPhrase(self)
         
     }

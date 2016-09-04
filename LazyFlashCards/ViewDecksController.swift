@@ -41,10 +41,12 @@ class ViewDecksController: UIViewController, UITableViewDataSource, UITableViewD
         super.viewDidLoad()
         title = "Decks"
         // Setup Tab
+        
+      
+
 
         
-        print(String("其他".dataUsingEncoding(NSUTF8StringEncoding)!))
-        print("其他".componentsSeparatedByString(" "))
+      
         tableViewSetup()
         expandFirstCell()
         liquidButtonSetup()
@@ -313,3 +315,4 @@ extension ViewDecksController : AddDeckViewControllerDelegate {
         self.dismissViewControllerAnimated(false, completion: nil)
     }
 }
+

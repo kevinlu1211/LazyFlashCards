@@ -18,18 +18,12 @@ class CardLanguageStrategyFactory {
     func getStrategy(language : Language) -> CardLanguageStrategy {
         switch language {
         case .English:
+            print("using english")
             return CardLanguageStrategyEnglish()
-//        case .Chinese:
-//            return CardLanguageStrategyChinese()
-        default:
-            return CardLanguageStrategyEnglish()
+        case .Chinese:
+            print("using chinese")
+            return CardLanguageStrategyChinese()
         }
     }
 }
 
-protocol CardLanguageStrategy {
-//    func previousResult(cardCollectionView : CardCollectionViewCell)
-//    func nextResult(cardCollectionView : CardCollectionViewCell)
-    func searchPhrase(addCardViewController : AddCardViewController)
-    func updateTextFields(addCardViewController : AddCardViewController)
-}

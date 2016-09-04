@@ -56,6 +56,7 @@
 		19B8B18F1D711B41002F3FEC /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B8B18E1D711B41002F3FEC /* Deck.swift */; };
 		19B8B1911D711B47002F3FEC /* FlashCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B8B1901D711B47002F3FEC /* FlashCard.swift */; };
 		19B8B1961D712114002F3FEC /* DetailDeckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B8B1951D712114002F3FEC /* DetailDeckViewController.swift */; };
+		19FE17BD1D7BA31000DB79EA /* CardLanguageStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FE17BC1D7BA31000DB79EA /* CardLanguageStrategy.swift */; };
 		BD1CA86C4C183B6EA83D7184 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1747660E56C8847495FB6C6C /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -138,6 +139,7 @@
 		19B8B18E1D711B41002F3FEC /* Deck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		19B8B1901D711B47002F3FEC /* FlashCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashCard.swift; sourceTree = "<group>"; };
 		19B8B1951D712114002F3FEC /* DetailDeckViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailDeckViewController.swift; sourceTree = "<group>"; };
+		19FE17BC1D7BA31000DB79EA /* CardLanguageStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardLanguageStrategy.swift; sourceTree = "<group>"; };
 		7297621F63D1BF85A3137C0B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -202,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				193383EC1D72735E00CCF703 /* CardLanguageStrategyFactory.swift */,
+				19FE17BC1D7BA31000DB79EA /* CardLanguageStrategy.swift */,
 				193383ED1D72735E00CCF703 /* CardLanguageStrategyEnglish.swift */,
 				193383EE1D72735E00CCF703 /* CardLanguageStrategyChinese.swift */,
 			);
@@ -575,6 +578,7 @@
 				193383F01D72735F00CCF703 /* CardLanguageStrategyEnglish.swift in Sources */,
 				191C40FF1D73F8E90003AED9 /* DetailCardView.swift in Sources */,
 				19B8B16B1D704258002F3FEC /* DeckTableViewCell.swift in Sources */,
+				19FE17BD1D7BA31000DB79EA /* CardLanguageStrategy.swift in Sources */,
 				193383F11D72735F00CCF703 /* CardLanguageStrategyChinese.swift in Sources */,
 				19B8B1961D712114002F3FEC /* DetailDeckViewController.swift in Sources */,
 				19263CC81D74FFAC00F0259F /* CardTableViewCell.swift in Sources */,
