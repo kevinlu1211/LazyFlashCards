@@ -16,6 +16,7 @@
     * ~~Figure out how to create nested XIB files~~ 2/9/16
     * ~~Figure out the purpose of File's Owner and it's relationship with the XIB file~~ 2/9/16
     * Create a queue data structure for the flash cards and make it work with Koloda, purpose of this is to add card that are swiped left (the card that the user doesn't know) to the end of the queue so that they will be retested
+    * Determine the weights to be used to determine whether the user will get the current card correct, maybe some exponential weighting where most recent results have most effect  
   2. ~~Figure a way out to determine the language in the phrase text field when adding the card, can't use NSLinguisticTagger as the phrase term is too short. Maybe determine by UTF8 encoding via dataUsingEncoding(NSUTF8StringEncoding) as English letters in UTF8 are only integers whereas in Chinese there are also letters~~ 4/9/16 Ending up using a hacky way to solve it via CFStringTransform not extendable 
   3. Find a colour scheme for the app
   4. Create the delete buttons for the Deck and Card View Controllers in CreateButtons branch
