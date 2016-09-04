@@ -86,6 +86,7 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-LazyFlashCardsUITests/AEAccordion.framework"
   install_framework "Pods-LazyFlashCardsUITests/AEXibceptionView.framework"
+  install_framework "Pods-LazyFlashCardsUITests/CKWaveCollectionViewTransition.framework"
   install_framework "Pods-LazyFlashCardsUITests/HidingNavigationBar.framework"
   install_framework "Pods-LazyFlashCardsUITests/JOEmojiableBtn.framework"
   install_framework "Pods-LazyFlashCardsUITests/Koloda.framework"
@@ -101,6 +102,7 @@ fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-LazyFlashCardsUITests/AEAccordion.framework"
   install_framework "Pods-LazyFlashCardsUITests/AEXibceptionView.framework"
+  install_framework "Pods-LazyFlashCardsUITests/CKWaveCollectionViewTransition.framework"
   install_framework "Pods-LazyFlashCardsUITests/HidingNavigationBar.framework"
   install_framework "Pods-LazyFlashCardsUITests/JOEmojiableBtn.framework"
   install_framework "Pods-LazyFlashCardsUITests/Koloda.framework"

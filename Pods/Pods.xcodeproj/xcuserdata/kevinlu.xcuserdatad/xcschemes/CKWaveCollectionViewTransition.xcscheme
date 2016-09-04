@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '0016192B67EE9FDE5490F289'
-               BlueprintName = 'PureLayout'
+               BlueprintIdentifier = 'F758CF315BC26CF5C598197A'
+               BlueprintName = 'CKWaveCollectionViewTransition'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'PureLayout.framework'>
+               BuildableName = 'CKWaveCollectionViewTransition.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

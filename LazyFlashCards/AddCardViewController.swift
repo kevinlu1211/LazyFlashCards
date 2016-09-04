@@ -79,7 +79,6 @@ extension AddCardViewController {
     
     @IBAction func handleSearch(sender: AnyObject) {
         // TODO: Delegate this to the factory methods so that we don't need to have a big switch block
-//        showLeftandRightButtons()
         let phraseText = phraseTextField.text
         if let phrase = phraseText {
             

@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>CKWaveCollectionViewTransition.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>HidingNavigationBar.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -97,17 +102,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1B86359D93991FE4D6F362C2C1BCF1E0</key>
+		<key>0AAC416028D803111A6DF71367469921</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>2692A60CA9509B2E2A543556E170DCB4</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>27E48FC4519B1B3E2F59E5DA3CF9E258</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -122,6 +122,21 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>32B53547568E26AF2A7F473E285487A0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3B37E74CEBCD5CC6089073E6C02F5571</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3F3B1B1F09F98CBF06665AD8E9D49C08</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>4BCE15B65BE1423E31A139A48360119E</key>
 		<dict>
 			<key>primary</key>
@@ -132,7 +147,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>76A36C8E9577C9AA15EA7E6154A171F1</key>
+		<key>5EF925C504D1AA63A61B3E2FC5334C9F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -142,22 +157,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9F1E9D0E068B0A6A405B462FE1DAE03D</key>
+		<key>90A3F00EAA2F5483650A7CC706F491A8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B0EF4DE3C9CCDDFBAEF99BBCCC3C55E9</key>
+		<key>94333CE2CA1A0D95DDE50463782A1CB1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BE17BAC0ABDBBE37A7D70A2F61672BC1</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C16190FE2378C421E6C96F45A2A5B6C8</key>
+		<key>C0F827EC6FDFB3D3A8ABC894A63CDBE6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -167,22 +177,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C80F1FECA9C9423CDEB00106F35BF8D8</key>
+		<key>D591828E90E3832A3AFC872324A9B777</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DFC143500A6027E093C83497B80049B9</key>
+		<key>D801FD5478C847BF351C79D5059CD639</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DFA9C95499E06087ADA45DC6AEE5FDF9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>F2BF5E77CE71CA889B85714FBBD21AA6</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F2EA020379709E8EA3ECEEF95BD02773</key>
 		<dict>
 			<key>primary</key>
 			<true/>

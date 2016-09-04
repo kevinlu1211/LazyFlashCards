@@ -1,6 +1,7 @@
 PODS:
   - AEAccordion (1.0.3)
   - AEXibceptionView (1.0.3)
+  - CKWaveCollectionViewTransition (1.0.0)
   - HidingNavigationBar (0.3.0)
   - JOEmojiableBtn (0.1.0)
   - Koloda (3.1.2):
@@ -21,6 +22,7 @@ PODS:
 DEPENDENCIES:
   - AEAccordion
   - AEXibceptionView
+  - CKWaveCollectionViewTransition
   - HidingNavigationBar (~> 0.3)
   - JOEmojiableBtn
   - Koloda (~> 3.1.2)
@@ -33,6 +35,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AEAccordion: 4a6b3b938fc9abe8a20d7e9e238a50a5eae02572
   AEXibceptionView: cb1e5696c2cf1283a8d083406928222c9b59608e
+  CKWaveCollectionViewTransition: 119deff90527b01de2969d77de2b3b28771ffd3e
   HidingNavigationBar: 6378af14cea27bfef8be73470b081a36d45b87c4
   JOEmojiableBtn: 7e3ca82bbb6b909ffb1f2ba26d9ea4fdfb3aadd4
   Koloda: 5aee353329cd1605540f1215a4c1975481dc7a37
