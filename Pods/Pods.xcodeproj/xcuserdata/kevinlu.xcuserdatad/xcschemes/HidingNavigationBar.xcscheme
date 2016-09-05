@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '79DC694D878740F39018CB36'
+               BlueprintIdentifier = 'B7A3B37E29F57866298A6E52'
                BlueprintName = 'HidingNavigationBar'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'HidingNavigationBar.framework'>

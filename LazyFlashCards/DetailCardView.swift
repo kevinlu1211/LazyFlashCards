@@ -13,8 +13,8 @@ class DetailCardView: AEXibceptionView {
 
     @IBOutlet weak var phraseLabel: UILabel!
     @IBOutlet weak var pronunciationLabel: UILabel!
-
     @IBOutlet weak var definitionTextView: UITextView!
+    var delegate : DetailCardViewDelegate?
     /*
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -23,8 +23,21 @@ class DetailCardView: AEXibceptionView {
     }
     */
     @IBAction func editButtonAction(sender: AnyObject) {
+        delegate?.handleEditAction(self)
     }
 
     @IBAction func deleteButtonAction(sender: AnyObject) {
+        delegate?.handleDeleteAction(self)
+    }
+}
+
+protocol DetailCardViewDelegate : class {
+    func handleEditAction(detailCardView : DetailCardView)
+    func handleDeleteAction(detailCardView: DetailCardView)
+}
+
+extension DetailCardView {
+    internal func getParentTableViewCell() -> CardTableViewCell {
+        return (self.superview?.superview as! CardTableViewCell)
     }
 }

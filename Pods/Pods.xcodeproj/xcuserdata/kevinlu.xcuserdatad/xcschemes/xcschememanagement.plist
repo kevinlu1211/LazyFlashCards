@@ -14,12 +14,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>CKWaveCollectionViewTransition.xcscheme</key>
+		<key>HidingNavigationBar.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>HidingNavigationBar.xcscheme</key>
+		<key>IBAnimatable.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -102,12 +102,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0AAC416028D803111A6DF71367469921</key>
+		<key>18A40A162B1C45CB411A07F42B5DD028</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2403DA64362DBC038FE2859AC1717027</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>2692A60CA9509B2E2A543556E170DCB4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>26BDCC2831DCC255F163B36A50D9D382</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>27818F85006147A4F542F24A0278FCDD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -122,17 +137,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>32B53547568E26AF2A7F473E285487A0</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>3B37E74CEBCD5CC6089073E6C02F5571</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>3F3B1B1F09F98CBF06665AD8E9D49C08</key>
+		<key>496E0221FA35BACAA536F4C50D12BC56</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -142,12 +147,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>4C283565247061180E0E21696B668FCF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>4D351D010EB4635526E5100DCBE7CDFF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5EF925C504D1AA63A61B3E2FC5334C9F</key>
+		<key>5FB1BD4A478DA76CA923918615E2C3A2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -157,17 +167,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>90A3F00EAA2F5483650A7CC706F491A8</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>94333CE2CA1A0D95DDE50463782A1CB1</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C0F827EC6FDFB3D3A8ABC894A63CDBE6</key>
+		<key>8ED8EFF3E0FD10A3C72D69C6F9BBA682</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -177,17 +177,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D591828E90E3832A3AFC872324A9B777</key>
+		<key>D406F0B092322EEC98658939D9C0A960</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D801FD5478C847BF351C79D5059CD639</key>
+		<key>E52DB62D95570F712DCD262B9EB359B6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DFA9C95499E06087ADA45DC6AEE5FDF9</key>
+		<key>E79B969C3B52AAD9B92FDE97C350BB86</key>
 		<dict>
 			<key>primary</key>
 			<true/>

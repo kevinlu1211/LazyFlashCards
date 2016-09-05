@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '13BEF6475DCFC3065DA21694'
+               BlueprintIdentifier = '59A6B0A088AEA475376258D6'
                BlueprintName = 'TZStackView'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'TZStackView.framework'>

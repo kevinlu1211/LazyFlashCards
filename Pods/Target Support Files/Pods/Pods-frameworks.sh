@@ -86,8 +86,8 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods/AEAccordion.framework"
   install_framework "Pods/AEXibceptionView.framework"
-  install_framework "Pods/CKWaveCollectionViewTransition.framework"
   install_framework "Pods/HidingNavigationBar.framework"
+  install_framework "Pods/IBAnimatable.framework"
   install_framework "Pods/JOEmojiableBtn.framework"
   install_framework "Pods/Koloda.framework"
   install_framework "Pods/LiquidFloatingActionButton.framework"
@@ -102,8 +102,8 @@ fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods/AEAccordion.framework"
   install_framework "Pods/AEXibceptionView.framework"
-  install_framework "Pods/CKWaveCollectionViewTransition.framework"
   install_framework "Pods/HidingNavigationBar.framework"
+  install_framework "Pods/IBAnimatable.framework"
   install_framework "Pods/JOEmojiableBtn.framework"
   install_framework "Pods/Koloda.framework"
   install_framework "Pods/LiquidFloatingActionButton.framework"

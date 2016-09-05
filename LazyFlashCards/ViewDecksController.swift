@@ -120,7 +120,7 @@ extension ViewDecksController {
         
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! DeckTableViewCell
         cell.selectionStyle = UITableViewCellSelectionStyle.None
-        cell.headerView.deckNameLabel.text = decks[indexPath.row].name
+        cell.headerView.titleLabel.text = decks[indexPath.row].name
         cell.detailView.delegate = self
         return cell
     }
@@ -276,7 +276,7 @@ extension ViewDecksController : LiquidFloatingActionButtonDataSource, LiquidFloa
     }
     
 }
-extension ViewDecksController : DetailViewProtocol {
+extension ViewDecksController : DetailDeckViewDelegate {
     func handleViewDeck(detailDeckView: DetailDeckView) {
         let detailDeckViewController = self.storyboard?.instantiateViewControllerWithIdentifier("DetailDeckViewController") as! DetailDeckViewController
         let indexPath = tableView.indexPathForCell(detailDeckView.getParentTableViewCell())
@@ -296,6 +296,22 @@ extension ViewDecksController : DetailViewProtocol {
         }
 
         self.navigationController!.pushViewController(testViewController, animated: true)
+    }
+    
+    func handleDelete(detailDeckView: DetailDeckView) {
+        let indexPath = tableView.indexPathForCell(detailDeckView.getParentTableViewCell())
+        if let indexPath = indexPath {
+            let deck = decks[indexPath.row]
+            deck.flashCards = nil
+            
+            decks.removeAtIndex(indexPath.row)
+            
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            
+            sharedContext.deleteObject(deck)
+            CoreDataStackManager.sharedInstance().saveContext()
+        }
+
     }
 }
 

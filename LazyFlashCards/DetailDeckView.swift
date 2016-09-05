@@ -11,7 +11,7 @@ import AEXibceptionView
 import AEAccordion
 
 class DetailDeckView: AEXibceptionView {
-    var delegate : ViewDecksController?
+    var delegate : DetailDeckViewDelegate?
 
     // MARK: - Outlets
     @IBAction func handleViewDeck(sender: AnyObject) {
@@ -20,12 +20,17 @@ class DetailDeckView: AEXibceptionView {
     @IBAction func handleTest(sender: AnyObject) {
         delegate?.handleTest(self)
     }
+    @IBAction func handleDelete(sender: AnyObject) {
+        delegate?.handleDelete(self)
+
+    }
     
 }
 
-protocol DetailViewProtocol : class {
+protocol DetailDeckViewDelegate : class {
     func handleViewDeck(detailDeckView : DetailDeckView)
     func handleTest(detailDeckView : DetailDeckView)
+    func handleDelete(detailDeckView : DetailDeckView)
 }
 
 extension DetailDeckView {

@@ -9,7 +9,6 @@
 ---
 
 ## TODO
-  Priority
 
   1. Create the ViewController for Testing the users in NestedCardView branch
     * ~~Read about XIB files~~ 1/9/16
