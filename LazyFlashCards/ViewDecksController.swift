@@ -299,18 +299,30 @@ extension ViewDecksController : DetailDeckViewDelegate {
     }
     
     func handleDelete(detailDeckView: DetailDeckView) {
-        let indexPath = tableView.indexPathForCell(detailDeckView.getParentTableViewCell())
-        if let indexPath = indexPath {
-            let deck = decks[indexPath.row]
-            deck.flashCards = nil
-            
-            decks.removeAtIndex(indexPath.row)
-            
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-            
-            sharedContext.deleteObject(deck)
-            CoreDataStackManager.sharedInstance().saveContext()
-        }
+        
+        let deleteDeckViewController = DeleteDeckViewController(nibName: "DeleteDeckViewController", bundle: nil)
+        let popup = PopupDialog(viewController: deleteDeckViewController, transitionStyle: .BounceDown, buttonAlignment: .Horizontal, gestureDismissal: true)
+        presentViewController(popup, animated: true, completion: nil)
+        
+        
+        
+//        
+//        
+//        
+//        let indexPath = tableView.indexPathForCell(detailDeckView.getParentTableViewCell())
+//        if let indexPath = indexPath {
+//            // Get the deck that is to be deleted
+//            let deck = decks[indexPath.row]
+//            
+//            // Update data source and table
+//            decks.removeAtIndex(indexPath.row)
+//            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+//            
+//            // Delete flashCard instance by setting it to nil
+//            deck.flashCards = nil
+//            sharedContext.deleteObject(deck)
+//            CoreDataStackManager.sharedInstance().saveContext()
+//        }
 
     }
 }

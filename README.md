@@ -19,4 +19,7 @@
   2. ~~Figure a way out to determine the language in the phrase text field when adding the card, can't use NSLinguisticTagger as the phrase term is too short. Maybe determine by UTF8 encoding via dataUsingEncoding(NSUTF8StringEncoding) as English letters in UTF8 are only integers whereas in Chinese there are also letters~~ 4/9/16 Ending up using a hacky way to solve it via CFStringTransform not extendable 
   3. Find a colour scheme for the app
   4. Create the delete buttons for the Deck and Card View Controllers in CreateButtons branch
+    * ~~Delete button for cards~~ 5/9/16
+    * ~~Delete button for decks~~ 5/9/16
+    * Use callbacks instead of delegation read [here](https://medium.cobeisfresh.com/why-you-shouldn-t-use-delegates-in-swift-7ef808a7f16b#.wn71g2472) for the popup view controller that has the confirmation message to delete the deck
 
