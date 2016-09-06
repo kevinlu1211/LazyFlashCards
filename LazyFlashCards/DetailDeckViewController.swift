@@ -97,13 +97,21 @@ extension DetailDeckViewController {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        // Setup cell view
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! CardTableViewCell
         cell.selectionStyle = UITableViewCellSelectionStyle.None
-        let fc = flashCards[indexPath.row]
-        cell.headerView.deckNameLabel.text = fc.phrase
-        cell.detailView.phraseLabel.text = fc.phrase
-        cell.detailView.pronunciationLabel.text = fc.pronunciation
-        cell.detailView.definitionTextView.text = fc.definition
+        
+        // Setup cell data
+        let flashCard = flashCards[indexPath.row]
+        cell.headerView.titleLabel.text = flashCard.phrase
+        cell.detailView.phraseLabel.text = flashCard.phrase
+        cell.detailView.pronunciationLabel.text = flashCard.pronunciation
+        cell.detailView.definitionTextView.text = flashCard.definition
+        cell.detailView.definitionTextView.userInteractionEnabled = false
+        // Setup delegate
+        cell.detailView.delegate = self
+        
         return cell
     }
     
@@ -272,5 +280,35 @@ extension DetailDeckViewController : AddCardViewControllerDelegate {
         flashCards.append(flashCard)
         tableView.reloadData()
         
+    }
+}
+
+extension DetailDeckViewController : DetailCardViewDelegate {
+    func handleEditAction(detailCardView: DetailCardView) {
+        print("pressed edit")
+    }
+    func handleDeleteAction(detailCardView: DetailCardView) {
+        print("pressed delete")
+        let indexPath = tableView.indexPathForCell(detailCardView.getParentTableViewCell())
+        if let indexPath = indexPath {
+            let flashCard = flashCards[indexPath.row]
+            
+            // Remove the the flashCard fields from the actors array using the inverse relationship
+            flashCard.phrase = nil
+            flashCard.pronunciation = nil
+            flashCard.definition = nil
+            
+            // Update the data source
+            flashCards.removeAtIndex(indexPath.row)
+            removeFromExpandedIndexPaths(indexPath)
+            
+            // Remove the row from the table
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+            
+            // Remove the movie from the context
+            sharedContext.deleteObject(flashCard)
+            CoreDataStackManager.sharedInstance().saveContext()
+        }
+       
     }
 }

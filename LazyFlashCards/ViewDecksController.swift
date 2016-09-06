@@ -40,22 +40,16 @@ class ViewDecksController: UIViewController, UITableViewDataSource, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Decks"
+        
         // Setup Tab
-        
-      
-
-
-        
-      
         tableViewSetup()
         expandFirstCell()
         liquidButtonSetup()
         decks = fetchAllDecks()
+        
         if let navController = navigationController {
             styleNavigationController(navController)
         }
-//        hidingNavBarManager?.delegate = self
-
 
     }
 
@@ -68,7 +62,7 @@ class ViewDecksController: UIViewController, UITableViewDataSource, UITableViewD
 
 }
 
-// MARK: -Core Data
+// MARK: - Core Data
 
 extension ViewDecksController {
     func fetchAllDecks() -> [Deck] {
@@ -120,7 +114,7 @@ extension ViewDecksController {
         
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! DeckTableViewCell
         cell.selectionStyle = UITableViewCellSelectionStyle.None
-        cell.headerView.deckNameLabel.text = decks[indexPath.row].name
+        cell.headerView.titleLabel.text = decks[indexPath.row].name
         cell.detailView.delegate = self
         return cell
     }
@@ -276,7 +270,7 @@ extension ViewDecksController : LiquidFloatingActionButtonDataSource, LiquidFloa
     }
     
 }
-extension ViewDecksController : DetailViewProtocol {
+extension ViewDecksController : DetailDeckViewDelegate {
     func handleViewDeck(detailDeckView: DetailDeckView) {
         let detailDeckViewController = self.storyboard?.instantiateViewControllerWithIdentifier("DetailDeckViewController") as! DetailDeckViewController
         let indexPath = tableView.indexPathForCell(detailDeckView.getParentTableViewCell())
@@ -297,7 +291,47 @@ extension ViewDecksController : DetailViewProtocol {
 
         self.navigationController!.pushViewController(testViewController, animated: true)
     }
+    
+    func handleDelete(detailDeckView: DetailDeckView) {
+        // Setup the delete deck view controller
+        let deleteDeckViewController = DeleteDeckViewController(nibName: "DeleteDeckViewController", bundle: nil)
+        let indexPathToBeDeleted = tableView.indexPathForCell(detailDeckView.getParentTableViewCell())
+        
+        // Tell the delete view controller which index path is to be deleted since we only have parameter visibility of detailDeckView
+        deleteDeckViewController.indexPathToBeDeleted = indexPathToBeDeleted
+        
+        let popup = PopupDialog(viewController: deleteDeckViewController, transitionStyle: .BounceDown, buttonAlignment: .Horizontal, gestureDismissal: true)
+        presentViewController(popup, animated: true, completion: nil)
+        
+        deleteDeckViewController.deleteDeck = deleteDeckHandler
+        
+        
+    }
+    
+    func deleteDeckHandler(shouldDelete: Bool, indexPathToBeDeleted : NSIndexPath) {
+        if shouldDelete {
+        
+            // Get the deck that is to be deleted
+            let deck = decks[indexPathToBeDeleted.row]
+            
+            // Update data source and table
+            decks.removeAtIndex(indexPathToBeDeleted.row)
+            tableView.deleteRowsAtIndexPaths([indexPathToBeDeleted], withRowAnimation: .Fade)
+            
+            // Delete flashCard instance by setting it to nil
+            deck.flashCards = nil
+            sharedContext.deleteObject(deck)
+            CoreDataStackManager.sharedInstance().saveContext()
+        }
+        
+        self.dismissViewControllerAnimated(false, completion: nil)
+
+    }
+    
+
+
 }
+
 
 extension ViewDecksController : AddDeckViewControllerDelegate {
     func handleAddDeck(deckName : String) {

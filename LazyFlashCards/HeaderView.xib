@@ -8,8 +8,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeaderView" customModule="LazyFlashCards" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="6Ep-Z6-g8T"/>
-                <outlet property="deckNameLabel" destination="xVn-Vd-cKo" id="0VW-ZP-xjG"/>
                 <outlet property="imageView" destination="fb4-3A-ox8" id="efd-7G-jwv"/>
+                <outlet property="titleLabel" destination="xVn-Vd-cKo" id="9hI-TF-10l"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

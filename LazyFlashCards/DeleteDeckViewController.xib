@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DeleteDeckViewController" customModule="LazyFlashCards" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="iN0-l3-epB" id="Cx2-ud-MkI"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="100"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ud5-sY-dm1">
+                    <rect key="frame" x="0.0" y="0.0" width="300" height="100"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirmation to delete deck" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EDw-KE-eEc">
+                            <rect key="frame" x="43" y="8" width="213" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="deU-xG-tu7" customClass="SwiftyButton" customModule="SwiftyButton">
+                            <rect key="frame" x="172" y="46" width="120" height="46"/>
+                            <state key="normal" title="No">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                    <color key="value" red="0.082232492830000004" green="0.84440020319999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                    <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="highlightedColor">
+                                    <color key="value" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="buttonPressDepth">
+                                    <real key="value" value="0.0"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="noButton:" destination="-1" eventType="touchUpInside" id="Wrh-fa-9oJ"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yi2-4A-lcr" customClass="SwiftyButton" customModule="SwiftyButton">
+                            <rect key="frame" x="8" y="46" width="120" height="46"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="46" id="bQX-eE-iz1"/>
+                                <constraint firstAttribute="width" constant="120" id="yjg-7f-8RN"/>
+                            </constraints>
+                            <state key="normal" title="Yes">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                    <color key="value" red="0.082232492830000004" green="0.84440020319999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                    <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="highlightedColor">
+                                    <color key="value" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="buttonPressDepth">
+                                    <real key="value" value="0.0"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="yesButton:" destination="-1" eventType="touchUpInside" id="3zd-ZS-fXj"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="deU-xG-tu7" secondAttribute="bottom" constant="8" id="EKi-9O-Bly"/>
+                        <constraint firstAttribute="bottom" secondItem="Yi2-4A-lcr" secondAttribute="bottom" constant="8" id="Jwq-Rd-tBw"/>
+                        <constraint firstAttribute="height" constant="100" id="LlQ-PS-z2F"/>
+                        <constraint firstAttribute="trailing" secondItem="deU-xG-tu7" secondAttribute="trailing" constant="8" id="Q5b-Ke-nb9"/>
+                        <constraint firstItem="Yi2-4A-lcr" firstAttribute="leading" secondItem="ud5-sY-dm1" secondAttribute="leading" constant="8" id="RZe-bH-ubH"/>
+                        <constraint firstAttribute="width" constant="300" id="Urc-Oy-OmA"/>
+                        <constraint firstItem="Yi2-4A-lcr" firstAttribute="width" secondItem="deU-xG-tu7" secondAttribute="width" id="X9d-FY-oyq"/>
+                        <constraint firstItem="deU-xG-tu7" firstAttribute="leading" secondItem="Yi2-4A-lcr" secondAttribute="trailing" constant="44" id="ZVB-Zj-K2i"/>
+                        <constraint firstItem="Yi2-4A-lcr" firstAttribute="height" secondItem="deU-xG-tu7" secondAttribute="height" id="Zuw-Nl-cBM"/>
+                        <constraint firstItem="EDw-KE-eEc" firstAttribute="centerX" secondItem="ud5-sY-dm1" secondAttribute="centerX" id="dgQ-of-ZWW"/>
+                        <constraint firstItem="EDw-KE-eEc" firstAttribute="top" secondItem="ud5-sY-dm1" secondAttribute="top" constant="8" id="eeS-n2-pQO"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="ud5-sY-dm1" secondAttribute="bottom" id="DHY-UL-jKT"/>
+                <constraint firstItem="ud5-sY-dm1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="R6s-yA-oB8"/>
+                <constraint firstItem="ud5-sY-dm1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="hma-ql-PFv"/>
+                <constraint firstAttribute="trailing" secondItem="ud5-sY-dm1" secondAttribute="trailing" id="l6G-IX-KEm"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="525" y="27"/>
+        </view>
+    </objects>
+</document>

@@ -21,6 +21,8 @@
 		193383F51D72736A00CCF703 /* PearsonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193383F31D72736A00CCF703 /* PearsonData.swift */; };
 		193383F81D72737C00CCF703 /* MDBGScraper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193383F61D72737C00CCF703 /* MDBGScraper.swift */; };
 		193383F91D72737C00CCF703 /* MDBGData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193383F71D72737C00CCF703 /* MDBGData.swift */; };
+		1964D9121D7CFC7A004CA72F /* DeleteDeckViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1964D9111D7CFC7A004CA72F /* DeleteDeckViewController.xib */; };
+		1964D9181D7CFDD1004CA72F /* DeleteDeckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1964D9171D7CFDD1004CA72F /* DeleteDeckViewController.swift */; };
 		19B4E2CE1D7669AF0047ED50 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B4E2CD1D7669AF0047ED50 /* TestViewController.swift */; };
 		19B4E2D11D76721A0047ED50 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19B4E2D01D76721A0047ED50 /* CardView.xib */; };
 		19B4E2D31D7672AA0047ED50 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B4E2D21D7672AA0047ED50 /* CardView.swift */; };
@@ -94,6 +96,8 @@
 		193383F31D72736A00CCF703 /* PearsonData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PearsonData.swift; sourceTree = "<group>"; };
 		193383F61D72737C00CCF703 /* MDBGScraper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDBGScraper.swift; sourceTree = "<group>"; };
 		193383F71D72737C00CCF703 /* MDBGData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDBGData.swift; sourceTree = "<group>"; };
+		1964D9111D7CFC7A004CA72F /* DeleteDeckViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeleteDeckViewController.xib; sourceTree = "<group>"; };
+		1964D9171D7CFDD1004CA72F /* DeleteDeckViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteDeckViewController.swift; sourceTree = "<group>"; };
 		19B4E2CD1D7669AF0047ED50 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		19B4E2D01D76721A0047ED50 /* CardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
 		19B4E2D21D7672AA0047ED50 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -262,8 +266,8 @@
 				19B8B12E1D7040B6002F3FEC /* AppDelegate.swift */,
 				19B8B1921D711B64002F3FEC /* CoreData */,
 				19B8B1851D7046AF002F3FEC /* TFHpple */,
-				19B4E2CF1D7669B80047ED50 /* TestViewController */,
 				19B8B1761D7043EA002F3FEC /* DeckViewController */,
+				19B4E2CF1D7669B80047ED50 /* TestViewController */,
 				19B8B1971D712123002F3FEC /* DetailDeckViewController */,
 				19B8B1381D7040B6002F3FEC /* Assets.xcassets */,
 				19B4E2D81D7792DC0047ED50 /* Fonts */,
@@ -314,6 +318,8 @@
 				19B8B16F1D7043E4002F3FEC /* LiquidButtonHelper.swift */,
 				19B8B1701D7043E4002F3FEC /* AddDeckViewController.swift */,
 				19B8B1711D7043E4002F3FEC /* AddDeckViewController.xib */,
+				1964D9171D7CFDD1004CA72F /* DeleteDeckViewController.swift */,
+				1964D9111D7CFC7A004CA72F /* DeleteDeckViewController.xib */,
 				19B8B16D1D704268002F3FEC /* ExpandingTableViewCell */,
 			);
 			name = DeckViewController;
@@ -487,6 +493,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				191C41011D73F93F0003AED9 /* DetailCardView.xib in Resources */,
+				1964D9121D7CFC7A004CA72F /* DeleteDeckViewController.xib in Resources */,
 				19B8B1781D704402002F3FEC /* Main.storyboard in Resources */,
 				19B4E2DC1D77CA1B0047ED50 /* CardBack.xib in Resources */,
 				19B4E2D71D7792D40047ED50 /* FontAwesome.otf in Resources */,
@@ -572,6 +579,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1964D9181D7CFDD1004CA72F /* DeleteDeckViewController.swift in Sources */,
 				193383F91D72737C00CCF703 /* MDBGData.swift in Sources */,
 				19B8B18F1D711B41002F3FEC /* Deck.swift in Sources */,
 				19B4E2E01D77CA690047ED50 /* CardBack.swift in Sources */,
