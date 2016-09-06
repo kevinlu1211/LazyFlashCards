@@ -16,16 +16,16 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="B4q-MD-EnD">
-                    <rect key="frame" x="161" y="66" width="279" height="18"/>
+                    <rect key="frame" x="161" y="55" width="279" height="40"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gch-jp-8FZ" customClass="SwiftyButton" customModule="SwiftyButton">
-                            <rect key="frame" x="0.0" y="0.0" width="73" height="18"/>
+                            <rect key="frame" x="0.0" y="0.0" width="73" height="40"/>
                             <state key="normal" title="View Deck">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </state>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="color" keyPath="highlightedColor">
-                                    <color key="value" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="value" red="1" green="0.75945960589999995" blue="0.22198696900000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
                                     <color key="value" red="1" green="0.86573428801827546" blue="0.022031834200903933" alpha="0.0" colorSpace="calibratedRGB"/>
@@ -42,13 +42,13 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gRq-Jl-mVs" customClass="SwiftyButton" customModule="SwiftyButton">
-                            <rect key="frame" x="103" y="0.0" width="73" height="18"/>
+                            <rect key="frame" x="103" y="0.0" width="73" height="40"/>
                             <state key="normal" title="Test">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </state>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="color" keyPath="highlightedColor">
-                                    <color key="value" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="value" red="1" green="0.75945960589999995" blue="0.22198696900000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
                                     <color key="value" red="1" green="0.86573428799999996" blue="0.022031834199999999" alpha="0.0" colorSpace="calibratedRGB"/>
@@ -65,13 +65,13 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nNL-fq-lRi" customClass="SwiftyButton" customModule="SwiftyButton">
-                            <rect key="frame" x="206" y="0.0" width="73" height="18"/>
+                            <rect key="frame" x="206" y="0.0" width="73" height="40"/>
                             <state key="normal" title="Delete">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </state>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="color" keyPath="highlightedColor">
-                                    <color key="value" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="value" red="1" green="0.75945960589999995" blue="0.22198696900000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
                                     <color key="value" red="1" green="0.86573428799999996" blue="0.022031834199999999" alpha="0.0" colorSpace="calibratedRGB"/>
@@ -88,6 +88,9 @@
                             </connections>
                         </button>
                     </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="lDg-BB-WAM"/>
+                    </constraints>
                 </stackView>
             </subviews>
             <color key="backgroundColor" red="1" green="0.86573428801827546" blue="0.022031834200903933" alpha="1" colorSpace="calibratedRGB"/>

@@ -9,34 +9,20 @@
 import UIKit
 
 class DeleteDeckViewController: UIViewController {
-
-    var deleteDeck : ((Bool) -> ())?
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    var deleteDeck : ((shouldDelete : Bool, indexPathToBeDeleted : NSIndexPath) -> ())?
+    var indexPathToBeDeleted : NSIndexPath?
     
     @IBAction func yesButton(sender: AnyObject) {
-        deleteDeck!(true)
+        if let indexPathToBeDeleted = self.indexPathToBeDeleted {
+            deleteDeck!(shouldDelete: true, indexPathToBeDeleted: indexPathToBeDeleted)
+
+        }
     }
 
     @IBAction func noButton(sender: AnyObject) {
-        deleteDeck!(false)  
+        if let indexPathToBeDeleted = self.indexPathToBeDeleted {
+            deleteDeck!(shouldDelete: false, indexPathToBeDeleted: indexPathToBeDeleted)
+            
+        }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
