@@ -317,6 +317,7 @@ extension ViewDecksController : DetailDeckViewDelegate {
             // Update data source and table
             decks.removeAtIndex(indexPathToBeDeleted.row)
             tableView.deleteRowsAtIndexPaths([indexPathToBeDeleted], withRowAnimation: .Fade)
+            removeFromExpandedIndexPaths(indexPathToBeDeleted)
             
             // Delete flashCard instance by setting it to nil
             deck.flashCards = nil

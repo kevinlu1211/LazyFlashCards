@@ -19,7 +19,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="300" height="100"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirmation to delete deck" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EDw-KE-eEc">
-                            <rect key="frame" x="43" y="8" width="213" height="21"/>
+                            <rect key="frame" x="43" y="12" width="213" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
@@ -93,7 +93,7 @@
                         <constraint firstItem="deU-xG-tu7" firstAttribute="leading" secondItem="Yi2-4A-lcr" secondAttribute="trailing" constant="44" id="ZVB-Zj-K2i"/>
                         <constraint firstItem="Yi2-4A-lcr" firstAttribute="height" secondItem="deU-xG-tu7" secondAttribute="height" id="Zuw-Nl-cBM"/>
                         <constraint firstItem="EDw-KE-eEc" firstAttribute="centerX" secondItem="ud5-sY-dm1" secondAttribute="centerX" id="dgQ-of-ZWW"/>
-                        <constraint firstItem="EDw-KE-eEc" firstAttribute="top" secondItem="ud5-sY-dm1" secondAttribute="top" constant="8" id="eeS-n2-pQO"/>
+                        <constraint firstItem="EDw-KE-eEc" firstAttribute="top" secondItem="ud5-sY-dm1" secondAttribute="top" constant="12" id="eeS-n2-pQO"/>
                     </constraints>
                 </view>
             </subviews>
