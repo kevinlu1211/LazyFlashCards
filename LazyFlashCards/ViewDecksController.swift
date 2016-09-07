@@ -53,7 +53,7 @@ class ViewDecksController: UIViewController, UITableViewDataSource, UITableViewD
     }
 
     func styleNavigationController(navigationController: UINavigationController){
-        navigationController.navigationBar.translucent = true
+        navigationController.navigationBar.translucent = false
         navigationController.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         navigationController.navigationBar.tintColor = UIColor.whiteColor()
         navigationController.navigationBar.barTintColor = BACKGROUND_COLOR
