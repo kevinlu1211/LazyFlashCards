@@ -36,10 +36,6 @@ class Deck : NSManagedObject {
 
     }
     
-    func shuffleDeck() {
-        self.useableFlashCards?.shuffle((self.useableFlashCards?.count)!)
-    }
-    
     func getCard(index : Int) -> FlashCard {
         return self.useableFlashCards![index]
     }

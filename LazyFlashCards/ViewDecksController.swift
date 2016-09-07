@@ -22,7 +22,7 @@ class ViewDecksController: UIViewController, UITableViewDataSource, UITableViewD
     private let ADD_DECK_BUTTON_INDEX = 0
     var liquidFloatingCells: [LiquidFloatingCell] = []
     var tableView: UITableView!
-    
+    private let BACKGROUND_COLOR : UIColor = UIColor(red: 0/255, green: 31/255, blue: 63/255, alpha: 1)
     // Core Data
     private var decks = [Deck]()
     lazy var sharedContext = {
@@ -50,14 +50,13 @@ class ViewDecksController: UIViewController, UITableViewDataSource, UITableViewD
         if let navController = navigationController {
             styleNavigationController(navController)
         }
-
     }
 
     func styleNavigationController(navigationController: UINavigationController){
         navigationController.navigationBar.translucent = true
         navigationController.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         navigationController.navigationBar.tintColor = UIColor.whiteColor()
-        navigationController.navigationBar.barTintColor = UIColor(red: 41/255, green: 141/255, blue: 250/255, alpha: 1)
+        navigationController.navigationBar.barTintColor = BACKGROUND_COLOR
     }
 
 }
@@ -93,6 +92,7 @@ extension ViewDecksController {
         self.tableView.separatorStyle = .None
         registerCell()
         tableView.reloadData()
+        tableView.backgroundColor = BACKGROUND_COLOR
     }
     func registerCell() {
         let cellNib = UINib(nibName: cellIdentifier, bundle: nil)
@@ -113,9 +113,12 @@ extension ViewDecksController {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! DeckTableViewCell
+        cell.backgroundColor = BACKGROUND_COLOR
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         cell.headerView.titleLabel.text = decks[indexPath.row].name
+        cell.headerView.contentView.layer.cornerRadius = 10
         cell.detailView.delegate = self
+        cell.detailView.contentView.layer.cornerRadius = 10
         return cell
     }
     

@@ -19,27 +19,54 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wWO-hm-hXQ" customClass="KolodaView" customModule="Koloda">
-                                <rect key="frame" x="70" y="100" width="460" height="400"/>
+                                <rect key="frame" x="95" y="150" width="410" height="300"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="400" id="drH-f1-fW8"/>
+                                    <constraint firstAttribute="height" constant="300" id="drH-f1-fW8"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n9q-px-FgZ" customClass="SwiftyButton" customModule="SwiftyButton">
+                                <rect key="frame" x="268" y="268" width="64" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="YAd-Sz-OOS"/>
+                                    <constraint firstAttribute="height" constant="64" id="xPO-Lx-jEJ"/>
+                                </constraints>
+                                <state key="normal" title="Restart">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                        <color key="value" red="0.082232492830000004" green="0.84440020319999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="buttonPressDepth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="restartButton:" destination="uCd-bf-je7" eventType="touchUpInside" id="TZh-vm-FNl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wWO-hm-hXQ" firstAttribute="leading" secondItem="wma-Fi-ZlS" secondAttribute="leadingMargin" constant="50" id="FTc-qz-jD5"/>
+                            <constraint firstItem="wWO-hm-hXQ" firstAttribute="leading" secondItem="wma-Fi-ZlS" secondAttribute="leadingMargin" constant="75" id="FTc-qz-jD5"/>
                             <constraint firstItem="wWO-hm-hXQ" firstAttribute="centerX" secondItem="wma-Fi-ZlS" secondAttribute="centerX" id="PWz-pU-bTK"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="wWO-hm-hXQ" secondAttribute="trailing" constant="50" id="uf5-YX-U1b"/>
+                            <constraint firstItem="n9q-px-FgZ" firstAttribute="centerX" secondItem="wWO-hm-hXQ" secondAttribute="centerX" id="ejD-be-Zsu"/>
+                            <constraint firstItem="n9q-px-FgZ" firstAttribute="centerY" secondItem="wWO-hm-hXQ" secondAttribute="centerY" id="lL3-gn-Iam"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wWO-hm-hXQ" secondAttribute="trailing" constant="75" id="uf5-YX-U1b"/>
                             <constraint firstItem="wWO-hm-hXQ" firstAttribute="centerY" secondItem="wma-Fi-ZlS" secondAttribute="centerY" id="yTM-ps-4H8"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="deckView" destination="wWO-hm-hXQ" id="Qbk-G0-5sv"/>
+                        <outlet property="restartButton" destination="n9q-px-FgZ" id="DYV-Fc-ZY6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JG6-gY-5Ka" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1386" y="-209"/>
+            <point key="canvasLocation" x="1747" y="-163"/>
         </scene>
         <!--View Decks Controller-->
         <scene sceneID="HPx-oj-P3W">

@@ -297,7 +297,7 @@
 			path = LazyFlashCardsUITests;
 			sourceTree = "<group>";
 		};
-		19B8B16D1D704268002F3FEC /* ExpandingTableViewCell */ = {
+		19B8B16D1D704268002F3FEC /* ExpandingDeckViewCell */ = {
 			isa = PBXGroup;
 			children = (
 				19B8B15F1D704258002F3FEC /* HeaderView.swift */,
@@ -308,7 +308,7 @@
 				19B8B1641D704258002F3FEC /* DeckTableViewCell.swift */,
 				19B8B1651D704258002F3FEC /* DeckTableViewCell.xib */,
 			);
-			name = ExpandingTableViewCell;
+			name = ExpandingDeckViewCell;
 			sourceTree = "<group>";
 		};
 		19B8B1761D7043EA002F3FEC /* DeckViewController */ = {
@@ -320,7 +320,7 @@
 				19B8B1711D7043E4002F3FEC /* AddDeckViewController.xib */,
 				1964D9171D7CFDD1004CA72F /* DeleteDeckViewController.swift */,
 				1964D9111D7CFC7A004CA72F /* DeleteDeckViewController.xib */,
-				19B8B16D1D704268002F3FEC /* ExpandingTableViewCell */,
+				19B8B16D1D704268002F3FEC /* ExpandingDeckViewCell */,
 			);
 			name = DeckViewController;
 			sourceTree = "<group>";

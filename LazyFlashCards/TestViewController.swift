@@ -8,6 +8,7 @@
 
 import UIKit
 import Koloda
+import SwiftyButton
 
 class TestViewController: UIViewController {
 
@@ -16,14 +17,18 @@ class TestViewController: UIViewController {
     var deck : Deck!
     var flashCards : [FlashCard] = []
     var swipedLeftFlashCards : [FlashCard] = []
+    var initialCardNumber : Int!
+    @IBOutlet weak var restartButton: SwiftyButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         // Do any additional setup after loading the view.
-        setupDeck()
-        deckView.dataSource = self
-        deckView.delegate = self
+        setupDataSource()
+        setupDeckView()
+        setupButton()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,11 +37,30 @@ class TestViewController: UIViewController {
     }
     
 
-    func setupDeck() {
-        deck.createFlashCards()
-        if let useableFlashCards = deck.useableFlashCards {
-            flashCards = useableFlashCards
+    func setupDataSource() {
+        if let flashCards = deck.useableFlashCards {
+            self.flashCards = flashCards
         }
+        else {
+            deck.createFlashCards()
+            if let flashCards = deck.useableFlashCards {
+                self.flashCards = flashCards
+            }
+        }
+        
+        initialCardNumber = flashCards.count
+        print("shuffling flash cards")
+        flashCards.shuffle(initialCardNumber)
+    }
+    
+    func setupDeckView() {
+        deckView.delegate = self
+        deckView.dataSource = self
+    }
+    
+    func setupButton() {
+        restartButton.hidden = true
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -46,10 +70,29 @@ class TestViewController: UIViewController {
 //        print("viewDidLayoutSubviews cardView.frame after reloading data is: \(deckView.frame)")
     }
 
+    @IBAction func restartButton(sender: AnyObject) {
+        setupDataSource()
+        deckView.resetCurrentCardIndex()
+        restartButton.hidden = true
+    }
 }
 extension TestViewController: KolodaViewDelegate {
     func kolodaDidRunOutOfCards(koloda: KolodaView) {
-        // TODO: Reset flashCards
+        // Before restart, clear away the old data
+        flashCards.removeFirst(initialCardNumber)
+        
+        // Setup the new number of cards in this iteration of testing
+        initialCardNumber = flashCards.count
+        
+        // Shuffle the cards
+        flashCards.shuffle(initialCardNumber)
+        
+        if (initialCardNumber == 0) {
+            restartButton.hidden = false
+        }
+        else {
+            deckView.resetCurrentCardIndex()
+        }
         
     }
     
@@ -59,9 +102,18 @@ extension TestViewController: KolodaViewDelegate {
     
     func koloda(koloda: KolodaView, didSwipeCardAtIndex index: UInt, inDirection direction: SwipeResultDirection) {
         let currentCard = flashCards[Int(index)]
+        
+        for fc in flashCards {
+            print(fc.phrase)
+        }
+        
         if(direction == .Left) {
-            print("swiped card \(index) left ")
-            swipedLeftFlashCards.append(currentCard)
+            print("appending \(currentCard.phrase)")
+            flashCards.append(currentCard)
+            
+            for fc in flashCards {
+                print(fc.phrase)
+            }
 
         }
         else if (direction == .Right) {
@@ -108,6 +160,7 @@ extension TestViewController: KolodaViewDataSource {
 //        view.backgroundColor = UIColor.blueColor()
         let view = CardView(frame : koloda.bounds)
         let card = flashCards[Int(index)]
+        
         // Setup card front
         view.front.alpha = 1
         view.front.phraseLabel.text = card.phrase
@@ -118,6 +171,10 @@ extension TestViewController: KolodaViewDataSource {
         view.back.pronunciationLabel.text = card.pronunciation
         view.back.definitionTextField.text = card.definition
         view.userInteractionEnabled = false
+        
+        // Set view aesthestic
+        view.layer.cornerRadius = 5
+        view.clipsToBounds = true
         
         return view
     }

@@ -29,7 +29,6 @@
                         </constraints>
                     </view>
                 </subviews>
-                <color key="backgroundColor" red="1" green="0.0" blue="0.2147212752211427" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
                     <constraint firstItem="3bT-io-e08" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="0aZ-05-s4e"/>
                     <constraint firstItem="XQh-zO-XCN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="LXu-LC-lAU"/>
@@ -39,7 +38,7 @@
                     <constraint firstAttribute="trailing" secondItem="3bT-io-e08" secondAttribute="trailing" id="zuX-6L-yfX"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" red="1" green="0.28212521773578403" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="detailView" destination="3bT-io-e08" id="08q-cM-aGa"/>
                 <outlet property="headerView" destination="XQh-zO-XCN" id="lRj-vS-INk"/>
