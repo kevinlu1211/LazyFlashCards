@@ -21,6 +21,9 @@ class DeckTableViewCell: AEAccordionTableViewCell {
     }
     @IBOutlet weak var detailView: DetailDeckView!
     
+    // MARK: - Variables 
+    lazy var theme : ThemeStrategy = (UIApplication.sharedApplication().delegate as! AppDelegate).themeStrategy
+
     // MARK: - Override
     
     override func setExpanded(expanded: Bool, animated: Bool) {
@@ -48,6 +51,20 @@ class DeckTableViewCell: AEAccordionTableViewCell {
     private func toggleCell() {
         detailView.hidden = !expanded
         headerView.imageView.transform = expanded ? CGAffineTransformMakeRotation(CGFloat(M_PI)) : CGAffineTransformIdentity
+    }
+    
+    func setup() {
+        // Setup background
+        backgroundColor = theme.getBackgroundColor()
+        selectionStyle = UITableViewCellSelectionStyle.None
+        
+        // Setup header view
+        headerView.contentView.layer.cornerRadius = theme.getCornerRadiusForView()
+        headerView.titleLabel.textColor = theme.getTextColor()
+        headerView.backgroundColor = theme.getHeaderViewColor()
+        
+        detailView.contentView.layer.cornerRadius = theme.getCornerRadiusForView()
+        detailView.contentView.backgroundColor = theme.getDetailViewColor()
     }
     
 }

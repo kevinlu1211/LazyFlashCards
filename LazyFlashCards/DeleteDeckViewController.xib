@@ -7,7 +7,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DeleteDeckViewController" customModule="LazyFlashCards" customModuleProvider="target">
             <connections>
+                <outlet property="noButton" destination="deU-xG-tu7" id="Dp9-S0-OxD"/>
                 <outlet property="view" destination="iN0-l3-epB" id="Cx2-ud-MkI"/>
+                <outlet property="yesButton" destination="Yi2-4A-lcr" id="7eU-co-3Gw"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

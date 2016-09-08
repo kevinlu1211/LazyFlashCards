@@ -22,7 +22,7 @@ class ViewDecksController: UIViewController, UITableViewDataSource, UITableViewD
     private let ADD_DECK_BUTTON_INDEX = 0
     var liquidFloatingCells: [LiquidFloatingCell] = []
     var tableView: UITableView!
-    private let BACKGROUND_COLOR : UIColor = UIColor(red: 0/255, green: 31/255, blue: 63/255, alpha: 1)
+    
     // Core Data
     private var decks = [Deck]()
     lazy var sharedContext = {
@@ -31,6 +31,7 @@ class ViewDecksController: UIViewController, UITableViewDataSource, UITableViewD
     
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
+    lazy var theme : ThemeStrategy = (UIApplication.sharedApplication().delegate as! AppDelegate).themeStrategy
     
     /// Array of `NSIndexPath` objects for all of the expanded cells.
     internal var expandedIndexPaths = [NSIndexPath]()
@@ -40,6 +41,10 @@ class ViewDecksController: UIViewController, UITableViewDataSource, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Decks"
+        
+        // Setup Theme
+//        theme = appDelegate.themeStrategy
+        
         
         // Setup Tab
         tableViewSetup()
@@ -56,7 +61,7 @@ class ViewDecksController: UIViewController, UITableViewDataSource, UITableViewD
         navigationController.navigationBar.translucent = false
         navigationController.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         navigationController.navigationBar.tintColor = UIColor.whiteColor()
-        navigationController.navigationBar.barTintColor = BACKGROUND_COLOR
+        navigationController.navigationBar.barTintColor = theme.getBackgroundColor()
     }
 
 }
@@ -92,7 +97,7 @@ extension ViewDecksController {
         self.tableView.separatorStyle = .None
         registerCell()
         tableView.reloadData()
-        tableView.backgroundColor = BACKGROUND_COLOR
+        tableView.backgroundColor = theme.getBackgroundColor()
     }
     func registerCell() {
         let cellNib = UINib(nibName: cellIdentifier, bundle: nil)
@@ -113,12 +118,13 @@ extension ViewDecksController {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! DeckTableViewCell
-        cell.backgroundColor = BACKGROUND_COLOR
-        cell.selectionStyle = UITableViewCellSelectionStyle.None
+      
+        
+        // Setup header view
         cell.headerView.titleLabel.text = decks[indexPath.row].name
-        cell.headerView.contentView.layer.cornerRadius = 10
         cell.detailView.delegate = self
-        cell.detailView.contentView.layer.cornerRadius = 10
+        
+        cell.setup()
         return cell
     }
     
@@ -237,14 +243,14 @@ extension ViewDecksController : LiquidFloatingActionButtonDataSource, LiquidFloa
         
         // Setup the frame 
         
-//        let statusBarHeight = UIApplication.sharedApplication().statusBarFrame.size.height
-//        let navigationBarHeight = self.navigationController!.navigationBar.frame.height
+        let statusBarHeight = UIApplication.sharedApplication().statusBarFrame.size.height
+        let navigationBarHeight = self.navigationController!.navigationBar.frame.height
         let buttonHeight = CGFloat(56)
         let floatingFrame = CGRect(x: 0, y: 0 , width: buttonHeight, height: buttonHeight)
         let bottomRightButton = createButton(floatingFrame, .Up)
         self.view.addSubview(bottomRightButton)
 //        bottomRightButton.center = CGPointMake(self.view.bounds.width - 56 - 16, self.view.bounds.height - 56 - 16 - statusBarHeight - navigationBarHeight)
-        bottomRightButton.center = CGPointMake(self.view.bounds.width - buttonHeight, self.view.bounds.height - buttonHeight)
+        bottomRightButton.center = CGPointMake(self.view.bounds.width - buttonHeight, self.view.bounds.height - buttonHeight - statusBarHeight - navigationBarHeight)
     
     }
     

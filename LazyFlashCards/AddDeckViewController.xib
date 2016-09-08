@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddDeckViewController" customModule="LazyFlashCards" customModuleProvider="target">
             <connections>
+                <outlet property="addDeckButton" destination="wCl-qH-TcJ" id="zvu-7Z-S5B"/>
                 <outlet property="deckNameTextField" destination="uX5-ZV-32J" id="dsI-dw-TTx"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

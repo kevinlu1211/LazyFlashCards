@@ -7,11 +7,22 @@
 //
 
 import UIKit
+import SwiftyButton
 
 class DeleteDeckViewController: UIViewController {
     var deleteDeck : ((shouldDelete : Bool, indexPathToBeDeleted : NSIndexPath) -> ())?
     var indexPathToBeDeleted : NSIndexPath?
     
+    @IBOutlet weak var yesButton: SwiftyButton!
+    @IBOutlet weak var noButton: SwiftyButton!
+    
+    lazy var theme : ThemeStrategy = (UIApplication.sharedApplication().delegate as! AppDelegate).themeStrategy
+    
+
+    override func viewDidLoad() {
+        setupButton(yesButton)
+        setupButton(noButton)
+    }
     @IBAction func yesButton(sender: AnyObject) {
         if let indexPathToBeDeleted = self.indexPathToBeDeleted {
             deleteDeck!(shouldDelete: true, indexPathToBeDeleted: indexPathToBeDeleted)
@@ -25,4 +36,10 @@ class DeleteDeckViewController: UIViewController {
             
         }
     }
+    
+    func setupButton(swiftyButton : SwiftyButton) {
+        swiftyButton.buttonColor = theme.getBackgroundColor()
+        swiftyButton.titleLabel?.textColor = theme.getTextColor()
+    }
+
 }

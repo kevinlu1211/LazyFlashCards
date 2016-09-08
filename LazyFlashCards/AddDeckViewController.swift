@@ -8,21 +8,38 @@
 
 import UIKit
 import SkyFloatingLabelTextField
+import SwiftyButton
 
 class AddDeckViewController: UIViewController {
     
     @IBOutlet weak var deckNameTextField: SkyFloatingLabelTextFieldWithIcon!
+    
+    @IBOutlet weak var addDeckButton: SwiftyButton!
+    
     var delegate : AddDeckViewControllerDelegate?
+
+    lazy var theme : ThemeStrategy = (UIApplication.sharedApplication().delegate as! AppDelegate).themeStrategy
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("AddDeckViewController is loaded")
-        print(self.view.frame)
-        // Do any additional setup after loading the view.
-        deckNameTextField.iconText = "\u{f072}"
+                // Do any additional setup after loading the view.
+        setupTextField()
+        setupButton()
         
-        
-        
+    }
+    
+    func setupTextField() {
+        deckNameTextField.selectedIconColor = theme.getBackgroundColor()
+        deckNameTextField.selectedLineColor = theme.getBackgroundColor()
+        deckNameTextField.selectedTitleColor = theme.getBackgroundColor()
+        deckNameTextField.layer.cornerRadius = theme.getCornerRadiusForButton()
+
+    }
+    
+    func setupButton() {
+        addDeckButton.buttonColor = theme.getBackgroundColor()
+        addDeckButton.titleLabel?.textColor = theme.getTextColor()
     }
 
     override func didReceiveMemoryWarning() {

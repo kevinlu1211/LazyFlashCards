@@ -58,6 +58,10 @@
 		19B8B18F1D711B41002F3FEC /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B8B18E1D711B41002F3FEC /* Deck.swift */; };
 		19B8B1911D711B47002F3FEC /* FlashCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B8B1901D711B47002F3FEC /* FlashCard.swift */; };
 		19B8B1961D712114002F3FEC /* DetailDeckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B8B1951D712114002F3FEC /* DetailDeckViewController.swift */; };
+		19CCB2081D80CC080066AC6F /* ThemeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CCB2071D80CC080066AC6F /* ThemeFactory.swift */; };
+		19CCB20A1D80CD840066AC6F /* ThemeStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CCB2091D80CD840066AC6F /* ThemeStrategy.swift */; };
+		19CCB20C1D80CF880066AC6F /* ThemeStrategyBlue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CCB20B1D80CF880066AC6F /* ThemeStrategyBlue.swift */; };
+		19CCB20E1D80E18D0066AC6F /* ThemeName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CCB20D1D80E18D0066AC6F /* ThemeName.swift */; };
 		19FE17BD1D7BA31000DB79EA /* CardLanguageStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FE17BC1D7BA31000DB79EA /* CardLanguageStrategy.swift */; };
 		BD1CA86C4C183B6EA83D7184 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1747660E56C8847495FB6C6C /* Pods.framework */; };
 /* End PBXBuildFile section */
@@ -143,6 +147,10 @@
 		19B8B18E1D711B41002F3FEC /* Deck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		19B8B1901D711B47002F3FEC /* FlashCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashCard.swift; sourceTree = "<group>"; };
 		19B8B1951D712114002F3FEC /* DetailDeckViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailDeckViewController.swift; sourceTree = "<group>"; };
+		19CCB2071D80CC080066AC6F /* ThemeFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeFactory.swift; sourceTree = "<group>"; };
+		19CCB2091D80CD840066AC6F /* ThemeStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeStrategy.swift; sourceTree = "<group>"; };
+		19CCB20B1D80CF880066AC6F /* ThemeStrategyBlue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeStrategyBlue.swift; sourceTree = "<group>"; };
+		19CCB20D1D80E18D0066AC6F /* ThemeName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeName.swift; sourceTree = "<group>"; };
 		19FE17BC1D7BA31000DB79EA /* CardLanguageStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardLanguageStrategy.swift; sourceTree = "<group>"; };
 		7297621F63D1BF85A3137C0B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -266,6 +274,7 @@
 				19B8B12E1D7040B6002F3FEC /* AppDelegate.swift */,
 				19B8B1921D711B64002F3FEC /* CoreData */,
 				19B8B1851D7046AF002F3FEC /* TFHpple */,
+				19CCB20F1D80E1A80066AC6F /* Theme */,
 				19B8B1761D7043EA002F3FEC /* DeckViewController */,
 				19B4E2CF1D7669B80047ED50 /* TestViewController */,
 				19B8B1971D712123002F3FEC /* DetailDeckViewController */,
@@ -361,6 +370,17 @@
 				193383FC1D7273A200CCF703 /* DetailDeckViewHelper */,
 			);
 			name = DetailDeckViewController;
+			sourceTree = "<group>";
+		};
+		19CCB20F1D80E1A80066AC6F /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				19CCB20D1D80E18D0066AC6F /* ThemeName.swift */,
+				19CCB2071D80CC080066AC6F /* ThemeFactory.swift */,
+				19CCB2091D80CD840066AC6F /* ThemeStrategy.swift */,
+				19CCB20B1D80CF880066AC6F /* ThemeStrategyBlue.swift */,
+			);
+			name = Theme;
 			sourceTree = "<group>";
 		};
 		CA569992AB67256194631FA0 /* Pods */ = {
@@ -592,8 +612,10 @@
 				19263CC81D74FFAC00F0259F /* CardTableViewCell.swift in Sources */,
 				19B8B1741D7043E4002F3FEC /* AddDeckViewController.swift in Sources */,
 				193383F51D72736A00CCF703 /* PearsonData.swift in Sources */,
+				19CCB20E1D80E18D0066AC6F /* ThemeName.swift in Sources */,
 				19B8B1371D7040B6002F3FEC /* LazyFlashCards.xcdatamodeld in Sources */,
 				19B4E2DE1D77CA630047ED50 /* CardFront.swift in Sources */,
+				19CCB2081D80CC080066AC6F /* ThemeFactory.swift in Sources */,
 				19B8B1661D704258002F3FEC /* HeaderView.swift in Sources */,
 				19B8B1671D704258002F3FEC /* HeaderViewDefaultView.swift in Sources */,
 				193383EF1D72735F00CCF703 /* CardLanguageStrategyFactory.swift in Sources */,
@@ -601,6 +623,7 @@
 				19B4E2D31D7672AA0047ED50 /* CardView.swift in Sources */,
 				19B8B1821D704699002F3FEC /* TFHpple.m in Sources */,
 				19B8B1691D704258002F3FEC /* DetailDeckView.swift in Sources */,
+				19CCB20C1D80CF880066AC6F /* ThemeStrategyBlue.swift in Sources */,
 				19B8B12F1D7040B6002F3FEC /* AppDelegate.swift in Sources */,
 				19B8B1911D711B47002F3FEC /* FlashCard.swift in Sources */,
 				19B8B1721D7043E4002F3FEC /* ViewDecksController.swift in Sources */,
@@ -609,6 +632,7 @@
 				19B8B1731D7043E4002F3FEC /* LiquidButtonHelper.swift in Sources */,
 				19B8B1841D704699002F3FEC /* XPathQuery.m in Sources */,
 				193383EB1D713B1B00CCF703 /* UIViewExtensions.swift in Sources */,
+				19CCB20A1D80CD840066AC6F /* ThemeStrategy.swift in Sources */,
 				19B8B1831D704699002F3FEC /* TFHppleElement.m in Sources */,
 				193383F81D72737C00CCF703 /* MDBGScraper.swift in Sources */,
 				193383F41D72736A00CCF703 /* PearsonClient.swift in Sources */,

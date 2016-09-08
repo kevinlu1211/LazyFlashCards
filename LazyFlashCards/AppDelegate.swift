@@ -9,14 +9,23 @@
 import UIKit
 import CoreData
 
+
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    var themeName : ThemeName! {
+        didSet {
+            applicationUpdateThemeStrategy()
+        }
+    }
+    var themeStrategy : ThemeStrategy!
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+
+        // Set the themeName
+        themeName = .Blue
+        
         return true
     }
 
@@ -42,6 +51,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
         CoreDataStackManager.sharedInstance().saveContext()
+    }
+    
+    func applicationUpdateThemeStrategy() {
+        themeStrategy = ThemeFactory.sharedInstance().getStrategy(themeName)
+        print("updated theme strategy")
     }
 
 }
