@@ -14,16 +14,14 @@ class DeckTableViewCell: AEAccordionTableViewCell {
     
     // MARK: - Outlets
     
-    @IBOutlet weak var headerView: HeaderView! {
-        didSet {
-            headerView.imageView.tintColor = UIColor.whiteColor()
-        }
-    }
+    @IBOutlet weak var headerView: HeaderView! 
     @IBOutlet weak var detailView: DetailDeckView!
     
     // MARK: - Variables 
-    lazy var theme : ThemeStrategy = (UIApplication.sharedApplication().delegate as! AppDelegate).themeStrategy
-
+    var theme : ThemeStrategy {
+        return ThemeFactory.sharedInstance().getTheme()
+    }
+    
     // MARK: - Override
     
     override func setExpanded(expanded: Bool, animated: Bool) {
@@ -55,16 +53,18 @@ class DeckTableViewCell: AEAccordionTableViewCell {
     
     func setup() {
         // Setup background
-        backgroundColor = theme.getBackgroundColor()
+        backgroundColor = theme.getDarkColor()
         selectionStyle = UITableViewCellSelectionStyle.None
         
         // Setup header view
         headerView.contentView.layer.cornerRadius = theme.getCornerRadiusForView()
+        headerView.contentView.backgroundColor = theme.getMediumColor()
         headerView.titleLabel.textColor = theme.getTextColor()
-        headerView.backgroundColor = theme.getHeaderViewColor()
+        headerView.backgroundColor = UIColor.clearColor()
         
         detailView.contentView.layer.cornerRadius = theme.getCornerRadiusForView()
-        detailView.contentView.backgroundColor = theme.getDetailViewColor()
+        detailView.contentView.backgroundColor = theme.getLightColor()
+        detailView.backgroundColor = UIColor.clearColor()
     }
     
 }

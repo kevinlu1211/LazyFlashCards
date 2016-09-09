@@ -10,10 +10,11 @@ import Foundation
 import UIKit
 
 protocol ThemeStrategy {
-    func getBackgroundColor() -> UIColor
-    func getHeaderViewColor() -> UIColor
-    func getDetailViewColor() -> UIColor
+    func getDarkColor() -> UIColor
+    func getMediumColor() -> UIColor
+    func getLightColor() -> UIColor
     func getCornerRadiusForView() -> CGFloat
     func getCornerRadiusForButton() -> CGFloat
     func getTextColor() -> UIColor
+    func getCardColor() -> UIColor
 }

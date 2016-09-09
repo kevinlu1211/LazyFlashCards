@@ -10,21 +10,21 @@ import Foundation
 import UIKit
 
 class ThemeStrategyBlue : NSObject, ThemeStrategy {
-    private let BACKGROUND_COLOR : UIColor = UIColor(red: 0/255, green: 31/255, blue: 63/255, alpha: 1)
-    private let HEADER_COLOR : UIColor = UIColor(red: 8/255, green: 51/255, blue: 88/255, alpha: 1)
-    private let DETAIL_COLOR : UIColor = UIColor(red: 13/255, green: 99/255, blue: 165/255, alpha: 1)
+    private let DARK_COLOR : UIColor = UIColor(red: 0/255, green: 31/255, blue: 63/255, alpha: 1)
+    private let MEDIUM_COLOR : UIColor = UIColor(red: 8/255, green: 51/255, blue: 88/255, alpha: 1)
+    private let LIGHT_COLOR : UIColor = UIColor(red: 13/255, green: 99/255, blue: 165/255, alpha: 1)
     private let CORNER_RADIUS_VIEW : CGFloat = 10.0
     private let CORNER_RADIUS_BUTTON : CGFloat = 5.0
     private let TEXT_COLOR : UIColor = UIColor.whiteColor()
-    
-    func getBackgroundColor() -> UIColor {
-        return BACKGROUND_COLOR
+    private let CARD_COLOR : UIColor = UIColor(red: 13/255, green: 99/255, blue: 165/255, alpha: 1)
+    func getDarkColor() -> UIColor {
+        return DARK_COLOR
     }
-    func getHeaderViewColor() -> UIColor {
-        return HEADER_COLOR
+    func getMediumColor() -> UIColor {
+        return MEDIUM_COLOR
     }
-    func getDetailViewColor() -> UIColor {
-        return DETAIL_COLOR
+    func getLightColor() -> UIColor {
+        return LIGHT_COLOR
     }
     func getCornerRadiusForView() -> CGFloat {
         return CORNER_RADIUS_VIEW
@@ -34,5 +34,8 @@ class ThemeStrategyBlue : NSObject, ThemeStrategy {
     }
     func getTextColor() -> UIColor {
         return TEXT_COLOR
+    }
+    func getCardColor() -> UIColor {
+        return CARD_COLOR
     }
 }

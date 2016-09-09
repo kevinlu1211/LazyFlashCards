@@ -155,26 +155,19 @@ extension TestViewController: KolodaViewDataSource {
         // Note that the commented out code below worked because our top level view of the CardView.xib was of class CardView, but now that we have changed it into a UIView it won't work this is because UINib(...)[0] will always get the top level view in the hierarchy
 //        let cardView = UINib(nibName: "CardView", bundle: nil).instantiateWithOwner(nil, options: nil).first as! CardView
 //        return cardView
-//        print("koloda frame is: \(koloda.frame)")
-//        let view = UIView(frame:koloda.frame)
-//        view.backgroundColor = UIColor.blueColor()
+
         let view = CardView(frame : koloda.bounds)
         let card = flashCards[Int(index)]
         
         // Setup card front
-        view.front.alpha = 1
         view.front.phraseLabel.text = card.phrase
-        view.userInteractionEnabled = false
         
         // Set card back
-        view.back.alpha = 0
         view.back.pronunciationLabel.text = card.pronunciation
         view.back.definitionTextField.text = card.definition
-        view.userInteractionEnabled = false
-        
+
         // Set view aesthestic
-        view.layer.cornerRadius = 5
-        view.clipsToBounds = true
+        view.setup()
         
         return view
     }

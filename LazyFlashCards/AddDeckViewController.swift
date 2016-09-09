@@ -18,28 +18,34 @@ class AddDeckViewController: UIViewController {
     
     var delegate : AddDeckViewControllerDelegate?
 
-    lazy var theme : ThemeStrategy = (UIApplication.sharedApplication().delegate as! AppDelegate).themeStrategy
-    
+    var theme : ThemeStrategy {
+        return ThemeFactory.sharedInstance().getTheme()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
                 // Do any additional setup after loading the view.
-        setupTextField()
-        setupButton()
+        
+        setup()
         
     }
     
-    func setupTextField() {
-        deckNameTextField.selectedIconColor = theme.getBackgroundColor()
-        deckNameTextField.selectedLineColor = theme.getBackgroundColor()
-        deckNameTextField.selectedTitleColor = theme.getBackgroundColor()
-        deckNameTextField.layer.cornerRadius = theme.getCornerRadiusForButton()
+    func setupTextField(textField : SkyFloatingLabelTextFieldWithIcon) {
+        textField.selectedIconColor = theme.getMediumColor()
+        textField.selectedLineColor = theme.getMediumColor()
+        textField.selectedTitleColor = theme.getMediumColor()
+        textField.layer.cornerRadius = theme.getCornerRadiusForButton()
 
     }
     
-    func setupButton() {
-        addDeckButton.buttonColor = theme.getBackgroundColor()
-        addDeckButton.titleLabel?.textColor = theme.getTextColor()
+    func setupButton(swiftyButton : SwiftyButton) {
+        swiftyButton.buttonColor = theme.getMediumColor()
+        swiftyButton.titleLabel?.textColor = theme.getTextColor()
+    }
+    
+    func setup() {
+        setupButton(addDeckButton)
+        setupTextField(deckNameTextField)
     }
 
     override func didReceiveMemoryWarning() {

@@ -34,7 +34,9 @@ class DetailDeckViewController: UIViewController, UITableViewDataSource, UITable
     }()
     var deck : Deck!
     var flashCards : [FlashCard] = []
-
+    var theme : ThemeStrategy {
+        return ThemeFactory.sharedInstance().getTheme()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         tableViewSetup()
@@ -78,6 +80,7 @@ extension DetailDeckViewController {
         self.view.addSubview(tableView)
         self.tableView.separatorStyle = .None
         registerCell()
+        tableView.backgroundColor = theme.getDarkColor()
         tableView.reloadData()
     }
     func registerCell() {
@@ -108,9 +111,14 @@ extension DetailDeckViewController {
         cell.detailView.phraseLabel.text = flashCard.phrase
         cell.detailView.pronunciationLabel.text = flashCard.pronunciation
         cell.detailView.definitionTextView.text = flashCard.definition
-        cell.detailView.definitionTextView.userInteractionEnabled = false
+        
+        
+        // Setup cell aesthetics
+        cell.setup()
+        
         // Setup delegate
         cell.detailView.delegate = self
+        
         
         return cell
     }
@@ -227,14 +235,14 @@ extension DetailDeckViewController : LiquidFloatingActionButtonDataSource, Liqui
         
         // Setup the frame
         
-        //        let statusBarHeight = UIApplication.sharedApplication().statusBarFrame.size.height
-        //        let navigationBarHeight = self.navigationController!.navigationBar.frame.height
+        let statusBarHeight = UIApplication.sharedApplication().statusBarFrame.size.height
+        let navigationBarHeight = self.navigationController!.navigationBar.frame.height
         let buttonHeight = CGFloat(56)
         let floatingFrame = CGRect(x: 0, y: 0 , width: buttonHeight, height: buttonHeight)
         let bottomRightButton = createButton(floatingFrame, .Up)
         self.view.addSubview(bottomRightButton)
         //        bottomRightButton.center = CGPointMake(self.view.bounds.width - 56 - 16, self.view.bounds.height - 56 - 16 - statusBarHeight - navigationBarHeight)
-        bottomRightButton.center = CGPointMake(self.view.bounds.width - buttonHeight, self.view.bounds.height - buttonHeight)
+        bottomRightButton.center = CGPointMake(self.view.bounds.width - buttonHeight, self.view.bounds.height - buttonHeight - statusBarHeight - navigationBarHeight)
         
     }
     

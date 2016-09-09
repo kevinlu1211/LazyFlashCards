@@ -362,12 +362,8 @@
 			isa = PBXGroup;
 			children = (
 				19B8B1951D712114002F3FEC /* DetailDeckViewController.swift */,
-				193383E61D7129D400CCF703 /* AddCardViewController.swift */,
-				193383E71D7129D400CCF703 /* AddCardViewController.xib */,
+				19CCB2141D810F860066AC6F /* AddCardViewController */,
 				19263CC51D74FD6D00F0259F /* ExpandingCardViewCell */,
-				193383FB1D72738E00CCF703 /* English API */,
-				193383FA1D72738800CCF703 /* Chinese API */,
-				193383FC1D7273A200CCF703 /* DetailDeckViewHelper */,
 			);
 			name = DetailDeckViewController;
 			sourceTree = "<group>";
@@ -381,6 +377,18 @@
 				19CCB20B1D80CF880066AC6F /* ThemeStrategyBlue.swift */,
 			);
 			name = Theme;
+			sourceTree = "<group>";
+		};
+		19CCB2141D810F860066AC6F /* AddCardViewController */ = {
+			isa = PBXGroup;
+			children = (
+				193383E61D7129D400CCF703 /* AddCardViewController.swift */,
+				193383E71D7129D400CCF703 /* AddCardViewController.xib */,
+				193383FB1D72738E00CCF703 /* English API */,
+				193383FA1D72738800CCF703 /* Chinese API */,
+				193383FC1D7273A200CCF703 /* DetailDeckViewHelper */,
+			);
+			name = AddCardViewController;
 			sourceTree = "<group>";
 		};
 		CA569992AB67256194631FA0 /* Pods */ = {

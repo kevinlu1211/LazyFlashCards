@@ -30,8 +30,9 @@ class ViewDecksController: UIViewController, UITableViewDataSource, UITableViewD
     }()
     
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-    
-    lazy var theme : ThemeStrategy = (UIApplication.sharedApplication().delegate as! AppDelegate).themeStrategy
+    var theme : ThemeStrategy {
+        return ThemeFactory.sharedInstance().getTheme()
+    }
     
     /// Array of `NSIndexPath` objects for all of the expanded cells.
     internal var expandedIndexPaths = [NSIndexPath]()
@@ -43,8 +44,6 @@ class ViewDecksController: UIViewController, UITableViewDataSource, UITableViewD
         title = "Decks"
         
         // Setup Theme
-//        theme = appDelegate.themeStrategy
-        
         
         // Setup Tab
         tableViewSetup()
@@ -61,7 +60,7 @@ class ViewDecksController: UIViewController, UITableViewDataSource, UITableViewD
         navigationController.navigationBar.translucent = false
         navigationController.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         navigationController.navigationBar.tintColor = UIColor.whiteColor()
-        navigationController.navigationBar.barTintColor = theme.getBackgroundColor()
+        navigationController.navigationBar.barTintColor = theme.getDarkColor()
     }
 
 }
@@ -97,7 +96,7 @@ extension ViewDecksController {
         self.tableView.separatorStyle = .None
         registerCell()
         tableView.reloadData()
-        tableView.backgroundColor = theme.getBackgroundColor()
+        tableView.backgroundColor = theme.getDarkColor()
     }
     func registerCell() {
         let cellNib = UINib(nibName: cellIdentifier, bundle: nil)

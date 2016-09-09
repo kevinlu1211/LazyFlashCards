@@ -16,8 +16,9 @@ class DeleteDeckViewController: UIViewController {
     @IBOutlet weak var yesButton: SwiftyButton!
     @IBOutlet weak var noButton: SwiftyButton!
     
-    lazy var theme : ThemeStrategy = (UIApplication.sharedApplication().delegate as! AppDelegate).themeStrategy
-    
+    var theme : ThemeStrategy {
+        return ThemeFactory.sharedInstance().getTheme()
+    }
 
     override func viewDidLoad() {
         setupButton(yesButton)
@@ -38,7 +39,7 @@ class DeleteDeckViewController: UIViewController {
     }
     
     func setupButton(swiftyButton : SwiftyButton) {
-        swiftyButton.buttonColor = theme.getBackgroundColor()
+        swiftyButton.buttonColor = theme.getMediumColor()
         swiftyButton.titleLabel?.textColor = theme.getTextColor()
     }
 

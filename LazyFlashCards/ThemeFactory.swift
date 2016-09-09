@@ -9,6 +9,8 @@
 import Foundation
 
 class ThemeFactory {
+    var currentThemeName : ThemeName?
+    
     class func sharedInstance() -> ThemeFactory {
         struct Singleton {
             static let sharedInstance = ThemeFactory()
@@ -16,11 +18,20 @@ class ThemeFactory {
         return Singleton.sharedInstance
     }
     
-    func getStrategy(themeName : ThemeName) -> ThemeStrategy {
-        switch themeName {
-        case .Blue:
+    func getTheme() -> ThemeStrategy {
+        if let themeName = currentThemeName {
+            switch themeName {
+            case .Blue:
+                return ThemeStrategyBlue()
+            }
+        }
+        else {
             return ThemeStrategyBlue()
         }
-        
+       
     }
+    func setTheme(themeName : ThemeName) {
+        currentThemeName = themeName
+    }
+    
 }

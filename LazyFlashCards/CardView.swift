@@ -15,7 +15,9 @@ class CardView: UIView {
     
     // Our custom view from the XIB file
     var view: UIView!
-    
+    var theme : ThemeStrategy! {
+        return ThemeFactory.sharedInstance().getTheme()
+    }
     @IBOutlet weak var front: CardFront!
     @IBOutlet weak var back: CardBack!
     
@@ -33,6 +35,27 @@ class CardView: UIView {
 
     }
     
+    func setupFront() {
+        front.alpha = 1
+        front.phraseLabel.textColor = theme.getTextColor()
+        view.userInteractionEnabled = false
+    }
+    
+    func setupBack() {
+        back.alpha = 0
+        back.pronunciationLabel.textColor = theme.getTextColor()
+        back.definitionTextField.textColor = theme.getTextColor()
+        view.userInteractionEnabled = false
+    }
+    
+    func setup() {
+        view.backgroundColor = theme.getDarkColor()
+        view.layer.cornerRadius = 5
+        view.clipsToBounds = true
+        setupFront()
+        setupBack()
+        
+    }
     required init?(coder aDecoder: NSCoder) {
         // 1. setup any properties here
         // 2. call super.init(coder:)

@@ -15,17 +15,12 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var themeName : ThemeName! {
-        didSet {
-            applicationUpdateThemeStrategy()
-        }
-    }
-    var themeStrategy : ThemeStrategy!
+   
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
         // Set the themeName
-        themeName = .Blue
-        
+    
+        ThemeFactory.sharedInstance().setTheme(ThemeName.Blue)
         return true
     }
 
@@ -53,10 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         CoreDataStackManager.sharedInstance().saveContext()
     }
     
-    func applicationUpdateThemeStrategy() {
-        themeStrategy = ThemeFactory.sharedInstance().getStrategy(themeName)
-        print("updated theme strategy")
-    }
+
 
 }
 

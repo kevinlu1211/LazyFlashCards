@@ -8,11 +8,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddCardViewController" customModule="LazyFlashCards" customModuleProvider="target">
             <connections>
+                <outlet property="addCardButton" destination="waY-mC-z6I" id="zCW-gC-axg"/>
                 <outlet property="definitionTextField" destination="hqB-1T-27a" id="uV8-3p-MI5"/>
                 <outlet property="nextButton" destination="Gxf-BC-Pqr" id="38F-4M-IZt"/>
                 <outlet property="phraseTextField" destination="mbK-V8-LYI" id="3Tx-GQ-OCF"/>
                 <outlet property="previousButton" destination="T8j-hQ-TGt" id="14J-Lt-QY1"/>
                 <outlet property="pronunicationTextField" destination="Lm0-la-kG0" id="MfO-5o-fGQ"/>
+                <outlet property="searchButton" destination="iJD-IS-lI5" id="a27-3W-aH2"/>
                 <outlet property="view" destination="fOH-Bh-YDp" id="yeq-3B-9Rg"/>
             </connections>
         </placeholder>

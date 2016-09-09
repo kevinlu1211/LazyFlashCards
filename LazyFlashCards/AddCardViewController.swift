@@ -20,10 +20,13 @@ class AddCardViewController: UIViewController {
     @IBOutlet weak var phraseTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var pronunicationTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var definitionTextField: SkyFloatingLabelTextField!
-    var delegate : AddCardViewControllerDelegate?
-    
+    @IBOutlet weak var searchButton: SwiftyButton!
     @IBOutlet weak var previousButton: SwiftyButton!
     @IBOutlet weak var nextButton: SwiftyButton!
+    @IBOutlet weak var addCardButton: SwiftyButton!
+    
+    var delegate : AddCardViewControllerDelegate?
+
     
     var currentLanguage : Language!  {
         didSet {
@@ -41,16 +44,17 @@ class AddCardViewController: UIViewController {
         }
     }
     var maxIndex : Int!
-    
+    var theme : ThemeStrategy {
+        return ThemeFactory.sharedInstance().getTheme()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         currentLanguage = .English
         
         // Disable the previous and next buttons
-
+        setup()
         hideLeftAndRightButtons()
 
-        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -62,7 +66,29 @@ class AddCardViewController: UIViewController {
         print("setting card strategy to \(currentLanguage)")
         cardLanguageStrategy = CardLanguageStrategyFactory.sharedInstance().getStrategy(self.currentLanguage)
     }
-
+    
+    func setupTextField(textField : SkyFloatingLabelTextField) {
+        //        textField.selectedIconColor = theme.getMediumColor()
+        textField.selectedLineColor = theme.getMediumColor()
+        textField.selectedTitleColor = theme.getMediumColor()
+        textField.layer.cornerRadius = theme.getCornerRadiusForButton()
+    }
+    
+    func setupButton(swiftyButton : SwiftyButton) {
+        swiftyButton.buttonColor = theme.getMediumColor()
+        swiftyButton.titleLabel?.textColor = theme.getTextColor()
+    }
+    
+    func setup() {
+        setupButton(searchButton)
+        setupButton(previousButton)
+        setupButton(nextButton)
+        setupButton(addCardButton)
+        setupTextField(phraseTextField)
+        setupTextField(pronunicationTextField)
+        setupTextField(definitionTextField)
+        
+    }
     /*
     // MARK: - Navigation
 
