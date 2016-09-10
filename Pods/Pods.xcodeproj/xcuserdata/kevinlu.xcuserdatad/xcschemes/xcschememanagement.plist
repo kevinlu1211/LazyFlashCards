@@ -44,21 +44,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Material-io.cosmicmind.material.fonts.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Material-io.cosmicmind.material.icons.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Material.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-LazyFlashCards.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -117,27 +102,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>04693735BCFA74B873DE04047ECC5FBA</key>
+		<key>18A40A162B1C45CB411A07F42B5DD028</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>08C670F14C5E0F92D52B4FD40051294F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>15E8AD9466A00250AD6DDC19DED93526</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>1B006392A6DC63E06AC81DE6F08803B1</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>1B48662364DA0FEEE1ED8A65E54F2486</key>
+		<key>2403DA64362DBC038FE2859AC1717027</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -152,6 +122,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>27818F85006147A4F542F24A0278FCDD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>2CE8C65154F37B35F96BD68FB3F76601</key>
 		<dict>
 			<key>primary</key>
@@ -162,7 +137,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>459753469AF9071A76B501DD7BB5959B</key>
+		<key>496E0221FA35BACAA536F4C50D12BC56</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -172,27 +147,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>4C283565247061180E0E21696B668FCF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>4D351D010EB4635526E5100DCBE7CDFF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4FBEF13FB8CE037014D4D6086B20FF32</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>591A5A9DA5782A379D7E6C0E1E96F459</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>5C9F00C8DAB12BC399BA5982CBC6E53F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>78EC38D0F2221908DF3F488990FC2E08</key>
+		<key>5FB1BD4A478DA76CA923918615E2C3A2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -202,12 +167,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>843747165F555D66AE1E3560B36EAA39</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>AD1D7BF108056A7AF4B6E7BCE7227F21</key>
+		<key>8ED8EFF3E0FD10A3C72D69C6F9BBA682</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -217,7 +177,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E63152D09CEB49DABA2ED6AB3E2C5D7B</key>
+		<key>D406F0B092322EEC98658939D9C0A960</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E52DB62D95570F712DCD262B9EB359B6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E79B969C3B52AAD9B92FDE97C350BB86</key>
 		<dict>
 			<key>primary</key>
 			<true/>
