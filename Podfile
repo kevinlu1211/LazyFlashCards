@@ -15,6 +15,8 @@ pod "LiquidFloatingActionButton"
 pod 'PopupDialog', '~> 0.4'
 pod 'SkyFloatingLabelTextField', '~> 1.0'
 pod 'IBAnimatable'  
+pod 'Material', '~> 1.0'
+
 target 'LazyFlashCards' do
 
 end

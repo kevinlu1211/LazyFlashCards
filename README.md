@@ -23,6 +23,6 @@
     * ~~Delete button for cards~~ 5/9/16
     * ~~Delete button for decks~~ 5/9/16
     * ~~Use callbacks instead of delegation read [here](https://medium.cobeisfresh.com/why-you-shouldn-t-use-delegates-in-swift-7ef808a7f16b#.wn71g2472) for the popup view controller that has the confirmation message to delete the deck~~ 6/9/16
-  5. Create button icons for add deck, delete deck etc
+  5. ~~Create custom button and icons for add deck, delete deck etc~~ 10/9/16
   6. Create activity indication when retrieving information from the web
   7. ~~Refactor the code by using Factory pattern for coloring the UI elements so that it is less coupled with the ViewController code, and more easily customizable (HIGH PRIORITY)~~ 8/9/16
