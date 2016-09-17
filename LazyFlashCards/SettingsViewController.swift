@@ -33,7 +33,7 @@ class SettingsViewController: UIViewController {
 //        self.view.layer.borderWidth = 2
 //        self.view.layer.borderColor = UIColor.blackColor().CGColor
         // Do any additional setup after loading the view.
-        setupDoneButton()
+        setupDoneButtonEnabled()
         setupDeleteButtonEnabled()
         setupTextField()
         
@@ -65,7 +65,8 @@ class SettingsViewController: UIViewController {
     }
     
 
-    func setupDoneButton() {
+    func setupDoneButtonEnabled() {
+        doneButton.userInteractionEnabled = true
         // Setup button
         doneButton.layer.borderColor = theme.getMediumColor().CGColor
         doneButton.layer.borderWidth = 1
@@ -77,7 +78,10 @@ class SettingsViewController: UIViewController {
 , forState: .Normal)
         
     }
+    
+    
     func setupDeleteButtonEnabled() {
+        deleteButton.userInteractionEnabled = true
         // Setup button
         deleteButton.layer.borderColor = UIColor.redColor().CGColor
         deleteButton.layer.borderWidth = 1
@@ -88,16 +92,19 @@ class SettingsViewController: UIViewController {
         deleteButton.setTitleColor( UIColor.redColor()
             , forState: .Normal)
     }
-    func setupDeleteButtonDisabled() {
+    func setupButtonDisabled(swiftyButton : SwiftyButton) {
+        
+        swiftyButton.userInteractionEnabled = false
+
         
         // Setup button
-        deleteButton.layer.borderColor = UIColor.grayColor().CGColor
-        deleteButton.layer.borderWidth = 1
-        deleteButton.layer.cornerRadius = theme.getCornerRadiusForButton()
+        swiftyButton.layer.borderColor = UIColor.grayColor().CGColor
+        swiftyButton.layer.borderWidth = 1
+        swiftyButton.layer.cornerRadius = theme.getCornerRadiusForButton()
         
         // Setup the button when it's not highlighted
-        deleteButton.buttonColor = UIColor.whiteColor()
-        deleteButton.setTitleColor(UIColor.grayColor(), forState: .Normal)
+        swiftyButton.buttonColor = UIColor.whiteColor()
+        swiftyButton.setTitleColor(UIColor.grayColor(), forState: .Normal)
         
 
     }
@@ -108,9 +115,9 @@ class SettingsViewController: UIViewController {
     @IBAction func deleteButton(sender: AnyObject) {
         if !deleteMode {
             deleteMode = !deleteMode
-            deleteButton.userInteractionEnabled = false
             setupTextField()
-            setupDeleteButtonDisabled()
+            setupButtonDisabled(deleteButton)
+            setupButtonDisabled(doneButton)
         }
         else {
             deleteDeck(indexPathOfDeck: indexPathOfDeck)
@@ -129,14 +136,10 @@ extension SettingsViewController : UITextFieldDelegate {
         }
         else {
             if(currentText == deck.name) {
-                print("hi")
-                deleteButton.userInteractionEnabled = true
                 setupDeleteButtonEnabled()
             }
             else {
-                print("bye")
-                deleteButton.userInteractionEnabled = false
-                setupDeleteButtonDisabled()
+                setupButtonDisabled(deleteButton)
             }
         }
         return true
