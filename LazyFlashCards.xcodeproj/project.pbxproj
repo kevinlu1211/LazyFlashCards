@@ -63,6 +63,8 @@
 		19CCB20A1D80CD840066AC6F /* ThemeStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CCB2091D80CD840066AC6F /* ThemeStrategy.swift */; };
 		19CCB20C1D80CF880066AC6F /* ThemeStrategyBlue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CCB20B1D80CF880066AC6F /* ThemeStrategyBlue.swift */; };
 		19CCB20E1D80E18D0066AC6F /* ThemeName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CCB20D1D80E18D0066AC6F /* ThemeName.swift */; };
+		19D325BA1D84FEFE0059D767 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D325B81D84FEFE0059D767 /* SettingsViewController.swift */; };
+		19D325BB1D84FEFE0059D767 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19D325B91D84FEFE0059D767 /* SettingsViewController.xib */; };
 		19FE17BD1D7BA31000DB79EA /* CardLanguageStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FE17BC1D7BA31000DB79EA /* CardLanguageStrategy.swift */; };
 		BD1CA86C4C183B6EA83D7184 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1747660E56C8847495FB6C6C /* Pods.framework */; };
 /* End PBXBuildFile section */
@@ -153,6 +155,8 @@
 		19CCB2091D80CD840066AC6F /* ThemeStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeStrategy.swift; sourceTree = "<group>"; };
 		19CCB20B1D80CF880066AC6F /* ThemeStrategyBlue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeStrategyBlue.swift; sourceTree = "<group>"; };
 		19CCB20D1D80E18D0066AC6F /* ThemeName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeName.swift; sourceTree = "<group>"; };
+		19D325B81D84FEFE0059D767 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		19D325B91D84FEFE0059D767 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		19FE17BC1D7BA31000DB79EA /* CardLanguageStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardLanguageStrategy.swift; sourceTree = "<group>"; };
 		7297621F63D1BF85A3137C0B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -330,6 +334,8 @@
 				19B8B16F1D7043E4002F3FEC /* LiquidButtonHelper.swift */,
 				19B8B1701D7043E4002F3FEC /* AddDeckViewController.swift */,
 				19B8B1711D7043E4002F3FEC /* AddDeckViewController.xib */,
+				19D325B81D84FEFE0059D767 /* SettingsViewController.swift */,
+				19D325B91D84FEFE0059D767 /* SettingsViewController.xib */,
 				1964D9171D7CFDD1004CA72F /* DeleteDeckViewController.swift */,
 				1964D9111D7CFC7A004CA72F /* DeleteDeckViewController.xib */,
 				19B8B16D1D704268002F3FEC /* ExpandingDeckViewCell */,
@@ -534,6 +540,7 @@
 				19B8B13C1D7040B6002F3FEC /* LaunchScreen.storyboard in Resources */,
 				19B4E2DA1D77CA140047ED50 /* CardFront.xib in Resources */,
 				193383E91D7129D400CCF703 /* AddCardViewController.xib in Resources */,
+				19D325BB1D84FEFE0059D767 /* SettingsViewController.xib in Resources */,
 				19B8B1751D7043E4002F3FEC /* AddDeckViewController.xib in Resources */,
 				19B4E2D11D76721A0047ED50 /* CardView.xib in Resources */,
 				19263CC91D74FFAC00F0259F /* CardTableViewCell.xib in Resources */,
@@ -633,6 +640,7 @@
 				193383EF1D72735F00CCF703 /* CardLanguageStrategyFactory.swift in Sources */,
 				19B4E2CE1D7669AF0047ED50 /* TestViewController.swift in Sources */,
 				19B4E2D31D7672AA0047ED50 /* CardView.swift in Sources */,
+				19D325BA1D84FEFE0059D767 /* SettingsViewController.swift in Sources */,
 				19B8B1821D704699002F3FEC /* TFHpple.m in Sources */,
 				19B8B1691D704258002F3FEC /* DetailDeckView.swift in Sources */,
 				19CCB20C1D80CF880066AC6F /* ThemeStrategyBlue.swift in Sources */,

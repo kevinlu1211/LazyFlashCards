@@ -8,7 +8,8 @@
 
 import UIKit
 
-@IBDesignable public class RoundView: UIView {
+@IBDesignable
+public class RoundView: UIView {
     
     @IBInspectable var borderColor: UIColor = UIColor.whiteColor() {
         didSet {

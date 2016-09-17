@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '9293A4B500F445D9D3145228'
+               BlueprintIdentifier = '2E56B098BDEB8479E423D97D'
                BlueprintName = 'AEXibceptionView'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'AEXibceptionView.framework'>

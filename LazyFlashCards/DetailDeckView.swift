@@ -16,7 +16,7 @@ class DetailDeckView: AEXibceptionView {
     // MARK: - Outlets
     @IBOutlet weak var deckButtonView: RoundView!
     @IBOutlet weak var testButtonView: RoundView!
-    @IBOutlet weak var deleteButtonView: RoundView!
+    @IBOutlet weak var settingsButtonView: RoundView!
     
     
     func handleViewDeck() {
@@ -28,8 +28,8 @@ class DetailDeckView: AEXibceptionView {
         delegate?.handleTest(self)
     }
     func handleDelete() {
-        deleteButtonView.respondToTap()
-        delegate?.handleDelete(self)
+        settingsButtonView.respondToTap()
+        delegate?.handleSettings(self)
 
     }
     
@@ -39,14 +39,14 @@ class DetailDeckView: AEXibceptionView {
         let tapDelete = UITapGestureRecognizer(target: self, action: #selector(self.handleDelete))
         deckButtonView.addGestureRecognizer(tapDeck)
         testButtonView.addGestureRecognizer(tapTest)
-        deleteButtonView.addGestureRecognizer(tapDelete)
+        settingsButtonView.addGestureRecognizer(tapDelete)
     }
 }
 
 protocol DetailDeckViewDelegate : class {
     func handleViewDeck(detailDeckView : DetailDeckView)
     func handleTest(detailDeckView : DetailDeckView)
-    func handleDelete(detailDeckView : DetailDeckView)
+    func handleSettings(detailDeckView : DetailDeckView)
 }
 
 extension DetailDeckView {

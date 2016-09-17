@@ -25,7 +25,6 @@ class AddDeckViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
                 // Do any additional setup after loading the view.
-        
         setup()
         
     }
@@ -39,8 +38,22 @@ class AddDeckViewController: UIViewController {
     }
     
     func setupButton(swiftyButton : SwiftyButton) {
-        swiftyButton.buttonColor = theme.getMediumColor()
-        swiftyButton.titleLabel?.textColor = theme.getTextColor()
+        // Setup button 
+        swiftyButton.layer.borderColor = theme.getMediumColor().CGColor
+        swiftyButton.layer.borderWidth = 2
+        swiftyButton.layer.cornerRadius = theme.getCornerRadiusForButton()
+        
+        // Setup the button when it's not highlighted
+        swiftyButton.buttonColor = UIColor.whiteColor()
+        swiftyButton.setTitleColor(theme.getMediumColor(), forState: .Normal)
+//        
+//        // Setup the button when it's highlighted
+//        swiftyButton.highlightedColor = theme.getMediumColor()
+//        swiftyButton.setTitleColor(UIColor.whiteColor(), forState: .Highlighted)
+//        
+//        // Setup the button when it's disabled
+//        swiftyButton.disabledButtonColor = UIColor.whiteColor()
+//        swiftyButton.setTitleColor(UIColor.grayColor(), forState: .Disabled)
     }
     
     func setup() {
@@ -48,16 +61,10 @@ class AddDeckViewController: UIViewController {
         setupTextField(deckNameTextField)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 
     @IBAction func addDeckButton(sender: AnyObject) {
         // Assuming that there is text
         delegate?.handleAddDeck(deckNameTextField.text!)
-        print("Adding deck")
         
     }
     /*

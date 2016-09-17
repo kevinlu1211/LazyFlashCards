@@ -23,11 +23,11 @@
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wCl-qH-TcJ" customClass="SwiftyButton" customModule="SwiftyButton">
                             <rect key="frame" x="8" y="70" width="284" height="46"/>
                             <state key="normal" title="Add Deck">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <color key="titleColor" red="1" green="0.0" blue="0.21472127520000001" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
-                                    <color key="value" red="0.082232492830517145" green="0.84440020315005337" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="value" red="0.1347031873" green="0.73343176649999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                     <real key="value" value="5"/>
@@ -36,7 +36,7 @@
                                     <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="color" keyPath="highlightedColor">
-                                    <color key="value" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="number" keyPath="buttonPressDepth">
                                     <real key="value" value="0.0"/>
@@ -95,7 +95,7 @@
                     <exclude reference="xpd-vD-Oc8"/>
                 </mask>
             </variation>
-            <point key="canvasLocation" x="59" y="282"/>
+            <point key="canvasLocation" x="248" y="327"/>
         </view>
     </objects>
 </document>
