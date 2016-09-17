@@ -35,7 +35,7 @@ class DeckTableViewCell: AEAccordionTableViewCell {
             let collapsedOptions: UIViewAnimationOptions = [.TransitionFlipFromBottom, .CurveEaseIn]
             let options: UIViewAnimationOptions = expanded ? alwaysOptions.union(expandedOptions) : alwaysOptions.union(collapsedOptions)
             
-            UIView.transitionWithView(detailView, duration: 0.3, options: options, animations: { () -> Void in
+            UIView.transitionWithView(detailView, duration: 0.2, options: options, animations: { () -> Void in
                 self.toggleCell()
                 }, completion: nil)
         }
@@ -94,7 +94,7 @@ extension DeckTableViewCell{
                 print("The hitView pointer address is: \(hitView.description)")
                 
                 // By not returning the view attached to the CustomTableViewCell, we avoid hiding the cell everytime it's tapped. So we only return a view if it is the top bar view, or if it's the button.
-                if (hitView.isKindOfClass(UIButton) || hitView.isKindOfClass(HeaderViewDefaultView)) {
+                if (hitView.isKindOfClass(RoundView) || hitView.isKindOfClass(HeaderViewDefaultView)) {
                     return hitView
                 }
                 else {

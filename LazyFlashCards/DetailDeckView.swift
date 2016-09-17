@@ -14,23 +14,39 @@ class DetailDeckView: AEXibceptionView {
     var delegate : DetailDeckViewDelegate?
 
     // MARK: - Outlets
-    @IBAction func handleViewDeck(sender: AnyObject) {
+    @IBOutlet weak var deckButtonView: RoundView!
+    @IBOutlet weak var testButtonView: RoundView!
+    @IBOutlet weak var settingsButtonView: RoundView!
+    
+    
+    func handleViewDeck() {
+        deckButtonView.respondToTap()
         delegate?.handleViewDeck(self)
     }
-    @IBAction func handleTest(sender: AnyObject) {
+    func handleTest() {
+        testButtonView.respondToTap()
         delegate?.handleTest(self)
     }
-    @IBAction func handleDelete(sender: AnyObject) {
-        delegate?.handleDelete(self)
+    func handleDelete() {
+        settingsButtonView.respondToTap()
+        delegate?.handleSettings(self)
 
     }
     
+    override func awakeFromNib() {
+        let tapDeck = UITapGestureRecognizer(target: self, action: #selector(self.handleViewDeck))
+        let tapTest = UITapGestureRecognizer(target: self, action: #selector(self.handleTest))
+        let tapDelete = UITapGestureRecognizer(target: self, action: #selector(self.handleDelete))
+        deckButtonView.addGestureRecognizer(tapDeck)
+        testButtonView.addGestureRecognizer(tapTest)
+        settingsButtonView.addGestureRecognizer(tapDelete)
+    }
 }
 
 protocol DetailDeckViewDelegate : class {
     func handleViewDeck(detailDeckView : DetailDeckView)
     func handleTest(detailDeckView : DetailDeckView)
-    func handleDelete(detailDeckView : DetailDeckView)
+    func handleSettings(detailDeckView : DetailDeckView)
 }
 
 extension DetailDeckView {

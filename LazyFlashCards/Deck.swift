@@ -39,9 +39,6 @@ class Deck : NSManagedObject {
     func getCard(index : Int) -> FlashCard {
         return self.useableFlashCards![index]
     }
-    
-    
-
 }
 
 extension Array
