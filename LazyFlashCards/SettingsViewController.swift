@@ -18,11 +18,12 @@ class SettingsViewController: UIViewController {
     
     @IBOutlet weak var deleteButton: SwiftyButton!
     
+    // Instead of using delegate pattern
     var changeDeckName: ((newDeckName: String, indexPathOfDeck : NSIndexPath) -> ())!
     var deleteDeck : ((indexPathOfDeck : NSIndexPath) -> ())!
     var deck : Deck!
     var indexPathOfDeck : NSIndexPath!
-    private var deleteMode = false
+    private var isDeleting = false
     
     var theme : ThemeStrategy {
         return ThemeFactory.sharedInstance().getTheme()
@@ -46,7 +47,7 @@ class SettingsViewController: UIViewController {
     
     func setupTextField() {
         deckNameTextField.autocorrectionType = .No
-        if !deleteMode {
+        if !isDeleting {
             deckNameTextField.selectedIconColor = theme.getMediumColor()
             deckNameTextField.selectedLineColor = theme.getMediumColor()
             deckNameTextField.selectedTitleColor = theme.getMediumColor()
@@ -111,10 +112,11 @@ class SettingsViewController: UIViewController {
 
 
     @IBAction func doneButton(sender: AnyObject) {
+        changeDeckName(newDeckName: deckNameTextField.text!, indexPathOfDeck: indexPathOfDeck)
     }
     @IBAction func deleteButton(sender: AnyObject) {
-        if !deleteMode {
-            deleteMode = !deleteMode
+        if !isDeleting {
+            isDeleting = !isDeleting
             setupTextField()
             setupButtonDisabled(deleteButton)
             setupButtonDisabled(doneButton)
@@ -131,7 +133,7 @@ extension SettingsViewController : UITextFieldDelegate {
         let currentText = textField.text! + string
         print(currentText)
 
-        if !deleteMode {
+        if !isDeleting {
             
         }
         else {

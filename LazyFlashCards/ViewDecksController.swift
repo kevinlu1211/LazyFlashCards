@@ -311,6 +311,7 @@ extension ViewDecksController : DetailDeckViewDelegate {
         if let indexPath = indexPathOfDeck {
             let deck = decks[indexPath.row]
             settingsViewController.deleteDeck = deleteDeckHandler
+            settingsViewController.changeDeckName = changeDeckNameHandler
             settingsViewController.deck = deck
             settingsViewController.indexPathOfDeck = indexPath
             let popup = PopupDialog(viewController: settingsViewController, transitionStyle: .BounceDown, buttonAlignment: .Horizontal, gestureDismissal: true)
@@ -341,6 +342,14 @@ extension ViewDecksController : DetailDeckViewDelegate {
     }
     
     func changeDeckNameHandler(newDeckName: String, indexPathOfDeck: NSIndexPath) {
+       
+        let deck = decks[indexPathOfDeck.row]
+        deck.name = newDeckName
+        print(deck.name)
+        tableView.reloadRowsAtIndexPaths([indexPathOfDeck], withRowAnimation: .Fade)
+        CoreDataStackManager.sharedInstance().saveContext()
+        self.dismissViewControllerAnimated(false, completion: nil)
+        
         
     }
     
