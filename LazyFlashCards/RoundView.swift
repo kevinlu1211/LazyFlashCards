@@ -28,6 +28,7 @@ public class RoundView: UIView {
         layer.cornerRadius = 0.5 * bounds.size.width
         clipsToBounds = true
     }
+
     
     func respondToTap() {
         self.backgroundColor = UIColor.whiteColor()

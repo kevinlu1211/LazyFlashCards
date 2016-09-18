@@ -55,15 +55,7 @@ class DetailDeckViewController: UIViewController, UITableViewDataSource, UITable
             flashCards = useableFlashCards
         }
     }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
@@ -231,7 +223,7 @@ extension DetailDeckViewController : LiquidFloatingActionButtonDataSource, Liqui
         
         
         // Setup bottom right button
-        liquidFloatingCells.append(customCellFactory("ic_brush", "Add Card"))
+        liquidFloatingCells.append(customCellFactory(ImageName.ADD_CARD_IMAGE_NAME, "Add Card"))
         
         // Setup the frame
         
@@ -241,8 +233,12 @@ extension DetailDeckViewController : LiquidFloatingActionButtonDataSource, Liqui
         let floatingFrame = CGRect(x: 0, y: 0 , width: buttonHeight, height: buttonHeight)
         let bottomRightButton = createButton(floatingFrame, .Up)
         self.view.addSubview(bottomRightButton)
-        //        bottomRightButton.center = CGPointMake(self.view.bounds.width - 56 - 16, self.view.bounds.height - 56 - 16 - statusBarHeight - navigationBarHeight)
         bottomRightButton.center = CGPointMake(self.view.bounds.width - buttonHeight, self.view.bounds.height - buttonHeight - statusBarHeight - navigationBarHeight)
+        
+        let image = UIImage(named: ImageName.EXPANDING_MENU_IMAGE_IMAGE)
+        bottomRightButton.image = image
+        bottomRightButton.backgroundColor = UIColor.clearColor()
+        bottomRightButton.color = theme.getContrastColor()
         
     }
     
@@ -292,9 +288,7 @@ extension DetailDeckViewController : AddCardViewControllerDelegate {
 }
 
 extension DetailDeckViewController : DetailCardViewDelegate {
-    func handleEditAction(detailCardView: DetailCardView) {
-        print("pressed edit")
-    }
+
     func handleDeleteAction(detailCardView: DetailCardView) {
         print("pressed delete")
         let indexPath = tableView.indexPathForCell(detailCardView.getParentTableViewCell())

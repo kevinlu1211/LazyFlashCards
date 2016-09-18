@@ -17,7 +17,7 @@ import CoreData
 class ViewDecksController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     // MARK: - Properties
-    
+
     private let cellIdentifier = "DeckTableViewCell"
     private let ADD_DECK_BUTTON_INDEX = 0
     var liquidFloatingCells: [LiquidFloatingCell] = []
@@ -238,22 +238,23 @@ extension ViewDecksController : LiquidFloatingActionButtonDataSource, LiquidFloa
         
         
         // Setup bottom right button
-        liquidFloatingCells.append(customCellFactory("ic_brush", "Add Deck"))
+        liquidFloatingCells.append(customCellFactory(ImageName.ADD_DECK_IMAGE_NAME, "Add Deck"))
         
-        // Setup the frame 
-        
+        // Setup the frame of the expanding button on the bottom right
         let statusBarHeight = UIApplication.sharedApplication().statusBarFrame.size.height
         let navigationBarHeight = self.navigationController!.navigationBar.frame.height
         let buttonHeight = CGFloat(56)
         let floatingFrame = CGRect(x: 0, y: 0 , width: buttonHeight, height: buttonHeight)
         let bottomRightButton = createButton(floatingFrame, .Up)
-        let image = UIImage(named: "ic_add_circle_outline_white")
-        bottomRightButton.image = image
-        bottomRightButton.backgroundColor = theme.getDarkColor()
-
         self.view.addSubview(bottomRightButton)
-//        bottomRightButton.center = CGPointMake(self.view.bounds.width - 56 - 16, self.view.bounds.height - 56 - 16 - statusBarHeight - navigationBarHeight)
         bottomRightButton.center = CGPointMake(self.view.bounds.width - buttonHeight, self.view.bounds.height - buttonHeight - statusBarHeight - navigationBarHeight)
+        
+        // Setup the image of the expanding button
+        let image = UIImage(named: ImageName.EXPANDING_MENU_IMAGE_IMAGE)
+        bottomRightButton.image = image
+        bottomRightButton.backgroundColor = UIColor.clearColor()
+        bottomRightButton.color = theme.getContrastColor()
+
     
     }
     

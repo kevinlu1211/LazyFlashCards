@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'AC593FFFCDB8924C3B3B764D'
+               BlueprintIdentifier = '8006DB2C8FA3FB8E35BFA0F6'
                BlueprintName = 'Koloda'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Koloda.framework'>

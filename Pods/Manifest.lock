@@ -1,8 +1,10 @@
 PODS:
   - AEAccordion (1.0.3)
   - AEXibceptionView (1.0.3)
+  - ChameleonFramework/Default (2.1.0)
+  - ChameleonFramework/Swift (2.1.0):
+    - ChameleonFramework/Default
   - HidingNavigationBar (0.3.0)
-  - IBAnimatable (2.7)
   - JOEmojiableBtn (0.1.0)
   - Koloda (3.1.2):
     - pop (~> 1.0)
@@ -22,8 +24,8 @@ PODS:
 DEPENDENCIES:
   - AEAccordion
   - AEXibceptionView
+  - ChameleonFramework/Swift
   - HidingNavigationBar (~> 0.3)
-  - IBAnimatable
   - JOEmojiableBtn
   - Koloda (~> 3.1.2)
   - LiquidFloatingActionButton
@@ -35,8 +37,8 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AEAccordion: 4a6b3b938fc9abe8a20d7e9e238a50a5eae02572
   AEXibceptionView: cb1e5696c2cf1283a8d083406928222c9b59608e
+  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   HidingNavigationBar: 6378af14cea27bfef8be73470b081a36d45b87c4
-  IBAnimatable: baa9b37d0326de969836e9215f73cc377a5a84a6
   JOEmojiableBtn: 7e3ca82bbb6b909ffb1f2ba26d9ea4fdfb3aadd4
   Koloda: 5aee353329cd1605540f1215a4c1975481dc7a37
   LiquidFloatingActionButton: 9c28961915754e08cf596ea6bdd60f9cd949f172
