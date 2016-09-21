@@ -30,7 +30,7 @@
   * ~~Create a queue data structure for the flash cards and make it work with Koloda, purpose of this is to add card that are swiped left (the card that the user doesn't know) to the end of the queue so that they will be retested~~ 7/9/16
   * ~~Figure a way out to determine the language in the phrase text field when adding the card, can't use NSLinguisticTagger as the phrase term is too short. Maybe determine by UTF8 encoding via dataUsingEncoding(NSUTF8StringEncoding) as English letters in UTF8 are only integers whereas in Chinese there are also letters~~ 4/9/16
 
-* Create custom button and icons in ViewDecksViewController and DetailDeckViewController
+* ~~Create custom button and icons in ViewDecksViewController and DetailDeckViewController~~ 6/9/16
   * ~~Create the delete buttons CreateButtons branch~~ 6/9/16
   * ~~Delete button for cards~~ 5/9/16
   * ~~Delete button for decks~~ 5/9/16
