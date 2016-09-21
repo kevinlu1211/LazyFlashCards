@@ -9,7 +9,10 @@
 ---
 
 ## TODO
+
 > High priority
+---
+
 * Create custom button and icons in AddCardsViewController
   * ~~Deck~~ 10/9/16 
   * ~~Test~~ 10/9/16
@@ -35,12 +38,16 @@
 
 
 > Medium priority
+---
+
 * Create activity indication when retrieving information from the web
 * ~~Refactor the code by using Factory pattern for coloring the UI elements so that it is less coupled with the ViewController code, and more easily customizable ~~ 8/9/16
 * Remake custom RoundView class into a button  
 * ~~Find a colour scheme for the app~~ 7/9/16
 
 > Low priority
+---
+
 * Determine the weights to be used to determine whether the user will get the current card correct, maybe some exponential weighting where most recent results have most effect 
    
 
