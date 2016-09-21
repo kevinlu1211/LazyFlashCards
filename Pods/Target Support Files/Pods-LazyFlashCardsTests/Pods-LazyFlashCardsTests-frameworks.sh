@@ -86,8 +86,7 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-LazyFlashCardsTests/AEAccordion.framework"
   install_framework "Pods-LazyFlashCardsTests/AEXibceptionView.framework"
-  install_framework "Pods-LazyFlashCardsTests/HidingNavigationBar.framework"
-  install_framework "Pods-LazyFlashCardsTests/IBAnimatable.framework"
+  install_framework "Pods-LazyFlashCardsTests/ChameleonFramework.framework"
   install_framework "Pods-LazyFlashCardsTests/JOEmojiableBtn.framework"
   install_framework "Pods-LazyFlashCardsTests/Koloda.framework"
   install_framework "Pods-LazyFlashCardsTests/LiquidFloatingActionButton.framework"
@@ -96,14 +95,12 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-LazyFlashCardsTests/SkyFloatingLabelTextField.framework"
   install_framework "Pods-LazyFlashCardsTests/SnapKit.framework"
   install_framework "Pods-LazyFlashCardsTests/SwiftyButton.framework"
-  install_framework "Pods-LazyFlashCardsTests/TZStackView.framework"
   install_framework "Pods-LazyFlashCardsTests/pop.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-LazyFlashCardsTests/AEAccordion.framework"
   install_framework "Pods-LazyFlashCardsTests/AEXibceptionView.framework"
-  install_framework "Pods-LazyFlashCardsTests/HidingNavigationBar.framework"
-  install_framework "Pods-LazyFlashCardsTests/IBAnimatable.framework"
+  install_framework "Pods-LazyFlashCardsTests/ChameleonFramework.framework"
   install_framework "Pods-LazyFlashCardsTests/JOEmojiableBtn.framework"
   install_framework "Pods-LazyFlashCardsTests/Koloda.framework"
   install_framework "Pods-LazyFlashCardsTests/LiquidFloatingActionButton.framework"
@@ -112,6 +109,5 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-LazyFlashCardsTests/SkyFloatingLabelTextField.framework"
   install_framework "Pods-LazyFlashCardsTests/SnapKit.framework"
   install_framework "Pods-LazyFlashCardsTests/SwiftyButton.framework"
-  install_framework "Pods-LazyFlashCardsTests/TZStackView.framework"
   install_framework "Pods-LazyFlashCardsTests/pop.framework"
 fi

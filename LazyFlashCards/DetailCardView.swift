@@ -10,30 +10,53 @@ import UIKit
 import AEXibceptionView
 
 class DetailCardView: AEXibceptionView {
+    
 
     @IBOutlet weak var phraseLabel: UILabel!
     @IBOutlet weak var pronunciationLabel: UILabel!
     @IBOutlet weak var definitionTextView: UITextView!
+    
+    @IBOutlet weak var deleteButton: RoundView!
+    @IBOutlet weak var settingsButton: RoundView!
+    @IBOutlet weak var settingsButtonImage: UIImageView!
+    
+    var inSettings = false
+    
     var delegate : DetailCardViewDelegate?
-    /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        // Drawing code
-    }
-    */
-    @IBAction func editButtonAction(sender: AnyObject) {
-        delegate?.handleEditAction(self)
-    }
 
-    @IBAction func deleteButtonAction(sender: AnyObject) {
+    override func awakeFromNib() {
+        // First hide the delete and edit buttons
+        deleteButton.isHidden = true
+        
+        let tapSettings = UITapGestureRecognizer(target: self, action: #selector(self.handleSettings))
+        let tapDelete = UITapGestureRecognizer(target: self, action: #selector(self.handleDelete))
+        settingsButton.addGestureRecognizer(tapSettings)
+        deleteButton.addGestureRecognizer(tapDelete)
+    }
+  
+    func handleDelete() {
+        deleteButton.respondToTap()
         delegate?.handleDeleteAction(self)
+    }
+    
+    func handleSettings() {
+        settingsButton.respondToTap()
+        if !inSettings {
+            deleteButton.isHidden = false
+            settingsButtonImage.image = UIImage(named: ImageName.CHECKMARK_IMAGE_NAME)
+            inSettings = true
+        }
+        else {
+            deleteButton.isHidden = true
+            settingsButtonImage.image = UIImage(named: ImageName.SETTINGS_IMAGE_NAME)
+            inSettings = false
+        }
+        
     }
 }
 
 protocol DetailCardViewDelegate : class {
-    func handleEditAction(detailCardView : DetailCardView)
-    func handleDeleteAction(detailCardView: DetailCardView)
+    func handleDeleteAction(_ detailCardView: DetailCardView)
 }
 
 extension DetailCardView {

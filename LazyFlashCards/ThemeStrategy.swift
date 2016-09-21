@@ -13,6 +13,7 @@ protocol ThemeStrategy {
     func getDarkColor() -> UIColor
     func getMediumColor() -> UIColor
     func getLightColor() -> UIColor
+    func getContrastColor() -> UIColor
     func getCornerRadiusForView() -> CGFloat
     func getCornerRadiusForButton() -> CGFloat
     func getTextColor() -> UIColor

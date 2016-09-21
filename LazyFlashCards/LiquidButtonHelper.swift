@@ -10,7 +10,7 @@ import Foundation
 import SnapKit
 import LiquidFloatingActionButton
 
-public class CustomCell : LiquidFloatingCell {
+open class CustomCell : LiquidFloatingCell {
     var name: String = "sample"
     
     init(icon: UIImage, name: String) {
@@ -22,11 +22,11 @@ public class CustomCell : LiquidFloatingCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public override func setupView(view: UIView) {
+    open override func setupView(_ view: UIView) {
         super.setupView(view)
         let label = UILabel()
         label.text = name
-        label.textColor = UIColor.whiteColor()
+        label.textColor = UIColor.white
         label.font = UIFont(name: "Helvetica-Neue", size: 12)
         addSubview(label)
         label.snp_makeConstraints { make in
@@ -37,13 +37,13 @@ public class CustomCell : LiquidFloatingCell {
     }
 }
 
-public class CustomDrawingActionButton: LiquidFloatingActionButton {
+open class CustomDrawingActionButton: LiquidFloatingActionButton {
     
-    override public func createPlusLayer(frame: CGRect) -> CAShapeLayer {
+    override open func createPlusLayer(_ frame: CGRect) -> CAShapeLayer {
         
         let plusLayer = CAShapeLayer()
         plusLayer.lineCap = kCALineCapRound
-        plusLayer.strokeColor = UIColor.whiteColor().CGColor
+        plusLayer.strokeColor = UIColor.white.cgColor
         plusLayer.lineWidth = 3.0
         
         let w = frame.width
@@ -57,11 +57,11 @@ public class CustomDrawingActionButton: LiquidFloatingActionButton {
         
         let path = UIBezierPath()
         for (start, end) in points {
-            path.moveToPoint(start)
-            path.addLineToPoint(end)
+            path.move(to: start)
+            path.addLine(to: end)
         }
         
-        plusLayer.path = path.CGPath
+        plusLayer.path = path.cgPath
         
         return plusLayer
     }

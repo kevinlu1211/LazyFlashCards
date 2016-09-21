@@ -1,29 +1,27 @@
 PODS:
   - AEAccordion (1.0.3)
   - AEXibceptionView (1.0.3)
-  - HidingNavigationBar (0.3.0)
-  - IBAnimatable (2.7)
+  - ChameleonFramework/Default (2.1.0)
+  - ChameleonFramework/Swift (2.1.0):
+    - ChameleonFramework/Default
   - JOEmojiableBtn (0.1.0)
   - Koloda (3.1.2):
     - pop (~> 1.0)
   - LiquidFloatingActionButton (1.2.0)
   - pop (1.0.9)
-  - PopupDialog (0.4.0):
-    - TZStackView
+  - PopupDialog (0.5.0)
   - PureLayout (3.0.2)
   - SkyFloatingLabelTextField (1.2.1)
   - SnapKit (0.15.0)
-  - SwiftyButton (0.4.0):
-    - SwiftyButton/CustomContent (= 0.4.0)
-  - SwiftyButton/CustomContent (0.4.0):
+  - SwiftyButton (0.5.0):
+    - SwiftyButton/CustomContent (= 0.5.0)
+  - SwiftyButton/CustomContent (0.5.0):
     - PureLayout (~> 3.0)
-  - TZStackView (1.2.0)
 
 DEPENDENCIES:
   - AEAccordion
   - AEXibceptionView
-  - HidingNavigationBar (~> 0.3)
-  - IBAnimatable
+  - ChameleonFramework/Swift
   - JOEmojiableBtn
   - Koloda (~> 3.1.2)
   - LiquidFloatingActionButton
@@ -35,17 +33,15 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AEAccordion: 4a6b3b938fc9abe8a20d7e9e238a50a5eae02572
   AEXibceptionView: cb1e5696c2cf1283a8d083406928222c9b59608e
-  HidingNavigationBar: 6378af14cea27bfef8be73470b081a36d45b87c4
-  IBAnimatable: baa9b37d0326de969836e9215f73cc377a5a84a6
+  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   JOEmojiableBtn: 7e3ca82bbb6b909ffb1f2ba26d9ea4fdfb3aadd4
   Koloda: 5aee353329cd1605540f1215a4c1975481dc7a37
   LiquidFloatingActionButton: 9c28961915754e08cf596ea6bdd60f9cd949f172
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
-  PopupDialog: 5f87c0c97af1cf5f2eee6e5a83421c3fc0d22fb5
+  PopupDialog: 9890441b81105b9076757af2afe2b037be682f3e
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
   SkyFloatingLabelTextField: 3f6610aded18e778df5cfab3b9e12a11b3e014e9
   SnapKit: 4962eed2ee18e48cbd2b2292fffc57efe7235f87
-  SwiftyButton: fffcc0d82b2b5f9ec1681f20ee9c67bed0d5c73b
-  TZStackView: 4b82373b4aabe4d99adf739a34e1bc6755149272
+  SwiftyButton: 7f1c7774a0aa721cbb6ea287742198ea0ee50c05
 
 COCOAPODS: 0.39.0

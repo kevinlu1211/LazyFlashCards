@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		190E78DB1D838C940020494B /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190E78DA1D838C940020494B /* RoundView.swift */; };
 		190E78DD1D838F1B0020494B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 190E78DC1D838F1B0020494B /* Assets.xcassets */; };
+		190F01781D8ED14900220FE2 /* ImageName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190F01771D8ED14900220FE2 /* ImageName.swift */; };
 		191C40FF1D73F8E90003AED9 /* DetailCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191C40FE1D73F8E90003AED9 /* DetailCardView.swift */; };
 		191C41011D73F93F0003AED9 /* DetailCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 191C41001D73F93F0003AED9 /* DetailCardView.xib */; };
 		19263CC81D74FFAC00F0259F /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19263CC61D74FFAC00F0259F /* CardTableViewCell.swift */; };
@@ -91,6 +92,7 @@
 		1747660E56C8847495FB6C6C /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		190E78DA1D838C940020494B /* RoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
 		190E78DC1D838F1B0020494B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		190F01771D8ED14900220FE2 /* ImageName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageName.swift; sourceTree = "<group>"; };
 		191C40FE1D73F8E90003AED9 /* DetailCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCardView.swift; sourceTree = "<group>"; };
 		191C41001D73F93F0003AED9 /* DetailCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailCardView.xib; sourceTree = "<group>"; };
 		19263CC61D74FFAC00F0259F /* CardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
@@ -384,6 +386,7 @@
 				19CCB2071D80CC080066AC6F /* ThemeFactory.swift */,
 				19CCB2091D80CD840066AC6F /* ThemeStrategy.swift */,
 				19CCB20B1D80CF880066AC6F /* ThemeStrategyBlue.swift */,
+				190F01771D8ED14900220FE2 /* ImageName.swift */,
 			);
 			name = Theme;
 			sourceTree = "<group>";
@@ -485,21 +488,24 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Kevin Lu";
 				TargetAttributes = {
 					19B8B12A1D7040B6002F3FEC = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 75W8CPN6HK;
+						LastSwiftMigration = 0800;
 					};
 					19B8B1411D7040B6002F3FEC = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 75W8CPN6HK;
+						LastSwiftMigration = 0800;
 						TestTargetID = 19B8B12A1D7040B6002F3FEC;
 					};
 					19B8B14C1D7040B6002F3FEC = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 75W8CPN6HK;
+						LastSwiftMigration = 0800;
 						TestTargetID = 19B8B12A1D7040B6002F3FEC;
 					};
 				};
@@ -623,6 +629,7 @@
 				19B4E2E01D77CA690047ED50 /* CardBack.swift in Sources */,
 				190E78DB1D838C940020494B /* RoundView.swift in Sources */,
 				193383F01D72735F00CCF703 /* CardLanguageStrategyEnglish.swift in Sources */,
+				190F01781D8ED14900220FE2 /* ImageName.swift in Sources */,
 				191C40FF1D73F8E90003AED9 /* DetailCardView.swift in Sources */,
 				19B8B16B1D704258002F3FEC /* DeckTableViewCell.swift in Sources */,
 				19FE17BD1D7BA31000DB79EA /* CardLanguageStrategy.swift in Sources */,
@@ -716,8 +723,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -739,7 +748,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -761,8 +770,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -778,9 +789,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -789,11 +801,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7297621F63D1BF85A3137C0B /* Pods.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				"HEADER_SEARCH_PATHS[arch=*]" = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = LazyFlashCards/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -801,8 +815,6 @@
 					"\"AEAccordion\"",
 					"-framework",
 					"\"AEXibceptionView\"",
-					"-framework",
-					"\"HidingNavigationBar\"",
 					"-framework",
 					"\"JOEmojiableBtn\"",
 					"-framework",
@@ -817,14 +829,13 @@
 					"\"SnapKit\"",
 					"-framework",
 					"\"SwiftyButton\"",
-					"-framework",
-					"\"TZStackView\"",
 					"-lxml2",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kevinlu.LazyFlashCards;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "LazyFlashCards/LazyFlashCards-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -832,11 +843,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0DFE532A7A642991048FB109 /* Pods.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				"HEADER_SEARCH_PATHS[arch=*]" = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = LazyFlashCards/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -844,8 +857,6 @@
 					"\"AEAccordion\"",
 					"-framework",
 					"\"AEXibceptionView\"",
-					"-framework",
-					"\"HidingNavigationBar\"",
 					"-framework",
 					"\"JOEmojiableBtn\"",
 					"-framework",
@@ -860,13 +871,12 @@
 					"\"SnapKit\"",
 					"-framework",
 					"\"SwiftyButton\"",
-					"-framework",
-					"\"TZStackView\"",
 					"-lxml2",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kevinlu.LazyFlashCards;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "LazyFlashCards/LazyFlashCards-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -878,6 +888,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kevinlu.LazyFlashCardsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LazyFlashCards.app/LazyFlashCards";
 			};
 			name = Debug;
@@ -890,6 +901,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kevinlu.LazyFlashCardsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LazyFlashCards.app/LazyFlashCards";
 			};
 			name = Release;
@@ -901,6 +913,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kevinlu.LazyFlashCardsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = LazyFlashCards;
 			};
 			name = Debug;
@@ -912,6 +925,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kevinlu.LazyFlashCardsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = LazyFlashCards;
 			};
 			name = Release;

@@ -10,8 +10,8 @@ import UIKit
 import SwiftyButton
 
 class DeleteDeckViewController: UIViewController {
-    var deleteDeck : ((shouldDelete : Bool, indexPathToBeDeleted : NSIndexPath) -> ())?
-    var indexPathToBeDeleted : NSIndexPath?
+    var deleteDeck : ((_ shouldDelete : Bool, _ indexPathToBeDeleted : IndexPath) -> ())?
+    var indexPathToBeDeleted : IndexPath?
     
     @IBOutlet weak var yesButton: SwiftyButton!
     @IBOutlet weak var noButton: SwiftyButton!
@@ -24,21 +24,21 @@ class DeleteDeckViewController: UIViewController {
         setupButton(yesButton)
         setupButton(noButton)
     }
-    @IBAction func yesButton(sender: AnyObject) {
+    @IBAction func yesButton(_ sender: AnyObject) {
         if let indexPathToBeDeleted = self.indexPathToBeDeleted {
-            deleteDeck!(shouldDelete: true, indexPathToBeDeleted: indexPathToBeDeleted)
+            deleteDeck!(true, indexPathToBeDeleted)
 
         }
     }
 
-    @IBAction func noButton(sender: AnyObject) {
+    @IBAction func noButton(_ sender: AnyObject) {
         if let indexPathToBeDeleted = self.indexPathToBeDeleted {
-            deleteDeck!(shouldDelete: false, indexPathToBeDeleted: indexPathToBeDeleted)
+            deleteDeck!(false, indexPathToBeDeleted)
             
         }
     }
     
-    func setupButton(swiftyButton : SwiftyButton) {
+    func setupButton(_ swiftyButton : SwiftyButton) {
         swiftyButton.buttonColor = theme.getMediumColor()
         swiftyButton.titleLabel?.textColor = theme.getTextColor()
     }

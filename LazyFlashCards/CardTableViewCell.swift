@@ -20,18 +20,18 @@ class CardTableViewCell: AEAccordionTableViewCell {
     }
     // MARK: - Override
     
-    override func setExpanded(expanded: Bool, animated: Bool) {
+    override func setExpanded(_ expanded: Bool, animated: Bool) {
         super.setExpanded(expanded, animated: animated)
         
         if !animated {
             toggleCell()
         } else {
-            let alwaysOptions: UIViewAnimationOptions = [.AllowUserInteraction, .BeginFromCurrentState, .TransitionCrossDissolve]
-            let expandedOptions: UIViewAnimationOptions = [.TransitionFlipFromTop, .CurveEaseOut]
-            let collapsedOptions: UIViewAnimationOptions = [.TransitionFlipFromBottom, .CurveEaseIn]
+            let alwaysOptions: UIViewAnimationOptions = [.allowUserInteraction, .beginFromCurrentState, .transitionCrossDissolve]
+            let expandedOptions: UIViewAnimationOptions = [.transitionFlipFromTop, .curveEaseOut]
+            let collapsedOptions: UIViewAnimationOptions = [.transitionFlipFromBottom, .curveEaseIn]
             let options: UIViewAnimationOptions = expanded ? alwaysOptions.union(expandedOptions) : alwaysOptions.union(collapsedOptions)
             
-            UIView.transitionWithView(detailView, duration: 0.3, options: options, animations: { () -> Void in
+            UIView.transition(with: detailView, duration: 0.3, options: options, animations: { () -> Void in
                 self.toggleCell()
                 }, completion: nil)
         }
@@ -40,13 +40,13 @@ class CardTableViewCell: AEAccordionTableViewCell {
     func setup() {
         // Setup background
         backgroundColor = theme.getDarkColor()
-        selectionStyle = UITableViewCellSelectionStyle.None
+        selectionStyle = UITableViewCellSelectionStyle.none
         
         // Setup header view
         headerView.contentView.layer.cornerRadius = theme.getCornerRadiusForView()
         headerView.contentView.backgroundColor = theme.getMediumColor()
         headerView.titleLabel.textColor = theme.getTextColor()
-        headerView.backgroundColor = UIColor.clearColor()
+        headerView.backgroundColor = UIColor.clear
     
         
         detailView.contentView.layer.cornerRadius = theme.getCornerRadiusForView()
@@ -54,14 +54,14 @@ class CardTableViewCell: AEAccordionTableViewCell {
         detailView.phraseLabel.textColor = theme.getTextColor()
         detailView.pronunciationLabel.textColor = theme.getTextColor()
         detailView.definitionTextView.textColor = theme.getTextColor()
-        detailView.backgroundColor = UIColor.clearColor()
+        detailView.backgroundColor = UIColor.clear
     }
     
     // MARK: - Helpers
     
-    private func toggleCell() {
-        detailView.hidden = !expanded
-        headerView.imageView.transform = expanded ? CGAffineTransformMakeRotation(CGFloat(M_PI)) : CGAffineTransformIdentity
+    fileprivate func toggleCell() {
+        detailView.isHidden = !expanded
+        headerView.imageView.transform = expanded ? CGAffineTransform(rotationAngle: CGFloat(M_PI)) : CGAffineTransform.identity
     }
     
     

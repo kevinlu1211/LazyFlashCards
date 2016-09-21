@@ -15,12 +15,12 @@ class FlashCard : NSManagedObject {
     @NSManaged var pronunciation : String?
     @NSManaged var deck : Deck?
     
-    override init(entity: NSEntityDescription, insertIntoManagedObjectContext context: NSManagedObjectContext?) {
-        super.init(entity: entity, insertIntoManagedObjectContext: context)
+    override init(entity: NSEntityDescription, insertInto context: NSManagedObjectContext?) {
+        super.init(entity: entity, insertInto: context)
     }
     init(context : NSManagedObjectContext, phrase : String, pronunciation : String, definition : String) {
-        let entity = NSEntityDescription.entityForName("FlashCard", inManagedObjectContext: context)
-        super.init(entity: entity!, insertIntoManagedObjectContext: context)
+        let entity = NSEntityDescription.entity(forEntityName: "FlashCard", in: context)
+        super.init(entity: entity!, insertInto: context)
         self.phrase = phrase
         self.pronunciation = pronunciation
         self.definition = definition
@@ -28,7 +28,7 @@ class FlashCard : NSManagedObject {
         
     }
     
-    func isEqualInContent(object: AnyObject?) -> Bool {
+    func isEqualInContent(_ object: AnyObject?) -> Bool {
         print(self.phrase!)
         print(self.pronunciation!)
         print(self.definition!)
