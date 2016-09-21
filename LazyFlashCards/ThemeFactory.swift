@@ -21,7 +21,7 @@ class ThemeFactory {
     func getTheme() -> ThemeStrategy {
         if let themeName = currentThemeName {
             switch themeName {
-            case .Blue:
+            case .blue:
                 return ThemeStrategyBlue()
             }
         }
@@ -30,7 +30,7 @@ class ThemeFactory {
         }
        
     }
-    func setTheme(themeName : ThemeName) {
+    func setTheme(_ themeName : ThemeName) {
         currentThemeName = themeName
     }
     

@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'C4879C7EE4DC0E76E4DB2D8C'
+               BlueprintIdentifier = 'A930999EEC115F306723EBBB'
                BlueprintName = 'AEAccordion'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'AEAccordion.framework'>

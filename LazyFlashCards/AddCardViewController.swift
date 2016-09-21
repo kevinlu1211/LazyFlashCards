@@ -10,8 +10,8 @@ import UIKit
 import SkyFloatingLabelTextField
 import SwiftyButton
 enum Language {
-    case Chinese
-    case English
+    case chinese
+    case english
 }
 
 
@@ -20,11 +20,13 @@ class AddCardViewController: UIViewController {
     @IBOutlet weak var phraseTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var pronunicationTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var definitionTextField: SkyFloatingLabelTextField!
-    @IBOutlet weak var searchButton: SwiftyButton!
-    @IBOutlet weak var previousButton: SwiftyButton!
-    @IBOutlet weak var nextButton: SwiftyButton!
-    @IBOutlet weak var addCardButton: SwiftyButton!
+
+    @IBOutlet weak var searchButton: RoundView!
     
+    @IBOutlet weak var previousButton: RoundView!
+    @IBOutlet weak var nextButton: RoundView!
+    @IBOutlet weak var addCardButton: RoundView!
+    @IBOutlet weak var contentView: UIView!
     var delegate : AddCardViewControllerDelegate?
 
     
@@ -49,7 +51,7 @@ class AddCardViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        currentLanguage = .English
+        currentLanguage = .english
         
         // Disable the previous and next buttons
         setup()
@@ -62,28 +64,28 @@ class AddCardViewController: UIViewController {
     }
     
     
-    private func updateCardLanguageStrategy() {
+    fileprivate func updateCardLanguageStrategy() {
         print("setting card strategy to \(currentLanguage)")
         cardLanguageStrategy = CardLanguageStrategyFactory.sharedInstance().getStrategy(self.currentLanguage)
     }
     
-    func setupTextField(textField : SkyFloatingLabelTextField) {
+    func setupTextField(_ textField : SkyFloatingLabelTextField) {
         //        textField.selectedIconColor = theme.getMediumColor()
         textField.selectedLineColor = theme.getMediumColor()
         textField.selectedTitleColor = theme.getMediumColor()
         textField.layer.cornerRadius = theme.getCornerRadiusForButton()
     }
     
-    func setupButton(swiftyButton : SwiftyButton) {
-        swiftyButton.buttonColor = theme.getMediumColor()
-        swiftyButton.titleLabel?.textColor = theme.getTextColor()
+    func setupSearchButton() {
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.handleSearch))
+        searchButton.addGestureRecognizer(tapGestureRecognizer)
     }
     
     func setup() {
-        setupButton(searchButton)
-        setupButton(previousButton)
-        setupButton(nextButton)
-        setupButton(addCardButton)
+        setupSearchButton()
+//        setupButton(previousButton)
+//        setupButton(nextButton)
+//        setupButton(addCardButton)
         setupTextField(phraseTextField)
         setupTextField(pronunicationTextField)
         setupTextField(definitionTextField)
@@ -103,31 +105,32 @@ class AddCardViewController: UIViewController {
 // MARK: - Button Actions
 extension AddCardViewController {
     
-    @IBAction func handleSearch(sender: AnyObject) {
+    func handleSearch() {
+        searchButton.respondToTap(color: theme.getDarkColor())
         // TODO: Delegate this to the factory methods so that we don't need to have a big switch block
         let phraseText = phraseTextField.text
         if let phrase = phraseText {
             
             // See if transliteration changes the string, as it will change for Chinese but not english
-            let mutableString = NSMutableString(string: phrase) as CFMutableStringRef
+            let mutableString = NSMutableString(string: phrase) as CFMutableString
             CFStringTransform(mutableString, nil, kCFStringTransformToLatin, Bool(0))
             
             // If the mutableString after transliteration is the same as the original string then it must be english
             if(mutableString as String == phrase) {
-                currentLanguage = .English
+                currentLanguage = .english
             }
             else {
-                currentLanguage = .Chinese
+                currentLanguage = .chinese
             }
 
         }
         else {
-            currentLanguage = .English
+            currentLanguage = .english
         }
         cardLanguageStrategy?.searchPhrase(self)
         
     }
-    @IBAction func handleAddCard(sender: AnyObject) {
+    @IBAction func handleAddCard(_ sender: AnyObject) {
         // First hide the left and right buttons
         hideLeftAndRightButtons()
 
@@ -138,14 +141,14 @@ extension AddCardViewController {
         clearTextFields()
      
     }
-    @IBAction func handlePreviousResult(sender: AnyObject) {
+    @IBAction func handlePreviousResult(_ sender: AnyObject) {
         if (resultIndex > 0) {
             resultIndex -= 1
             cardLanguageStrategy?.updateTextFields(self)
 
         }
     }
-    @IBAction func handleNextResult(sender: AnyObject) {
+    @IBAction func handleNextResult(_ sender: AnyObject) {
         if (resultIndex < maxIndex) {
             resultIndex += 1
             cardLanguageStrategy?.updateTextFields(self)
@@ -163,23 +166,23 @@ extension AddCardViewController {
     }
     
     func hideLeftAndRightButtons() {
-        if (previousButton.hidden == true && nextButton.hidden == true) {
+        if (previousButton.isHidden == true && nextButton.isHidden == true) {
             return
         }
         else {
-            previousButton.hidden = true
-            nextButton.hidden = true
+            previousButton.isHidden = true
+            nextButton.isHidden = true
         }
     }
     
     func showLeftandRightButtons() {
-        if(previousButton.hidden == false && nextButton.hidden == false) {
+        if(previousButton.isHidden == false && nextButton.isHidden == false) {
             return
         }
         else {
             print("Showing previous and next buttons")
-            previousButton.hidden = false
-            nextButton.hidden = false
+            previousButton.isHidden = false
+            nextButton.isHidden = false
         }
   
     }
@@ -189,21 +192,21 @@ extension AddCardViewController {
         print("Max index is \(maxIndex)")
         
         if(maxIndex == 0) {
-            previousButton.enabled = false
-            nextButton.enabled = false
+            previousButton.isUserInteractionEnabled = false
+            nextButton.isUserInteractionEnabled = false
             return
         }
         if resultIndex <= 0 {
-            previousButton.enabled = false
-            nextButton.enabled = true
+            previousButton.isUserInteractionEnabled = false
+            nextButton.isUserInteractionEnabled = true
         }
         else if (resultIndex >= maxIndex) {
-            previousButton.enabled = true
-            nextButton.enabled = false
+            previousButton.isUserInteractionEnabled = true
+            nextButton.isUserInteractionEnabled = false
         }
         else {
-            previousButton.enabled = true
-            nextButton.enabled = true
+            previousButton.isUserInteractionEnabled = true
+            nextButton.isUserInteractionEnabled = true
         }
 
     }
@@ -215,10 +218,10 @@ extension String {
     func language() -> String? {
         let tagger = NSLinguisticTagger(tagSchemes: [NSLinguisticTagSchemeLanguage], options: 0)
         tagger.string = self
-        return tagger.tagAtIndex(0, scheme: NSLinguisticTagSchemeLanguage, tokenRange: nil, sentenceRange: nil)
+        return tagger.tag(at: 0, scheme: NSLinguisticTagSchemeLanguage, tokenRange: nil, sentenceRange: nil)
     }
 }
 
 protocol AddCardViewControllerDelegate : class {
-    func handleAddCard(addCardViewController: AddCardViewController, phrase : String?, pronunication : String?, definition : String?)
+    func handleAddCard(_ addCardViewController: AddCardViewController, phrase : String?, pronunication : String?, definition : String?)
 }

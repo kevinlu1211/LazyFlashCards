@@ -14,4 +14,6 @@ struct ImageName {
     static let EXPANDING_MENU_IMAGE_IMAGE = "Plus"
     static let CHECKMARK_IMAGE_NAME = "Checkmark"
     static let SETTINGS_IMAGE_NAME = "Settings"
+    static let RESTART_IMAGE_NAME = "Restart"
+    static let SEARCH_IMAGE_NAME = "Search"
 }

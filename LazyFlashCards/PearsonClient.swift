@@ -9,8 +9,8 @@
 import Foundation
 
 class PearsonClient {
-    private let BASE_URL_FOR_PRONUNCIATION = "https://api.pearson.com/v2/dictionaries/ldoce5/entries?headword="
-    private let BASE_URL_FOR_DEFINITION = "https://api.pearson.com/v2/dictionaries/laad3/entries?headword="
+    fileprivate let BASE_URL_FOR_PRONUNCIATION = "https://api.pearson.com/v2/dictionaries/ldoce5/entries?headword="
+    fileprivate let BASE_URL_FOR_DEFINITION = "https://api.pearson.com/v2/dictionaries/laad3/entries?headword="
     class func sharedInstance() -> PearsonClient {
         struct Singleton {
             static var sharedInstance = PearsonClient()
@@ -18,7 +18,7 @@ class PearsonClient {
         return Singleton.sharedInstance
     }
     
-    func retrieveData(englishWord : String, completionHandler : (success: Bool, data : [PearsonData]?, errorString : String?) -> Void) {
+    func retrieveData(_ englishWord : String, completionHandler : @escaping (_ success: Bool, _ data : [PearsonData]?, _ errorString : String?) -> Void) {
 
         let query = createQuery(englishWord)
         let urlStringForPronunciation = BASE_URL_FOR_PRONUNCIATION + query
@@ -40,51 +40,51 @@ class PearsonClient {
                         for result in pearsonResults {
                             result.pronunciation = pronunciation
                         }
-                        completionHandler(success: true, data: pearsonResults, errorString: nil)
+                        completionHandler(true, pearsonResults, nil)
                     }
                     else {
-                        completionHandler(success: false, data: pearsonResults, errorString: error)
+                        completionHandler(false, pearsonResults, error)
                     }
                 }
             }
             else {
-                completionHandler(success: false, data: nil, errorString: error)
+                completionHandler(false, nil, error)
             }
             
         }
     }
     
     
-    func retrieveDefinition(urlString : String!, query : String!, completionHandler : (success: Bool, definitions : [PearsonData]?, errorString : String?) -> Void) {
+    func retrieveDefinition(_ urlString : String!, query : String!, completionHandler : @escaping (_ success: Bool, _ definitions : [PearsonData]?, _ errorString : String?) -> Void) {
         var request : NSMutableURLRequest
-        let url = NSURL(string: urlString)
+        let url = URL(string: urlString)
         
         // Check if the url is valid!
         if let url = url {
-            request = NSMutableURLRequest(URL: url)
+            request = NSMutableURLRequest(url: url)
         }
         else {
-            completionHandler(success: false, definitions: nil, errorString: "There was an error in the request for data, check internet connection and language settings")
+            completionHandler(false, nil, "There was an error in the request for data, check internet connection and language settings")
             return
         }
         
-        let session = NSURLSession.sharedSession()
+        let session = URLSession.shared
         var pearsonResults = [PearsonData]()
-        let task = session.dataTaskWithRequest(request) { data, response, error in
+        let task = session.dataTask(with: request as URLRequest, completionHandler: { data, response, error in
             if error != nil {
-                completionHandler(success: false, definitions: nil, errorString: "There was a networking error")
+                completionHandler(false, nil, "There was a networking error")
                 return
             }
             if data == nil {
-                completionHandler(success: false, definitions: nil, errorString: "There was an error in the request for data")
+                completionHandler(false, nil, "There was an error in the request for data")
                 return
             }
             
             let parsedResult : AnyObject?
             do {
-                parsedResult = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
+                parsedResult = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as AnyObject?
             } catch {
-                completionHandler(success: false, definitions : nil, errorString: "There was an error in the conversion for data")
+                completionHandler(false, nil, "There was an error in the conversion for data")
                 return
             }
             
@@ -93,7 +93,7 @@ class PearsonClient {
             print("There are: " + String(numberOfResults) + "result(s)")
             
             if numberOfResults == 0 {
-                completionHandler(success: false, definitions: nil, errorString: "No results were found")
+                completionHandler(false, nil, "No results were found")
                 return
             }
             
@@ -115,83 +115,115 @@ class PearsonClient {
                 
                 if comparisonHeadWord == comparisonQuery {
                     
-                    // Make sure it isn't nil
-                    if result["senses"] === nil {
-                        // Do nothing
-                    }
-                    else {
-                        let senses = result["senses"]!
-                        if senses[0] === nil {
-                            // Do nothing
-                        }
-                        else {
-                            print("---------- Printing result that matched: ----------")
-                            print(result)
-
-                            if let definition = senses[0]["definition"] as? String {
-                                let userHeadWord = self.recreateUserInput(query)
-                                let pearsonData = PearsonData(headWord: userHeadWord, definition: definition)
-                                pearsonResults.append(pearsonData)
-                            }
-                            else {
-                                let definition = senses[0]["subsenses"]![0]["definition"] as! String
-                                let userHeadWord = self.recreateUserInput(query)
-                                let pearsonData = PearsonData(headWord: userHeadWord, definition: definition)
-                                pearsonResults.append(pearsonData)
-                            }
-                            
-                        }
+//                    // Make sure it isn't nil
+//                    if result["senses"] === nil {
+//                        // Do nothing
+//                    }
+//                    else {
+//                        let senses = result["senses"] as! [AnyObject]
+//                        if let firstSense = senses[0] {
+//                            // Do nothing
+//                        }
+//                        else {
+//                            print("---------- Printing result that matched: ----------")
+//                            print(result)
+//
+//                            if let definition = senses[0]["definition"] as? String {
+//                                let userHeadWord = self.recreateUserInput(query)
+//                                let pearsonData = PearsonData(headWord: userHeadWord, definition: definition)
+//                                pearsonResults.append(pearsonData)
+//                            }
+//                            else {
+//                                let definition = senses[0]["subsenses"]![0]["definition"] as! String
+//                                let userHeadWord = self.recreateUserInput(query)
+//                                let pearsonData = PearsonData(headWord: userHeadWord, definition: definition)
+//                                pearsonResults.append(pearsonData)
+//                            }
+//                            
+//                        }
+//                    }
+                    
+                    let unwrappedSenses = result["senses"] as? [AnyObject]
+                    guard let senses = unwrappedSenses else {
+                        completionHandler(false, nil, "No results were found")
+                        return
                     }
                     
+                    let unwrappedSense = senses[0] as? [String : AnyObject]
+                    guard let sense = unwrappedSense else {
+                        completionHandler(false, nil, "No results were found")
+                        return
+                    }
+                    
+                    
+                    if let definition = sense["definition"] as? String {
+                        let userHeadWord = self.recreateUserInput(query)
+                        let pearsonData = PearsonData(headWord: userHeadWord, definition: definition)
+                        pearsonResults.append(pearsonData)
+                    }
+                    else {
+                        let unwrappedSubsense = sense["subsenses"] as? [AnyObject]
+                        guard let subsense = unwrappedSubsense else {
+                            completionHandler(false, nil, "No results were found")
+                            return
+                        }
+                        let definition = subsense[0]["definition"] as! String
+                        let userHeadWord = self.recreateUserInput(query)
+                        let pearsonData = PearsonData(headWord: userHeadWord, definition: definition)
+                        pearsonResults.append(pearsonData)
+                    }
+                    
+                   
+
                 }
             }
             if pearsonResults.count == 0 {
-                completionHandler(success: false, definitions: nil, errorString: "No results were found")
+                completionHandler(false, nil, "No results were found")
             }
             else {
-                completionHandler(success: true, definitions: pearsonResults, errorString: nil)
+                completionHandler(true, pearsonResults, nil)
             }
-        }
+        }) 
         task.resume()
     }
     
-    func retrievePronuciation(urlString : String!, query: String!, completionHandler : (success: Bool, pronunciation : String?, errorString : String?) -> Void) {
+    func retrievePronuciation(_ urlString : String!, query: String!, completionHandler : @escaping (_ success: Bool, _ pronunciation : String?, _ errorString : String?) -> Void) {
         
         var request : NSMutableURLRequest?
-        let url = NSURL(string: urlString)
+        let url = URL(string: urlString)
         
         if let url = url {
-            request = NSMutableURLRequest(URL: url)
+            request = NSMutableURLRequest(url: url)
         }
         else {
-            completionHandler(success: false, pronunciation: nil, errorString: "There was an error in the request for data, check internet connection and language settings")
+            completionHandler(false, nil, "There was an error in the request for data, check internet connection and language settings")
             return
         }
         
-        let session = NSURLSession.sharedSession()
+        let session = URLSession.shared
         
-        let task = session.dataTaskWithRequest(request!) { data, response, error in
+        let task = session.dataTask(with: request! as URLRequest, completionHandler: { data, response, error in
             if error != nil {
-                completionHandler(success: false, pronunciation: nil, errorString: "There was a networking error")
+                completionHandler(false, nil, "There was a networking error")
                 return
             }
             if data == nil {
-                completionHandler(success: false, pronunciation: nil, errorString: "There was an error in the request for data")
+                completionHandler(false, nil, "There was an error in the request for data")
                 return
             }
             
             let parsedResult : AnyObject?
             do {
-                parsedResult = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
+                parsedResult = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as AnyObject
             } catch {
-                completionHandler(success: false, pronunciation: nil, errorString: "There was an error in the conversion for data")
+                completionHandler(false, nil, "There was an error in the conversion for data")
                 return
             }
             
             let numberOfResults = parsedResult!["count"] as! Int
             
             if numberOfResults == 0 {
-                completionHandler(success: false, pronunciation: nil, errorString: "No results were found")
+                completionHandler(false, nil, "No results were found")
                 return
             }
             
@@ -213,49 +245,53 @@ class PearsonClient {
                     // If we can find it check if the headword is the same as the query
                     if comparisonHeadWord == comparisonQuery {
                         
-                        // Make sure it isn't nil
-                        if result["pronunciations"] === nil {
-                            // Do nothing
-                        }
-                        else {
-                            if result["pronunciations"]![0]["ipa"] === nil {
-                                // Do nothing
-                            }
-                            else {
-                                print("---------- Printing result that matched: ----------")
-                                print(result)
 
-                                let pronunciation = result["pronunciations"]![0]["ipa"] as! String
-                                completionHandler(success: true, pronunciation: pronunciation, errorString: nil)
-                                return
-                            }
+                        let unwrappedPronunciations = result["pronunciations"] as? [AnyObject]
+                        guard let pronunciations = unwrappedPronunciations else {
+                            completionHandler(false, nil, "No results were found")
+                            return
                         }
+                        
+                        let unwrappedPronunciation = pronunciations[0] as? [String : AnyObject]
+                        guard let pronunciation = unwrappedPronunciation else {
+                            completionHandler(false, nil, "No results were found")
+                            return
+                        }
+                        
+                        let unwrappedIPA = pronunciation["ipa"] as? String
+                    
+                        guard let ipa = unwrappedIPA else {
+                            completionHandler(false, nil, "No results were found")
+                            return
+                        }
+
+                        completionHandler(true, ipa, nil)
                         
                     }
                 }
             }
-            completionHandler(success: false, pronunciation: nil, errorString: "No results for pronunciation were found")
+            completionHandler(false, nil, "No results for pronunciation were found")
             return
             
-        }
+        }) 
         task.resume()
     }
 
     
-    func standardizeWord(string : String!) -> String {
-        var standardizedString = string.stringByReplacingOccurrencesOfString(" ", withString: "")
-        standardizedString = standardizedString.stringByReplacingOccurrencesOfString("+", withString: "")
-        return standardizedString.lowercaseString
+    func standardizeWord(_ string : String!) -> String {
+        var standardizedString = string.replacingOccurrences(of: " ", with: "")
+        standardizedString = standardizedString.replacingOccurrences(of: "+", with: "")
+        return standardizedString.lowercased()
     }
     
-    func createQuery(string : String!) -> String {
-        let query = string.stringByReplacingOccurrencesOfString(" ", withString: "+")
+    func createQuery(_ string : String!) -> String {
+        let query = string.replacingOccurrences(of: " ", with: "+")
         return query
     }
     
     // The inverse of createQuery for output on UI
-    func recreateUserInput(string : String!) -> String {
-        let userInput = string.stringByReplacingOccurrencesOfString("+", withString: " ")
+    func recreateUserInput(_ string : String!) -> String {
+        let userInput = string.replacingOccurrences(of: "+", with: " ")
         return userInput
     }
 }

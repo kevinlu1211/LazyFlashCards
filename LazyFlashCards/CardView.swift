@@ -38,18 +38,18 @@ class CardView: UIView {
     func setupFront() {
         front.alpha = 1
         front.phraseLabel.textColor = theme.getTextColor()
-        view.userInteractionEnabled = false
+        view.isUserInteractionEnabled = false
     }
     
     func setupBack() {
         back.alpha = 0
         back.pronunciationLabel.textColor = theme.getTextColor()
         back.definitionTextField.textColor = theme.getTextColor()
-        view.userInteractionEnabled = false
+        view.isUserInteractionEnabled = false
     }
     
     func setup() {
-        view.backgroundColor = theme.getDarkColor()
+        view.backgroundColor = theme.getCardColor()
         view.layer.cornerRadius = 5
         view.clipsToBounds = true
         setupFront()
@@ -77,7 +77,7 @@ class CardView: UIView {
         view.frame = bounds
         
         // Make the view stretch with containing view
-        view.autoresizingMask = [UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleHeight]
+        view.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
 //        view.clipsToBounds = true
         
         
@@ -87,9 +87,9 @@ class CardView: UIView {
     
     func loadViewFromNib() -> UIView {
         
-        let bundle = NSBundle(forClass: self.dynamicType)
+        let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: "CardView", bundle: bundle)
-        let view = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
+        let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         
         return view
     }

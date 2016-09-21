@@ -18,7 +18,11 @@ class TestViewController: UIViewController {
     var flashCards : [FlashCard] = []
     var swipedLeftFlashCards : [FlashCard] = []
     var initialCardNumber : Int!
-    @IBOutlet weak var restartButton: SwiftyButton!
+    var theme : ThemeStrategy {
+        return ThemeFactory.sharedInstance().getTheme()
+    }
+    
+    @IBOutlet weak var restartButton: RoundView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +32,9 @@ class TestViewController: UIViewController {
         setupDataSource()
         setupDeckView()
         setupButton()
+        self.view.backgroundColor = theme.getLightColor()
+        
+        
         
     }
 
@@ -59,25 +66,24 @@ class TestViewController: UIViewController {
     }
     
     func setupButton() {
-        restartButton.hidden = true
+        restartButton.isHidden = true
+        let tapRestart = UITapGestureRecognizer(target: self, action: #selector(self.handleRestart))
+        restartButton.addGestureRecognizer(tapRestart)
         
     }
     
-    override func viewDidLayoutSubviews() {
-        print("viewDidLayoutSubviews cardView.frame before reloading data is: \(deckView.frame)")
-//        deckView.reloadData()
-//        deckView.reloadData()
-//        print("viewDidLayoutSubviews cardView.frame after reloading data is: \(deckView.frame)")
-    }
-
-    @IBAction func restartButton(sender: AnyObject) {
+    func handleRestart() {
         setupDataSource()
         deckView.resetCurrentCardIndex()
-        restartButton.hidden = true
+        restartButton.isHidden = true
     }
+    
+
+
 }
 extension TestViewController: KolodaViewDelegate {
-    func kolodaDidRunOutOfCards(koloda: KolodaView) {
+    
+    func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
         // Before restart, clear away the old data
         flashCards.removeFirst(initialCardNumber)
         
@@ -88,7 +94,8 @@ extension TestViewController: KolodaViewDelegate {
         flashCards.shuffle(initialCardNumber)
         
         if (initialCardNumber == 0) {
-            restartButton.hidden = false
+            restartButton.isHidden = false
+            self.view.bringSubview(toFront: restartButton)
         }
         else {
             deckView.resetCurrentCardIndex()
@@ -96,11 +103,11 @@ extension TestViewController: KolodaViewDelegate {
         
     }
     
-    func koloda(koloda: KolodaView, didSelectCardAtIndex index: UInt) {
+    func koloda(_ koloda: KolodaView, didSelectCardAtIndex index: UInt) {
         print("selected card \(index)")
     }
     
-    func koloda(koloda: KolodaView, didSwipeCardAtIndex index: UInt, inDirection direction: SwipeResultDirection) {
+    func koloda(_ koloda: KolodaView, didSwipeCardAtIndex index: UInt, inDirection direction: SwipeResultDirection) {
         let currentCard = flashCards[Int(index)]
         
         for fc in flashCards {
@@ -121,7 +128,7 @@ extension TestViewController: KolodaViewDelegate {
         }
     }
     
-    func koloda(koloda: KolodaView, draggedCardWithPercentage finishPercentage: CGFloat, inDirection direction: SwipeResultDirection) {
+    func koloda(_ koloda: KolodaView, draggedCardWithPercentage finishPercentage: CGFloat, inDirection direction: SwipeResultDirection) {
         print(finishPercentage)
         if (direction == .Left) {
             
@@ -137,7 +144,7 @@ extension TestViewController: KolodaViewDelegate {
         
     }
     
-    func kolodaDidResetCard(koloda: KolodaView) {
+    func kolodaDidResetCard(_ koloda: KolodaView) {
         let cardView = koloda.viewForCardAtIndex(koloda.currentCardIndex) as! CardView    
         cardView.front.alpha = 1
         cardView.back.alpha = 0
@@ -147,11 +154,11 @@ extension TestViewController: KolodaViewDelegate {
 
 extension TestViewController: KolodaViewDataSource {
     
-    func kolodaNumberOfCards(koloda:KolodaView) -> UInt {
+    func kolodaNumberOfCards(_ koloda:KolodaView) -> UInt {
         return UInt(flashCards.count)
     }
     
-    func koloda(koloda: KolodaView, viewForCardAtIndex index: UInt) -> UIView {
+    func koloda(_ koloda: KolodaView, viewForCardAtIndex index: UInt) -> UIView {
         // Note that the commented out code below worked because our top level view of the CardView.xib was of class CardView, but now that we have changed it into a UIView it won't work this is because UINib(...)[0] will always get the top level view in the hierarchy
 //        let cardView = UINib(nibName: "CardView", bundle: nil).instantiateWithOwner(nil, options: nil).first as! CardView
 //        return cardView

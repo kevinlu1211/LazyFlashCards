@@ -9,5 +9,5 @@
 import Foundation
 
 enum ThemeName {
-    case Blue
+    case blue
 }

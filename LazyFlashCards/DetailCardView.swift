@@ -26,7 +26,7 @@ class DetailCardView: AEXibceptionView {
 
     override func awakeFromNib() {
         // First hide the delete and edit buttons
-        deleteButton.hidden = true
+        deleteButton.isHidden = true
         
         let tapSettings = UITapGestureRecognizer(target: self, action: #selector(self.handleSettings))
         let tapDelete = UITapGestureRecognizer(target: self, action: #selector(self.handleDelete))
@@ -42,12 +42,12 @@ class DetailCardView: AEXibceptionView {
     func handleSettings() {
         settingsButton.respondToTap()
         if !inSettings {
-            deleteButton.hidden = false
+            deleteButton.isHidden = false
             settingsButtonImage.image = UIImage(named: ImageName.CHECKMARK_IMAGE_NAME)
             inSettings = true
         }
         else {
-            deleteButton.hidden = true
+            deleteButton.isHidden = true
             settingsButtonImage.image = UIImage(named: ImageName.SETTINGS_IMAGE_NAME)
             inSettings = false
         }
@@ -56,7 +56,7 @@ class DetailCardView: AEXibceptionView {
 }
 
 protocol DetailCardViewDelegate : class {
-    func handleDeleteAction(detailCardView: DetailCardView)
+    func handleDeleteAction(_ detailCardView: DetailCardView)
 }
 
 extension DetailCardView {

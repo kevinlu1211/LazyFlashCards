@@ -19,11 +19,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>HidingNavigationBar.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>JOEmojiableBtn-JOEmojiableBtn.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -89,11 +84,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>TZStackView.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>pop.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -102,7 +92,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>06B7DC78C90606098184FF7DD7634608</key>
+		<key>067B8DDAC554820A79724299AE0FDEA6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -122,22 +112,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>31F5F177FD068BE68642506699AF81EB</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>354CEDD3BB597CBA76722C1F7C9D1FF8</key>
+		<key>4B499760E878CC328D86D54BAB35701F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>4BCE15B65BE1423E31A139A48360119E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>4CAF6369D19A47F9E35F2FCDF7D27DE6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -152,12 +132,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>704AB866EEE6EFF33CA21B09DF1D7654</key>
+		<key>5FF629D374B8AB3579DF4F64B0074C03</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>78364B8A3FA8744295B7C1515F5F760F</key>
+		<key>6AB66B614194A8104A60A161196F60E6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6F670FACECF636C221DD448E41FB93A9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -167,12 +152,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9CB59346A7C18053AF8B8156A1A637F8</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>A48CE6C2388D3BC5D19C10C535DE16F3</key>
+		<key>819127895DA13ED00BEAE50DC9CE7BFE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -182,17 +162,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DF96E02B871455785741CA4B309FBFE2</key>
+		<key>C494BF9C473ABFDAD6B0C2FACF9669BF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E5178BCFD6B5125DCEE5BAF05575CF69</key>
+		<key>DB11758B5C0B7D832DBFDEBE079D9D71</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F2BF5E77CE71CA889B85714FBBD21AA6</key>
+		<key>EA55DB505F9B78FFFB7EC03E0F0BA109</key>
 		<dict>
 			<key>primary</key>
 			<true/>

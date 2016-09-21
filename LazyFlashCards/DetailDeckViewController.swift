@@ -9,7 +9,6 @@
 import UIKit
 import LiquidFloatingActionButton
 import PopupDialog
-import HidingNavigationBar
 import AEAccordion
 import AEXibceptionView
 import CoreData
@@ -20,12 +19,12 @@ class DetailDeckViewController: UIViewController, UITableViewDataSource, UITable
     // MARK: - Properties
     
     // Table View
-    private let cellIdentifier = "CardTableViewCell"
+    fileprivate let cellIdentifier = "CardTableViewCell"
     var tableView: UITableView!
-    internal var expandedIndexPaths = [NSIndexPath]()
+    internal var expandedIndexPaths = [IndexPath]()
     
     // Floating liquid cells
-    private let ADD_CARD_BUTTON_INDEX = 0
+    fileprivate let ADD_CARD_BUTTON_INDEX = 0
     var liquidFloatingCells: [LiquidFloatingCell] = []
 
     // Core Data
@@ -70,35 +69,35 @@ extension DetailDeckViewController {
         tableView.dataSource = self
         tableView.delegate = self
         self.view.addSubview(tableView)
-        self.tableView.separatorStyle = .None
+        self.tableView.separatorStyle = .none
         registerCell()
         tableView.backgroundColor = theme.getDarkColor()
         tableView.reloadData()
     }
     func registerCell() {
         let cellNib = UINib(nibName: cellIdentifier, bundle: nil)
-        tableView.registerNib(cellNib, forCellReuseIdentifier: cellIdentifier)
+        tableView.register(cellNib, forCellReuseIdentifier: cellIdentifier)
     }
     
     func expandFirstCell() {
-        let firstCellIndexPath = NSIndexPath(forRow: 0, inSection: 0)
+        let firstCellIndexPath = IndexPath(row: 0, section: 0)
         expandedIndexPaths.append(firstCellIndexPath)
     }
     
     // MARK: - UITableViewDataSource
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return flashCards.count
     }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+
+    @objc(tableView:cellForRowAtIndexPath:) func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         // Setup cell view
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! CardTableViewCell
-        cell.selectionStyle = UITableViewCellSelectionStyle.None
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! CardTableViewCell
+        cell.selectionStyle = UITableViewCellSelectionStyle.none
         
         // Setup cell data
-        let flashCard = flashCards[indexPath.row]
+        let flashCard = flashCards[(indexPath as NSIndexPath).row]
         cell.headerView.titleLabel.text = flashCard.phrase
         cell.detailView.phraseLabel.text = flashCard.phrase
         cell.detailView.pronunciationLabel.text = flashCard.pronunciation
@@ -117,25 +116,25 @@ extension DetailDeckViewController {
     
     // MARK: - UITableViewDelegate
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    @objc(tableView:heightForRowAtIndexPath:) func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return expandedIndexPaths.contains(indexPath) ? 200.0 : 50.0
     }
     
     
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    @objc(tableView:willDisplayCell:forRowAtIndexPath:) func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if let cell = cell as? AEAccordionTableViewCell {
             let expanded = expandedIndexPaths.contains(indexPath)
             cell.setExpanded(expanded, animated: false)
         }
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if let cell = tableView.cellForRowAtIndexPath(indexPath) as? AEAccordionTableViewCell {
+    @objc(tableView:didSelectRowAtIndexPath:) func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath) as? AEAccordionTableViewCell {
             toggleCell(cell, animated: true)
         }
     }
     
-    func toggleCell(cell: AEAccordionTableViewCell, animated: Bool) {
+    func toggleCell(_ cell: AEAccordionTableViewCell, animated: Bool) {
         if !cell.expanded {
             expandCell(cell, animated: animated)
         } else {
@@ -148,8 +147,8 @@ extension DetailDeckViewController {
 // TODO: - Separate this out into another class
 extension DetailDeckViewController {
     
-    private func expandCell(cell: AEAccordionTableViewCell, animated: Bool) {
-        if let indexPath = tableView.indexPathForCell(cell) {
+    fileprivate func expandCell(_ cell: AEAccordionTableViewCell, animated: Bool) {
+        if let indexPath = tableView.indexPath(for: cell) {
             if !animated {
                 cell.setExpanded(true, animated: false)
                 addToExpandedIndexPaths(indexPath)
@@ -171,8 +170,8 @@ extension DetailDeckViewController {
         }
     }
     
-    private func collapseCell(cell: AEAccordionTableViewCell, animated: Bool) {
-        if let indexPath = tableView.indexPathForCell(cell) {
+    fileprivate func collapseCell(_ cell: AEAccordionTableViewCell, animated: Bool) {
+        if let indexPath = tableView.indexPath(for: cell) {
             if !animated {
                 cell.setExpanded(false, animated: false)
                 removeFromExpandedIndexPaths(indexPath)
@@ -194,13 +193,13 @@ extension DetailDeckViewController {
         }
     }
     
-    private func addToExpandedIndexPaths(indexPath: NSIndexPath) {
+    fileprivate func addToExpandedIndexPaths(_ indexPath: IndexPath) {
         expandedIndexPaths.append(indexPath)
     }
     
-    private func removeFromExpandedIndexPaths(indexPath: NSIndexPath) {
-        if let index = self.expandedIndexPaths.indexOf(indexPath) {
-            self.expandedIndexPaths.removeAtIndex(index)
+    fileprivate func removeFromExpandedIndexPaths(_ indexPath: IndexPath) {
+        if let index = self.expandedIndexPaths.index(of: indexPath) {
+            self.expandedIndexPaths.remove(at: index)
         }
     }
 }
@@ -227,30 +226,30 @@ extension DetailDeckViewController : LiquidFloatingActionButtonDataSource, Liqui
         
         // Setup the frame
         
-        let statusBarHeight = UIApplication.sharedApplication().statusBarFrame.size.height
+        let statusBarHeight = UIApplication.shared.statusBarFrame.size.height
         let navigationBarHeight = self.navigationController!.navigationBar.frame.height
         let buttonHeight = CGFloat(56)
         let floatingFrame = CGRect(x: 0, y: 0 , width: buttonHeight, height: buttonHeight)
-        let bottomRightButton = createButton(floatingFrame, .Up)
+        let bottomRightButton = createButton(floatingFrame, .up)
         self.view.addSubview(bottomRightButton)
-        bottomRightButton.center = CGPointMake(self.view.bounds.width - buttonHeight, self.view.bounds.height - buttonHeight - statusBarHeight - navigationBarHeight)
+        bottomRightButton.center = CGPoint(x: self.view.bounds.width - buttonHeight, y: self.view.bounds.height - buttonHeight - statusBarHeight - navigationBarHeight)
         
         let image = UIImage(named: ImageName.EXPANDING_MENU_IMAGE_IMAGE)
         bottomRightButton.image = image
-        bottomRightButton.backgroundColor = UIColor.clearColor()
+        bottomRightButton.backgroundColor = UIColor.clear
         bottomRightButton.color = theme.getContrastColor()
         
     }
     
-    func numberOfCells(liquidFloatingActionButton: LiquidFloatingActionButton) -> Int {
+    func numberOfCells(_ liquidFloatingActionButton: LiquidFloatingActionButton) -> Int {
         return liquidFloatingCells.count
     }
     
-    func cellForIndex(index: Int) -> LiquidFloatingCell {
+    func cellForIndex(_ index: Int) -> LiquidFloatingCell {
         return liquidFloatingCells[index]
     }
     
-    func liquidFloatingActionButton(liquidFloatingActionButton: LiquidFloatingActionButton, didSelectItemAtIndex index: Int) {
+    func liquidFloatingActionButton(_ liquidFloatingActionButton: LiquidFloatingActionButton, didSelectItemAtIndex index: Int) {
         print("did Tapped! \(index)")
         if index == ADD_CARD_BUTTON_INDEX {
             cardSetupPopup()
@@ -260,16 +259,16 @@ extension DetailDeckViewController : LiquidFloatingActionButtonDataSource, Liqui
     
     func cardSetupPopup() {
         let cardSetupVC = AddCardViewController(nibName: "AddCardViewController", bundle: nil)
-        let popup = PopupDialog(viewController: cardSetupVC, transitionStyle: .BounceDown, buttonAlignment: .Horizontal, gestureDismissal: true)
+        let popup = PopupDialog(viewController: cardSetupVC, buttonAlignment: .horizontal, transitionStyle: .bounceDown, gestureDismissal: true)
         cardSetupVC.delegate = self
-        presentViewController(popup, animated: true, completion: nil)
+        present(popup, animated: true, completion: nil)
         
     }
     
 }
 
 extension DetailDeckViewController : AddCardViewControllerDelegate {
-    func handleAddCard(addCardViewController : AddCardViewController, phrase: String?, pronunication: String?, definition: String?) {
+    func handleAddCard(_ addCardViewController : AddCardViewController, phrase: String?, pronunication: String?, definition: String?) {
         print("creating new card")
         // Create the new flashCard
         let flashCard = FlashCard(context: sharedContext, phrase: phrase!, pronunciation: pronunication!, definition: definition!)
@@ -289,11 +288,11 @@ extension DetailDeckViewController : AddCardViewControllerDelegate {
 
 extension DetailDeckViewController : DetailCardViewDelegate {
 
-    func handleDeleteAction(detailCardView: DetailCardView) {
+    func handleDeleteAction(_ detailCardView: DetailCardView) {
         print("pressed delete")
-        let indexPath = tableView.indexPathForCell(detailCardView.getParentTableViewCell())
+        let indexPath = tableView.indexPath(for: detailCardView.getParentTableViewCell())
         if let indexPath = indexPath {
-            let flashCard = flashCards[indexPath.row]
+            let flashCard = flashCards[(indexPath as NSIndexPath).row]
             
             // Remove the the flashCard fields from the actors array using the inverse relationship
             flashCard.phrase = nil
@@ -301,14 +300,14 @@ extension DetailDeckViewController : DetailCardViewDelegate {
             flashCard.definition = nil
             
             // Update the data source
-            flashCards.removeAtIndex(indexPath.row)
+            flashCards.remove(at: (indexPath as NSIndexPath).row)
             removeFromExpandedIndexPaths(indexPath)
             
             // Remove the row from the table
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+            tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.fade)
             
             // Remove the movie from the context
-            sharedContext.deleteObject(flashCard)
+            sharedContext.delete(flashCard)
             CoreDataStackManager.sharedInstance().saveContext()
         }
        

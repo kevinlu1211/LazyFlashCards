@@ -9,6 +9,6 @@
 import Foundation
 
 protocol CardLanguageStrategy {
-    func searchPhrase(addCardViewController : AddCardViewController)
-    func updateTextFields(addCardViewController : AddCardViewController)
+    func searchPhrase(_ addCardViewController : AddCardViewController)
+    func updateTextFields(_ addCardViewController : AddCardViewController)
 }

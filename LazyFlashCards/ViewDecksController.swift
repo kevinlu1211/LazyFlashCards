@@ -1,15 +1,14 @@
 //
-//  SampleTableViewController.swift
-//  AEAccordion
+//  ViewDecksController.swift
 //
-//  Created by Marko Tadic on 6/26/15.
-//  Copyright © 2015 AE. All rights reserved.
+//
+//  Created by Kevin Lu on 21/08/2016.
+//
 //
 
 import UIKit
 import LiquidFloatingActionButton
 import PopupDialog
-import HidingNavigationBar
 import AEAccordion
 import AEXibceptionView
 import CoreData
@@ -18,24 +17,24 @@ class ViewDecksController: UIViewController, UITableViewDataSource, UITableViewD
     
     // MARK: - Properties
 
-    private let cellIdentifier = "DeckTableViewCell"
-    private let ADD_DECK_BUTTON_INDEX = 0
+    fileprivate let cellIdentifier = "DeckTableViewCell"
+    fileprivate let ADD_DECK_BUTTON_INDEX = 0
     var liquidFloatingCells: [LiquidFloatingCell] = []
     var tableView: UITableView!
     
     // Core Data
-    private var decks = [Deck]()
+    fileprivate var decks = [Deck]()
     lazy var sharedContext = {
         return CoreDataStackManager.sharedInstance().managedObjectContext
     }()
     
-    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var theme : ThemeStrategy {
         return ThemeFactory.sharedInstance().getTheme()
     }
     
     /// Array of `NSIndexPath` objects for all of the expanded cells.
-    internal var expandedIndexPaths = [NSIndexPath]()
+    internal var expandedIndexPaths = [IndexPath]()
     
     // MARK: - Lifecycle
     
@@ -56,10 +55,10 @@ class ViewDecksController: UIViewController, UITableViewDataSource, UITableViewD
         }
     }
 
-    func styleNavigationController(navigationController: UINavigationController){
-        navigationController.navigationBar.translucent = false
-        navigationController.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-        navigationController.navigationBar.tintColor = UIColor.whiteColor()
+    func styleNavigationController(_ navigationController: UINavigationController){
+        navigationController.navigationBar.isTranslucent = false
+        navigationController.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        navigationController.navigationBar.tintColor = UIColor.white
         navigationController.navigationBar.barTintColor = theme.getDarkColor()
     }
 
@@ -69,10 +68,9 @@ class ViewDecksController: UIViewController, UITableViewDataSource, UITableViewD
 
 extension ViewDecksController {
     func fetchAllDecks() -> [Deck] {
-        let fetchRequest = NSFetchRequest(entityName: "Deck")
         do {
-            let decks = try sharedContext.executeFetchRequest(fetchRequest) as! [Deck]
-            return decks
+            let decks = try sharedContext.fetch(NSFetchRequest(entityName: "Deck"))
+            return decks as! [Deck]
         }
         catch {
             print("Error")
@@ -93,34 +91,34 @@ extension ViewDecksController {
         tableView.dataSource = self
         tableView.delegate = self
         self.view.addSubview(tableView)
-        self.tableView.separatorStyle = .None
+        self.tableView.separatorStyle = .none
         registerCell()
         tableView.reloadData()
         tableView.backgroundColor = theme.getDarkColor()
     }
     func registerCell() {
         let cellNib = UINib(nibName: cellIdentifier, bundle: nil)
-        tableView.registerNib(cellNib, forCellReuseIdentifier: cellIdentifier)
+        tableView.register(cellNib, forCellReuseIdentifier: cellIdentifier)
     }
     
     func expandFirstCell() {
-        let firstCellIndexPath = NSIndexPath(forRow: 0, inSection: 0)
+        let firstCellIndexPath = IndexPath(row: 0, section: 0)
         expandedIndexPaths.append(firstCellIndexPath)
     }
     
     // MARK: - UITableViewDataSource
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return decks.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    @objc(tableView:cellForRowAtIndexPath:) func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! DeckTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! DeckTableViewCell
       
         
         // Setup header view
-        cell.headerView.titleLabel.text = decks[indexPath.row].name
+        cell.headerView.titleLabel.text = decks[(indexPath as NSIndexPath).row].name
         cell.detailView.delegate = self
         
         cell.setup()
@@ -129,25 +127,25 @@ extension ViewDecksController {
     
     // MARK: - UITableViewDelegate
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    @objc(tableView:heightForRowAtIndexPath:) func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return expandedIndexPaths.contains(indexPath) ? 200.0 : 50.0
     }
     
 
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    @objc(tableView:willDisplayCell:forRowAtIndexPath:) func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if let cell = cell as? AEAccordionTableViewCell {
             let expanded = expandedIndexPaths.contains(indexPath)
             cell.setExpanded(expanded, animated: false)
         }
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if let cell = tableView.cellForRowAtIndexPath(indexPath) as? AEAccordionTableViewCell {
+    @objc(tableView:didSelectRowAtIndexPath:) func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath) as? AEAccordionTableViewCell {
             toggleCell(cell, animated: true)
         }
     }
     
-    func toggleCell(cell: AEAccordionTableViewCell, animated: Bool) {
+    func toggleCell(_ cell: AEAccordionTableViewCell, animated: Bool) {
         if !cell.expanded {
             expandCell(cell, animated: animated)
         } else {
@@ -162,8 +160,8 @@ extension ViewDecksController {
 // TODO: - Separate this out into another class
 extension ViewDecksController {
     
-    private func expandCell(cell: AEAccordionTableViewCell, animated: Bool) {
-        if let indexPath = tableView.indexPathForCell(cell) {
+    fileprivate func expandCell(_ cell: AEAccordionTableViewCell, animated: Bool) {
+        if let indexPath = tableView.indexPath(for: cell) {
             if !animated {
                 cell.setExpanded(true, animated: false)
                 addToExpandedIndexPaths(indexPath)
@@ -185,8 +183,8 @@ extension ViewDecksController {
         }
     }
     
-    private func collapseCell(cell: AEAccordionTableViewCell, animated: Bool) {
-        if let indexPath = tableView.indexPathForCell(cell) {
+    fileprivate func collapseCell(_ cell: AEAccordionTableViewCell, animated: Bool) {
+        if let indexPath = tableView.indexPath(for: cell) {
             if !animated {
                 cell.setExpanded(false, animated: false)
                 removeFromExpandedIndexPaths(indexPath)
@@ -208,13 +206,13 @@ extension ViewDecksController {
         }
     }
     
-    private func addToExpandedIndexPaths(indexPath: NSIndexPath) {
+    fileprivate func addToExpandedIndexPaths(_ indexPath: IndexPath) {
         expandedIndexPaths.append(indexPath)
     }
     
-    private func removeFromExpandedIndexPaths(indexPath: NSIndexPath) {
-        if let index = self.expandedIndexPaths.indexOf(indexPath) {
-            self.expandedIndexPaths.removeAtIndex(index)
+    fileprivate func removeFromExpandedIndexPaths(_ indexPath: IndexPath) {
+        if let index = self.expandedIndexPaths.index(of: indexPath) {
+            self.expandedIndexPaths.remove(at: index)
         }
     }
 
@@ -241,32 +239,32 @@ extension ViewDecksController : LiquidFloatingActionButtonDataSource, LiquidFloa
         liquidFloatingCells.append(customCellFactory(ImageName.ADD_DECK_IMAGE_NAME, "Add Deck"))
         
         // Setup the frame of the expanding button on the bottom right
-        let statusBarHeight = UIApplication.sharedApplication().statusBarFrame.size.height
+        let statusBarHeight = UIApplication.shared.statusBarFrame.size.height
         let navigationBarHeight = self.navigationController!.navigationBar.frame.height
         let buttonHeight = CGFloat(56)
         let floatingFrame = CGRect(x: 0, y: 0 , width: buttonHeight, height: buttonHeight)
-        let bottomRightButton = createButton(floatingFrame, .Up)
+        let bottomRightButton = createButton(floatingFrame, .up)
         self.view.addSubview(bottomRightButton)
-        bottomRightButton.center = CGPointMake(self.view.bounds.width - buttonHeight, self.view.bounds.height - buttonHeight - statusBarHeight - navigationBarHeight)
+        bottomRightButton.center = CGPoint(x: self.view.bounds.width - buttonHeight, y: self.view.bounds.height - buttonHeight - statusBarHeight - navigationBarHeight)
         
         // Setup the image of the expanding button
         let image = UIImage(named: ImageName.EXPANDING_MENU_IMAGE_IMAGE)
         bottomRightButton.image = image
-        bottomRightButton.backgroundColor = UIColor.clearColor()
+        bottomRightButton.backgroundColor = UIColor.clear
         bottomRightButton.color = theme.getContrastColor()
 
     
     }
     
-    func numberOfCells(liquidFloatingActionButton: LiquidFloatingActionButton) -> Int {
+    func numberOfCells(_ liquidFloatingActionButton: LiquidFloatingActionButton) -> Int {
         return liquidFloatingCells.count
     }
     
-    func cellForIndex(index: Int) -> LiquidFloatingCell {
+    func cellForIndex(_ index: Int) -> LiquidFloatingCell {
         return liquidFloatingCells[index]
     }
     
-    func liquidFloatingActionButton(liquidFloatingActionButton: LiquidFloatingActionButton, didSelectItemAtIndex index: Int) {
+    func liquidFloatingActionButton(_ liquidFloatingActionButton: LiquidFloatingActionButton, didSelectItemAtIndex index: Int) {
         print("did Tapped! \(index)")
         if index == ADD_DECK_BUTTON_INDEX {
             deckSetupPopup()
@@ -276,80 +274,81 @@ extension ViewDecksController : LiquidFloatingActionButtonDataSource, LiquidFloa
     
     func deckSetupPopup() {
         let deckSetupVC = AddDeckViewController(nibName: "AddDeckViewController", bundle: nil)
-        let popup = PopupDialog(viewController: deckSetupVC, transitionStyle: .BounceDown, buttonAlignment: .Horizontal, gestureDismissal: true)
+        let popup = PopupDialog(viewController: deckSetupVC, buttonAlignment: .horizontal, transitionStyle: .bounceDown, gestureDismissal: true)
         deckSetupVC.delegate = self
-        presentViewController(popup, animated: true, completion: nil)
+        present(popup, animated: true, completion: nil)
         
     }
     
 }
 extension ViewDecksController : DetailDeckViewDelegate {
-    func handleViewDeck(detailDeckView: DetailDeckView) {
-        let detailDeckViewController = self.storyboard?.instantiateViewControllerWithIdentifier("DetailDeckViewController") as! DetailDeckViewController
-        let indexPath = tableView.indexPathForCell(detailDeckView.getParentTableViewCell())
+    func handleViewDeck(_ detailDeckView: DetailDeckView) {
+        let detailDeckViewController = self.storyboard?.instantiateViewController(withIdentifier: "DetailDeckViewController") as! DetailDeckViewController
+        let indexPath = tableView.indexPath(for: detailDeckView.getParentTableViewCell())
         if let indexPath = indexPath {
-            detailDeckViewController.deck = decks[indexPath.row]
+            detailDeckViewController.deck = decks[(indexPath as NSIndexPath).row]
         }
         self.navigationController!.pushViewController(detailDeckViewController, animated: true)
 
         print("handled the button woohoo")
     }
     
-    func handleTest(detailDeckView: DetailDeckView) {
-        let testViewController = self.storyboard?.instantiateViewControllerWithIdentifier("TestViewController") as! TestViewController
-        let indexPath = tableView.indexPathForCell(detailDeckView.getParentTableViewCell())
+    func handleTest(_ detailDeckView: DetailDeckView) {
+        let testViewController = self.storyboard?.instantiateViewController(withIdentifier: "TestViewController") as! TestViewController
+        let indexPath = tableView.indexPath(for: detailDeckView.getParentTableViewCell())
         if let indexPath = indexPath {
-            testViewController.deck = decks[indexPath.row]
+            testViewController.deck = decks[(indexPath as NSIndexPath).row]
         }
 
         self.navigationController!.pushViewController(testViewController, animated: true)
     }
     
-    func handleSettings(detailDeckView: DetailDeckView) {
+    func handleSettings(_ detailDeckView: DetailDeckView) {
         // Setup the delete deck view controller
         let settingsViewController = SettingsViewController(nibName: "SettingsViewController", bundle: nil)
-        let indexPathOfDeck = tableView.indexPathForCell(detailDeckView.getParentTableViewCell())
+        let indexPathOfDeck = tableView.indexPath(for: detailDeckView.getParentTableViewCell())
         if let indexPath = indexPathOfDeck {
-            let deck = decks[indexPath.row]
-            settingsViewController.deleteDeck = deleteDeckHandler
-            settingsViewController.changeDeckName = changeDeckNameHandler
+            let deck = decks[(indexPath as NSIndexPath).row]
+//            settingsViewController.deleteDeck = deleteDeckHandler
+//            settingsViewController.changeDeckName = changeDeckNameHandler
+            settingsViewController.delegate = self
             settingsViewController.deck = deck
             settingsViewController.indexPathOfDeck = indexPath
-            let popup = PopupDialog(viewController: settingsViewController, transitionStyle: .BounceDown, buttonAlignment: .Horizontal, gestureDismissal: true)
-            presentViewController(popup, animated: true, completion: nil)
+            let popup = PopupDialog(viewController: settingsViewController, buttonAlignment: .horizontal, transitionStyle: .bounceDown,  gestureDismissal: true)
+            present(popup, animated: true, completion: nil)
 
         }
     }
     
-    func deleteDeckHandler(indexPathOfDeck : NSIndexPath) {
+    func deleteDeckHandler(_ indexPathOfDeck : IndexPath) {
         
     
         // Get the deck that is to be deleted
-        let deck = decks[indexPathOfDeck.row]
+        let deck = decks[(indexPathOfDeck as NSIndexPath).row]
         
         // Update data source and table
-        decks.removeAtIndex(indexPathOfDeck.row)
-        tableView.deleteRowsAtIndexPaths([indexPathOfDeck], withRowAnimation: .Fade)
+        decks.remove(at: (indexPathOfDeck as NSIndexPath).row)
+        tableView.deleteRows(at: [indexPathOfDeck], with: .fade)
         removeFromExpandedIndexPaths(indexPathOfDeck)
         
         // Delete flashCard instance by setting it to nil
         deck.flashCards = nil
-        sharedContext.deleteObject(deck)
+        sharedContext.delete(deck)
         CoreDataStackManager.sharedInstance().saveContext()
         
         
-        self.dismissViewControllerAnimated(false, completion: nil)
+        self.dismiss(animated: false, completion: nil)
 
     }
     
-    func changeDeckNameHandler(newDeckName: String, indexPathOfDeck: NSIndexPath) {
+    func changeDeckNameHandler(_ newDeckName: String, indexPathOfDeck: IndexPath) {
        
-        let deck = decks[indexPathOfDeck.row]
+        let deck = decks[(indexPathOfDeck as NSIndexPath).row]
         deck.name = newDeckName
         print(deck.name)
-        tableView.reloadRowsAtIndexPaths([indexPathOfDeck], withRowAnimation: .Fade)
+        tableView.reloadRows(at: [indexPathOfDeck], with: .fade)
         CoreDataStackManager.sharedInstance().saveContext()
-        self.dismissViewControllerAnimated(false, completion: nil)
+        self.dismiss(animated: false, completion: nil)
         
         
     }
@@ -360,7 +359,7 @@ extension ViewDecksController : DetailDeckViewDelegate {
 
 
 extension ViewDecksController : AddDeckViewControllerDelegate {
-    func handleAddDeck(deckName : String) {
+    func handleAddDeck(_ deckName : String) {
         // First add the things required to update the data source
         let deck = Deck(context: sharedContext, name: deckName, detail: nil)
         decks.append(deck)
@@ -372,7 +371,45 @@ extension ViewDecksController : AddDeckViewControllerDelegate {
         tableView.reloadData()
         
         // Now dismiss the popup view controller
-        self.dismissViewControllerAnimated(false, completion: nil)
+        self.dismiss(animated: false, completion: nil)
     }
 }
 
+extension ViewDecksController : SettingsViewControllerDelegate {
+    func changeDeckName(settingsViewController: SettingsViewController) {
+        
+        let unwrappedIndexPathOfDeck = settingsViewController.indexPathOfDeck
+        guard let indexPathOfDeck = unwrappedIndexPathOfDeck else {
+            self.dismiss(animated: false, completion: nil)
+            return
+        }
+        let deck = decks[indexPathOfDeck.row]
+        deck.name = settingsViewController.deckNameTextField.text!
+        print(deck.name)
+        tableView.reloadRows(at: [indexPathOfDeck], with: .fade)
+        CoreDataStackManager.sharedInstance().saveContext()
+        self.dismiss(animated: false, completion: nil)
+    }
+    func deleteDeck(settingsViewController: SettingsViewController) {
+        let unwrappedIndexPathOfDeck = settingsViewController.indexPathOfDeck
+        guard let indexPathOfDeck = unwrappedIndexPathOfDeck else {
+            self.dismiss(animated: false, completion: nil)
+            return
+        }
+        let deck = decks[indexPathOfDeck.row]
+        
+        // Update data source and table
+        decks.remove(at: indexPathOfDeck.row)
+        tableView.deleteRows(at: [indexPathOfDeck], with: .fade)
+        removeFromExpandedIndexPaths(indexPathOfDeck)
+        
+        // Delete flashCard instance by setting it to nil
+        deck.flashCards = nil
+        sharedContext.delete(deck)
+        CoreDataStackManager.sharedInstance().saveContext()
+        
+        
+        self.dismiss(animated: false, completion: nil)
+
+    }
+}

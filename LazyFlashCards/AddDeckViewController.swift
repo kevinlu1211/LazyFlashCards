@@ -29,7 +29,8 @@ class AddDeckViewController: UIViewController {
         
     }
     
-    func setupTextField(textField : SkyFloatingLabelTextFieldWithIcon) {
+    func setupTextField(_ textField : SkyFloatingLabelTextFieldWithIcon) {
+        textField.delegate = self
         textField.selectedIconColor = theme.getMediumColor()
         textField.selectedLineColor = theme.getMediumColor()
         textField.selectedTitleColor = theme.getMediumColor()
@@ -37,48 +38,69 @@ class AddDeckViewController: UIViewController {
 
     }
     
-    func setupButton(swiftyButton : SwiftyButton) {
-        // Setup button 
-        swiftyButton.layer.borderColor = theme.getMediumColor().CGColor
-        swiftyButton.layer.borderWidth = 2
+    func setupButton(_ swiftyButton : SwiftyButton) {
+        //
+        swiftyButton.isEnabled = true
+
+        // Setup button
+        swiftyButton.layer.borderColor = theme.getMediumColor().cgColor
+        swiftyButton.layer.borderWidth = 1
         swiftyButton.layer.cornerRadius = theme.getCornerRadiusForButton()
         
         // Setup the button when it's not highlighted
-        swiftyButton.buttonColor = UIColor.whiteColor()
-        swiftyButton.setTitleColor(theme.getMediumColor(), forState: .Normal)
-//        
-//        // Setup the button when it's highlighted
-//        swiftyButton.highlightedColor = theme.getMediumColor()
-//        swiftyButton.setTitleColor(UIColor.whiteColor(), forState: .Highlighted)
-//        
-//        // Setup the button when it's disabled
-//        swiftyButton.disabledButtonColor = UIColor.whiteColor()
-//        swiftyButton.setTitleColor(UIColor.grayColor(), forState: .Disabled)
+        swiftyButton.buttonColor = UIColor.white
+        swiftyButton.shadowColor = UIColor.white
+        swiftyButton.setTitleColor(theme.getMediumColor(), for: UIControlState())
+        
+        swiftyButton.disabledButtonColor = UIColor.white
+        swiftyButton.disabledShadowColor = UIColor.white
+    }
+    
+    func disableButton(_ swiftyButton : SwiftyButton) {
+        
+        swiftyButton.isEnabled = false
+        
+        
+        // Setup button
+        swiftyButton.layer.borderColor = UIColor.gray.cgColor
+        swiftyButton.layer.borderWidth = 1
+        swiftyButton.layer.cornerRadius = theme.getCornerRadiusForButton()
+        
+        // Setup the button when it's not highlighted
+        swiftyButton.disabledButtonColor = UIColor.white
+        swiftyButton.disabledShadowColor = UIColor.white
+        swiftyButton.setTitleColor(UIColor.gray, for: UIControlState())
+        
+        
     }
     
     func setup() {
-        setupButton(addDeckButton)
+        disableButton(addDeckButton)
         setupTextField(deckNameTextField)
     }
 
 
-    @IBAction func addDeckButton(sender: AnyObject) {
-        // Assuming that there is text
+    @IBAction func addDeckButton(_ sender: AnyObject) {
         delegate?.handleAddDeck(deckNameTextField.text!)
         
     }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
+extension AddDeckViewController : UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let currentDeckName = textField.text! + string
+        if currentDeckName != "" {
+            setupButton(addDeckButton)
+        }
+        else {
+            disableButton(addDeckButton)
+        }
+        return true
+    }
+}
+
 protocol AddDeckViewControllerDelegate : class {
-    func handleAddDeck(deckName : String)
+    func handleAddDeck(_ deckName : String)
 }

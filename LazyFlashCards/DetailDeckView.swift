@@ -44,9 +44,9 @@ class DetailDeckView: AEXibceptionView {
 }
 
 protocol DetailDeckViewDelegate : class {
-    func handleViewDeck(detailDeckView : DetailDeckView)
-    func handleTest(detailDeckView : DetailDeckView)
-    func handleSettings(detailDeckView : DetailDeckView)
+    func handleViewDeck(_ detailDeckView : DetailDeckView)
+    func handleTest(_ detailDeckView : DetailDeckView)
+    func handleSettings(_ detailDeckView : DetailDeckView)
 }
 
 extension DetailDeckView {

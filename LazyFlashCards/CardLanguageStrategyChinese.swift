@@ -11,8 +11,8 @@ import Foundation
 class CardLanguageStrategyChinese : NSObject, CardLanguageStrategy {
     
 
-    func searchPhrase(addCardViewController : AddCardViewController) -> Void {
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)) {
+    func searchPhrase(_ addCardViewController : AddCardViewController) -> Void {
+        DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.high).async {
             MDBGScraper.sharedInstance().retrieveData(addCardViewController.phraseTextField.text!) {
                 success, MDBGResults, errorString in
                 
@@ -22,7 +22,7 @@ class CardLanguageStrategyChinese : NSObject, CardLanguageStrategy {
                         addCardViewController.maxIndex = results.count - 1
                         // Update UI
                         if addCardViewController.maxIndex >= 0 {
-                            dispatch_async(dispatch_get_main_queue()) {
+                            DispatchQueue.main.async {
                                 addCardViewController.showLeftandRightButtons()
                                 addCardViewController.resultIndex = 0
                                 self.updateTextFields(addCardViewController)
@@ -44,7 +44,7 @@ class CardLanguageStrategyChinese : NSObject, CardLanguageStrategy {
                     }
                 }
                 else {
-                    dispatch_async(dispatch_get_main_queue()) {
+                    DispatchQueue.main.async {
                         print(errorString!)
                     }
                 }
@@ -53,7 +53,7 @@ class CardLanguageStrategyChinese : NSObject, CardLanguageStrategy {
     }
 
 
-    internal func updateTextFields(addCardViewController : AddCardViewController) -> Void {
+    internal func updateTextFields(_ addCardViewController : AddCardViewController) -> Void {
         let currentResult = addCardViewController.results![addCardViewController.resultIndex] as! MDBGData
         addCardViewController.phraseTextField.text = currentResult.headWord
         addCardViewController.pronunicationTextField.text = currentResult.pronunciation

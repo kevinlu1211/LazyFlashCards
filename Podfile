@@ -7,7 +7,6 @@ source 'https://github.com/CocoaPods/Specs.git'
 pod 'SnapKit', '~> 0.15.0'
 pod ‘JOEmojiableBtn’
 pod 'SwiftyButton'
-pod 'HidingNavigationBar', '~> 0.3'
 pod 'AEAccordion'
 pod 'AEXibceptionView'
 pod 'Koloda', '~> 3.1.2'

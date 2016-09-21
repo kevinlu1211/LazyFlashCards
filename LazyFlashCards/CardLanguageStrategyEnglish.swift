@@ -11,8 +11,8 @@ import Foundation
 class CardLanguageStrategyEnglish : NSObject, CardLanguageStrategy {
 
     
-    func searchPhrase(addCardViewController : AddCardViewController) -> Void {
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)) {
+    func searchPhrase(_ addCardViewController : AddCardViewController) -> Void {
+        DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.high).async {
             PearsonClient.sharedInstance().retrieveData(addCardViewController.phraseTextField.text!) {
                 success, pearsonResults, errorString in
                 
@@ -22,7 +22,7 @@ class CardLanguageStrategyEnglish : NSObject, CardLanguageStrategy {
                         addCardViewController.maxIndex = results.count - 1
                         // Update UI
                         if addCardViewController.maxIndex >= 0 {
-                            dispatch_async(dispatch_get_main_queue()) {
+                            DispatchQueue.main.async {
                                 addCardViewController.showLeftandRightButtons()
                                 addCardViewController.resultIndex = 0
                                 self.updateTextFields(addCardViewController)
@@ -38,14 +38,14 @@ class CardLanguageStrategyEnglish : NSObject, CardLanguageStrategy {
                 }
                 else {
                     // Show alert view so user knows that there was no result
-                    dispatch_async(dispatch_get_main_queue()) {
+                    DispatchQueue.main.async {
                         print(errorString!)
                     }
                 }
             }
         }
     }
-    func updateTextFields(addCardViewController : AddCardViewController) -> Void {
+    func updateTextFields(_ addCardViewController : AddCardViewController) -> Void {
         for result in addCardViewController.results! {
             print(result)
         }

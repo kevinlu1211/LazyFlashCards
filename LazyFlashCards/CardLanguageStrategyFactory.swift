@@ -15,12 +15,12 @@ class CardLanguageStrategyFactory {
         }
         return Singleton.sharedInstance
     }
-    func getStrategy(language : Language) -> CardLanguageStrategy {
+    func getStrategy(_ language : Language) -> CardLanguageStrategy {
         switch language {
-        case .English:
+        case .english:
             print("using english")
             return CardLanguageStrategyEnglish()
-        case .Chinese:
+        case .chinese:
             print("using chinese")
             return CardLanguageStrategyChinese()
         }

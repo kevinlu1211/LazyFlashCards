@@ -9,11 +9,17 @@
 import UIKit
 
 @IBDesignable
-public class RoundView: UIView {
-    
-    @IBInspectable var borderColor: UIColor = UIColor.whiteColor() {
+open class RoundView: UIView {
+    override open var isUserInteractionEnabled: Bool {
         didSet {
-            layer.borderColor = borderColor.CGColor
+            if isUserInteractionEnabled == false {
+                borderColor = UIColor.gray
+            }
+        }
+    }
+    @IBInspectable var borderColor: UIColor = UIColor.white {
+        didSet {
+            layer.borderColor = borderColor.cgColor
         }
     }
     
@@ -23,17 +29,20 @@ public class RoundView: UIView {
         }
     }
     
-    override public func layoutSubviews() {
+    override open func layoutSubviews() {
         super.layoutSubviews()
         layer.cornerRadius = 0.5 * bounds.size.width
         clipsToBounds = true
     }
 
     
-    func respondToTap() {
-        self.backgroundColor = UIColor.whiteColor()
-        UIView.animateWithDuration(0.5) {
-            self.backgroundColor = UIColor.clearColor() 
-        }
+    func respondToTap(color : UIColor = UIColor.white) {
+        let originalColor = self.backgroundColor
+        self.backgroundColor = color
+        UIView.animate(withDuration: 0.5, animations: {
+            self.backgroundColor = originalColor
+        }) 
     }
+    
+    
 }
