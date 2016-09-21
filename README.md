@@ -31,7 +31,7 @@
   * ~~Figure a way out to determine the language in the phrase text field when adding the card, can't use NSLinguisticTagger as the phrase term is too short. Maybe determine by UTF8 encoding via dataUsingEncoding(NSUTF8StringEncoding) as English letters in UTF8 are only integers whereas in Chinese there are also letters~~ 4/9/16
 
 * Create custom button and icons in ViewDecksViewController and DetailDeckViewController
-* ~~Create the delete buttons CreateButtons branch~~ 6/9/16
+  * ~~Create the delete buttons CreateButtons branch~~ 6/9/16
   * ~~Delete button for cards~~ 5/9/16
   * ~~Delete button for decks~~ 5/9/16
 * ~~Use callbacks instead of delegation read [here](https://medium.cobeisfresh.com/why-you-shouldn-t-use-delegates-in-swift-7ef808a7f16b#.wn71g2472) for the popup view controller that has the confirmation message to delete the deck~~ 6/9/16
@@ -41,7 +41,7 @@
 ---
 
 * Create activity indication when retrieving information from the web
-* ~~Refactor the code by using Factory pattern for coloring the UI elements so that it is less coupled with the ViewController code, and more easily customizable ~~ 8/9/16
+* ~~Refactor the code by using Factory pattern for coloring the UI elements so that it is less coupled with the ViewController code, and more easily customizable~~ 8/9/16
 * Remake custom RoundView class into a button  
 * ~~Find a colour scheme for the app~~ 7/9/16
 
