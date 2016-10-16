@@ -31,6 +31,12 @@ class PearsonClient {
             if success {
                 pearsonResults = result!
                 
+                print("-----Finishing getting results for definition-----")
+                for result in pearsonResults {
+                    print("Result for headword: \(result.headWord)")
+                    print("Result for definition: \(result.definition)")
+                }
+                
                 // Now get the pronunciation
                 self.retrievePronuciation(urlStringForPronunciation, query: query) { success, result, error in
                     
@@ -39,6 +45,13 @@ class PearsonClient {
                         pronunciation = result!
                         for result in pearsonResults {
                             result.pronunciation = pronunciation
+                        }
+                        print("-----Finishing getting results for pronunciation-----")
+
+                        for result in pearsonResults {
+                            print("Result for headword: \(result.headWord)")
+                            print("Result for definition: \(result.definition)")
+                            print("Result for pronunciation: \(result.pronunciation)")
                         }
                         completionHandler(true, pearsonResults, nil)
                     }
@@ -90,22 +103,24 @@ class PearsonClient {
             
             // Now parse the results
             let numberOfResults = parsedResult!["count"] as! Int
-            print("There are: " + String(numberOfResults) + "result(s)")
+            print("There are: " + String(numberOfResults) + "result(s) in the pronunciation data")
             
             if numberOfResults == 0 {
                 completionHandler(false, nil, "No results were found")
                 return
             }
             
-            print("Printing results for the definition")
+            var errorString = ""
             for index in 0...(numberOfResults - 1) {
                 let results = parsedResult!["results"]! as! [[String : AnyObject]]
                 let result = results[index]
-                
+//                print("In Definition")
+//                print(result)
                 // First check if we can find the headword
                 if result["headword"] === nil {
                     continue
                 }
+    
                 
                 let headWord = result["headword"] as! String!
                 
@@ -115,44 +130,16 @@ class PearsonClient {
                 
                 if comparisonHeadWord == comparisonQuery {
                     
-//                    // Make sure it isn't nil
-//                    if result["senses"] === nil {
-//                        // Do nothing
-//                    }
-//                    else {
-//                        let senses = result["senses"] as! [AnyObject]
-//                        if let firstSense = senses[0] {
-//                            // Do nothing
-//                        }
-//                        else {
-//                            print("---------- Printing result that matched: ----------")
-//                            print(result)
-//
-//                            if let definition = senses[0]["definition"] as? String {
-//                                let userHeadWord = self.recreateUserInput(query)
-//                                let pearsonData = PearsonData(headWord: userHeadWord, definition: definition)
-//                                pearsonResults.append(pearsonData)
-//                            }
-//                            else {
-//                                let definition = senses[0]["subsenses"]![0]["definition"] as! String
-//                                let userHeadWord = self.recreateUserInput(query)
-//                                let pearsonData = PearsonData(headWord: userHeadWord, definition: definition)
-//                                pearsonResults.append(pearsonData)
-//                            }
-//                            
-//                        }
-//                    }
-                    
                     let unwrappedSenses = result["senses"] as? [AnyObject]
                     guard let senses = unwrappedSenses else {
-                        completionHandler(false, nil, "No results were found")
-                        return
+                        errorString = "No results for senses were found"
+                        continue
                     }
                     
                     let unwrappedSense = senses[0] as? [String : AnyObject]
                     guard let sense = unwrappedSense else {
-                        completionHandler(false, nil, "No results were found")
-                        return
+                        errorString = "No results for a sense was found"
+                        continue
                     }
                     
                     
@@ -162,19 +149,17 @@ class PearsonClient {
                         pearsonResults.append(pearsonData)
                     }
                     else {
-                        let unwrappedSubsense = sense["subsenses"] as? [AnyObject]
-                        guard let subsense = unwrappedSubsense else {
-                            completionHandler(false, nil, "No results were found")
-                            return
+                        let unwrappedSubsenses = sense["subsenses"] as? [AnyObject]
+                        guard let subsense = unwrappedSubsenses else {
+                            errorString = "No results for subsenses were found"
+                            continue
                         }
+                        
                         let definition = subsense[0]["definition"] as! String
                         let userHeadWord = self.recreateUserInput(query)
                         let pearsonData = PearsonData(headWord: userHeadWord, definition: definition)
                         pearsonResults.append(pearsonData)
                     }
-                    
-                   
-
                 }
             }
             if pearsonResults.count == 0 {
@@ -182,8 +167,9 @@ class PearsonClient {
             }
             else {
                 completionHandler(true, pearsonResults, nil)
+                
             }
-        }) 
+        })
         task.resume()
     }
     
@@ -227,7 +213,20 @@ class PearsonClient {
                 return
             }
             
-            print("Printing results for the pronunciation")
+//            print("In pronunciation")
+//            
+//            for index in 0...(numberOfResults - 1) {
+//                let results = parsedResult!["results"]! as! [[String : AnyObject]]
+//                let result = results[index]
+//                let headword = result["headword"] as! String!
+//                if (headword == "human") {
+//                    print(result)
+//                }
+//            }
+            
+            // Iterate through our results and see if we can find the phonetic characters associated with our headword
+
+            var errorString = ""
             for index in 0...(numberOfResults - 1) {
                 let results = parsedResult!["results"]! as! [[String : AnyObject]]
                 let result = results[index]
@@ -248,31 +247,30 @@ class PearsonClient {
 
                         let unwrappedPronunciations = result["pronunciations"] as? [AnyObject]
                         guard let pronunciations = unwrappedPronunciations else {
-                            completionHandler(false, nil, "No results were found")
-                            return
+                            errorString = "No results for pronunciations were found"
+                            continue
                         }
                         
                         let unwrappedPronunciation = pronunciations[0] as? [String : AnyObject]
                         guard let pronunciation = unwrappedPronunciation else {
-                            completionHandler(false, nil, "No results were found")
-                            return
+                            errorString = "No result for pronunciation was found"
+                            continue
                         }
                         
                         let unwrappedIPA = pronunciation["ipa"] as? String
-                    
                         guard let ipa = unwrappedIPA else {
-                            completionHandler(false, nil, "No results were found")
-                            return
+                            errorString = "No results for phonetic text was found"
+                            continue
                         }
-
-                        completionHandler(true, ipa, nil)
                         
+                        // everything is found so we can return the pronunciation
+                        completionHandler(true, ipa, nil)
+                        print("Found phonetic text: \(ipa)")
+                        return
                     }
                 }
             }
-            completionHandler(false, nil, "No results for pronunciation were found")
-            return
-            
+            completionHandler(false, nil, errorString)
         }) 
         task.resume()
     }

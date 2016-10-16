@@ -20,14 +20,22 @@ class CardLanguageStrategyEnglish : NSObject, CardLanguageStrategy {
                     if let results = pearsonResults {
                         addCardViewController.results = results
                         addCardViewController.maxIndex = results.count - 1
+                        print(" addCardViewController.maxIndex = \(addCardViewController.maxIndex)")
                         // Update UI
-                        if addCardViewController.maxIndex >= 0 {
+                        if addCardViewController.maxIndex >= 1 {
                             DispatchQueue.main.async {
-                                addCardViewController.showLeftandRightButtons()
+                                addCardViewController.showPreviousAndNextButtons()
                                 addCardViewController.resultIndex = 0
                                 self.updateTextFields(addCardViewController)
                                 
                                 // If there is more than one result then show the previous and next button for the user to be able to switch between the different definitions
+
+                            }
+                        }
+                        else if addCardViewController.maxIndex == 0 {
+                            DispatchQueue.main.async {
+                                addCardViewController.resultIndex = 0
+                                self.updateTextFields(addCardViewController)
 
                             }
                         }
@@ -39,6 +47,7 @@ class CardLanguageStrategyEnglish : NSObject, CardLanguageStrategy {
                 else {
                     // Show alert view so user knows that there was no result
                     DispatchQueue.main.async {
+                        print("There was no result")
                         print(errorString!)
                     }
                 }
@@ -46,9 +55,7 @@ class CardLanguageStrategyEnglish : NSObject, CardLanguageStrategy {
         }
     }
     func updateTextFields(_ addCardViewController : AddCardViewController) -> Void {
-        for result in addCardViewController.results! {
-            print(result)
-        }
+
         let currentResult = addCardViewController.results![addCardViewController.resultIndex] as! PearsonData
         addCardViewController.phraseTextField.text = currentResult.headWord
         addCardViewController.pronunicationTextField.text = currentResult.pronunciation

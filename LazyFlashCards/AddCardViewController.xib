@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -9,13 +9,17 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddCardViewController" customModule="LazyFlashCards" customModuleProvider="target">
             <connections>
                 <outlet property="addCardButton" destination="miS-YQ-NPf" id="mXP-Pk-uNi"/>
+                <outlet property="addCardIcon" destination="pBb-Ij-XHV" id="aVL-vr-kix"/>
                 <outlet property="contentView" destination="pr0-jb-a3B" id="26N-0L-3az"/>
                 <outlet property="definitionTextField" destination="hqB-1T-27a" id="uV8-3p-MI5"/>
                 <outlet property="nextButton" destination="SI9-rA-xhU" id="lHX-wm-Voa"/>
+                <outlet property="nextIcon" destination="9qr-Nr-ajx" id="qDP-Xy-A0P"/>
                 <outlet property="phraseTextField" destination="mbK-V8-LYI" id="3Tx-GQ-OCF"/>
                 <outlet property="previousButton" destination="wBa-oZ-iZo" id="EvI-cg-Qgo"/>
+                <outlet property="previousIcon" destination="KJe-SY-Gzq" id="f8U-vi-P8W"/>
                 <outlet property="pronunicationTextField" destination="Lm0-la-kG0" id="MfO-5o-fGQ"/>
                 <outlet property="searchButton" destination="ORb-b4-kb1" id="RV3-IE-zeb"/>
+                <outlet property="searchIcon" destination="HXq-WR-mEC" id="8J0-V1-oKB"/>
                 <outlet property="view" destination="fOH-Bh-YDp" id="yeq-3B-9Rg"/>
             </connections>
         </placeholder>
@@ -28,7 +32,8 @@
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="zQr-x2-pNO">
                             <subviews>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mbK-V8-LYI" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mbK-V8-LYI" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                    <frame key="frameInset" width="324" height="61"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                     <textInputTraits key="textInputTraits"/>
                                     <userDefinedRuntimeAttributes>
@@ -48,7 +53,8 @@
                                         <userDefinedRuntimeAttribute type="string" keyPath="selectedTitle" value="Phrase"/>
                                     </userDefinedRuntimeAttributes>
                                 </textField>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lm0-la-kG0" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lm0-la-kG0" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                    <frame key="frameInset" minY="86" width="324" height="30"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                     <textInputTraits key="textInputTraits"/>
                                     <userDefinedRuntimeAttributes>
@@ -68,7 +74,8 @@
                                         <userDefinedRuntimeAttribute type="string" keyPath="selectedTitle" value="Pronunciation"/>
                                     </userDefinedRuntimeAttributes>
                                 </textField>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hqB-1T-27a" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hqB-1T-27a" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                    <frame key="frameInset" minY="141" width="324" height="30"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                     <textInputTraits key="textInputTraits"/>
                                     <userDefinedRuntimeAttributes>
@@ -211,7 +218,7 @@
                     <exclude reference="gDF-zc-fNM"/>
                 </mask>
             </variation>
-            <point key="canvasLocation" x="368" y="379"/>
+            <point key="canvasLocation" x="478" y="311"/>
         </view>
     </objects>
     <resources>

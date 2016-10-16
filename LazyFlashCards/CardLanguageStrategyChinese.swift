@@ -23,7 +23,7 @@ class CardLanguageStrategyChinese : NSObject, CardLanguageStrategy {
                         // Update UI
                         if addCardViewController.maxIndex >= 0 {
                             DispatchQueue.main.async {
-                                addCardViewController.showLeftandRightButtons()
+                                addCardViewController.showPreviousAndNextButtons()
                                 addCardViewController.resultIndex = 0
                                 self.updateTextFields(addCardViewController)
 

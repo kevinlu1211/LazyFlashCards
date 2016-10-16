@@ -16,19 +16,26 @@ enum Language {
 
 
 class AddCardViewController: UIViewController {
-
+    
     @IBOutlet weak var phraseTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var pronunicationTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var definitionTextField: SkyFloatingLabelTextField!
-
+    
     @IBOutlet weak var searchButton: RoundView!
+    @IBOutlet weak var searchIcon: UIImageView!
     
     @IBOutlet weak var previousButton: RoundView!
+    @IBOutlet weak var previousIcon: UIImageView!
+    
     @IBOutlet weak var nextButton: RoundView!
+    @IBOutlet weak var nextIcon: UIImageView!
+    
     @IBOutlet weak var addCardButton: RoundView!
+    @IBOutlet weak var addCardIcon: UIImageView!
+    
     @IBOutlet weak var contentView: UIView!
     var delegate : AddCardViewControllerDelegate?
-
+    
     
     var currentLanguage : Language!  {
         didSet {
@@ -36,12 +43,11 @@ class AddCardViewController: UIViewController {
         }
     }
     var cardLanguageStrategy : CardLanguageStrategy?
-
+    
     
     var results : [NSObject]?
     var resultIndex : Int = 0 {
         didSet {
-            print("setting result index")
             buttonsToDisable()
         }
     }
@@ -55,8 +61,7 @@ class AddCardViewController: UIViewController {
         
         // Disable the previous and next buttons
         setup()
-        hideLeftAndRightButtons()
-
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -76,32 +81,50 @@ class AddCardViewController: UIViewController {
         textField.layer.cornerRadius = theme.getCornerRadiusForButton()
     }
     
-    func setupSearchButton() {
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.handleSearch))
-        searchButton.addGestureRecognizer(tapGestureRecognizer)
-    }
     
     func setup() {
+
         setupSearchButton()
-//        setupButton(previousButton)
-//        setupButton(nextButton)
-//        setupButton(addCardButton)
+
+        setupPreviousButton()
+
+        setupNextButton()
+        hidePreviousAndNextButtons()
+        
+        setupAddCardButton()
+
         setupTextField(phraseTextField)
+        print("setting delegate")
+        phraseTextField.delegate = self
+
         setupTextField(pronunicationTextField)
         setupTextField(definitionTextField)
+
+        
+        
         
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
+    
 }
 
+extension AddCardViewController : UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let currentSearchPhrase = textField.text! + string
+
+        if currentSearchPhrase == textField.text! &&
+            currentSearchPhrase.characters.count == 1 {
+            disableSearchButton()
+            disableAddCardButton()
+        }
+        else {
+            enableSearchButton()
+            enableAddCardButton()
+        }
+        return true
+
+    }
+}
 // MARK: - Button Actions
 extension AddCardViewController {
     
@@ -122,7 +145,7 @@ extension AddCardViewController {
             else {
                 currentLanguage = .chinese
             }
-
+            
         }
         else {
             currentLanguage = .english
@@ -130,61 +153,80 @@ extension AddCardViewController {
         cardLanguageStrategy?.searchPhrase(self)
         
     }
-    @IBAction func handleAddCard(_ sender: AnyObject) {
-        // First hide the left and right buttons
-        hideLeftAndRightButtons()
+    
+    func handlePreviousResult() {
+        previousButton.respondToTap(color: theme.getDarkColor())
+        if (resultIndex > 0) {
+            resultIndex -= 1
+            cardLanguageStrategy?.updateTextFields(self)
+            
+        }
+    }
+    func handleNextResult() {
+        nextButton.respondToTap(color: theme.getDarkColor())
 
+        if (resultIndex < maxIndex) {
+            resultIndex += 1
+            cardLanguageStrategy?.updateTextFields(self)
+        }
+        
+        
+    }
+    
+    func handleAddCard() {
+        addCardButton.respondToTap(color: theme.getDarkColor())
+        
+        // First hide the left and right buttons
+        hidePreviousAndNextButtons()
+        
+        // Disable add card and search buttons
+        disableAddCardButton()
+        disableSearchButton()
+        
         // Delegate adding card to DetailDeckViewController
         delegate!.handleAddCard(self, phrase: phraseTextField.text, pronunication: pronunicationTextField.text, definition:  definitionTextField.text)
         
         // Now clear the text fields
         clearTextFields()
-     
+        
+        
+        
     }
-    @IBAction func handlePreviousResult(_ sender: AnyObject) {
-        if (resultIndex > 0) {
-            resultIndex -= 1
-            cardLanguageStrategy?.updateTextFields(self)
-
-        }
-    }
-    @IBAction func handleNextResult(_ sender: AnyObject) {
-        if (resultIndex < maxIndex) {
-            resultIndex += 1
-            cardLanguageStrategy?.updateTextFields(self)
-        }
-
-
-    }
+    
     
     func clearTextFields() {
-        self.view.fadeOut()
-        phraseTextField.text = ""
-        pronunicationTextField.text = ""
-        definitionTextField.text = ""
-        self.view.fadeIn()
+        clearTextField(textField: phraseTextField)
+        clearTextField(textField: pronunicationTextField)
+        clearTextField(textField: definitionTextField)
     }
     
-    func hideLeftAndRightButtons() {
-        if (previousButton.isHidden == true && nextButton.isHidden == true) {
+    func clearTextField(textField : SkyFloatingLabelTextField) {
+        textField.text = ""
+        textField.fadeOut()
+        textField.fadeIn()
+    }
+    
+    func hidePreviousAndNextButtons() {
+        if (previousButton.alpha == 0 && nextButton.alpha == 0) {
             return
         }
         else {
-            previousButton.isHidden = true
-            nextButton.isHidden = true
+            previousButton.fadeOut()
+            nextButton.fadeOut()
         }
     }
     
-    func showLeftandRightButtons() {
-        if(previousButton.isHidden == false && nextButton.isHidden == false) {
+    func showPreviousAndNextButtons() {
+        print("showPreviousAndNextButtons")
+        if(previousButton.alpha == 1 && nextButton.alpha == 1) {
             return
         }
         else {
             print("Showing previous and next buttons")
-            previousButton.isHidden = false
-            nextButton.isHidden = false
+            previousButton.fadeIn()
+            nextButton.fadeIn()
         }
-  
+        
     }
     
     func buttonsToDisable() {
@@ -192,26 +234,96 @@ extension AddCardViewController {
         print("Max index is \(maxIndex)")
         
         if(maxIndex == 0) {
-            previousButton.isUserInteractionEnabled = false
-            nextButton.isUserInteractionEnabled = false
-            return
-        }
-        if resultIndex <= 0 {
-            previousButton.isUserInteractionEnabled = false
-            nextButton.isUserInteractionEnabled = true
-        }
-        else if (resultIndex >= maxIndex) {
-            previousButton.isUserInteractionEnabled = true
-            nextButton.isUserInteractionEnabled = false
+            disablePreviousButton()
+            disableNextButton()
         }
         else {
-            previousButton.isUserInteractionEnabled = true
-            nextButton.isUserInteractionEnabled = true
+            if resultIndex <= 0 {
+                disablePreviousButton()
+                enableNextButton()
+            }
+            else if (resultIndex >= maxIndex) {
+                enablePreviousButton()
+                disableNextButton()
+                
+            }
+            else {
+                enablePreviousButton()
+                enableNextButton()
+            }
+            
         }
-
+        
     }
     
     
+}
+
+extension AddCardViewController {
+    func setupSearchButton() {
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.handleSearch))
+        searchButton.addGestureRecognizer(tapGestureRecognizer)
+        disableSearchButton()
+    }
+    
+    func disableSearchButton() {
+        searchButton.isUserInteractionEnabled = false
+        searchIcon.image = UIImage(named: ImageName.SEARCH_IMAGE_GRAY_NAME)
+    }
+    
+    func enableSearchButton() {
+        searchButton.isUserInteractionEnabled = true
+        searchIcon.image = UIImage(named : ImageName.SEARCH_IMAGE_DARK_BLUE_NAME)
+    }
+    
+    func setupPreviousButton() {
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.handlePreviousResult))
+        previousButton.addGestureRecognizer(tapGestureRecognizer)
+        disablePreviousButton()
+    }
+    
+    func disablePreviousButton() {
+        previousButton.isUserInteractionEnabled = false
+        previousIcon.image = UIImage(named : ImageName.PREVIOUS_IMAGE_GRAY_NAME)
+        
+    }
+    func enablePreviousButton() {
+        previousButton.isUserInteractionEnabled = true
+        previousIcon.image = UIImage(named: ImageName.PREVIOUS_IMAGE_DARK_BLUE_NAME)
+    }
+    
+    func setupNextButton() {
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.handleNextResult))
+        nextButton.addGestureRecognizer(tapGestureRecognizer)
+        disableNextButton()
+    }
+    
+    func disableNextButton() {
+        nextButton.isUserInteractionEnabled = false
+        nextIcon.image = UIImage(named :ImageName.NEXT_IMAGE_GRAY_NAME)
+    }
+    
+    func enableNextButton() {
+        nextButton.isUserInteractionEnabled = true
+        nextIcon.image = UIImage(named : ImageName.NEXT_IMAGE_DARK_BLUE_NAME)
+    }
+    
+    func setupAddCardButton() {
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.handleAddCard))
+        addCardButton.addGestureRecognizer(tapGestureRecognizer)
+        disableAddCardButton()
+    }
+    
+    func disableAddCardButton() {
+        addCardButton.isUserInteractionEnabled = false
+        addCardIcon.image = UIImage(named : ImageName.ADD_CARD_IMAGE_GRAY_NAME)
+        
+    }
+    
+    func enableAddCardButton() {
+        addCardButton.isUserInteractionEnabled = true
+        addCardIcon.image = UIImage(named : ImageName.ADD_CARD_IMAGE_DARK_BLUE_NAME)
+    }
 }
 
 extension String {

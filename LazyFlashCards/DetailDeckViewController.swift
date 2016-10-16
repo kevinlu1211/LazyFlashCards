@@ -26,7 +26,7 @@ class DetailDeckViewController: UIViewController, UITableViewDataSource, UITable
     // Floating liquid cells
     fileprivate let ADD_CARD_BUTTON_INDEX = 0
     var liquidFloatingCells: [LiquidFloatingCell] = []
-
+    
     // Core Data
     lazy var sharedContext : NSManagedObjectContext = {
         return CoreDataStackManager.sharedInstance().managedObjectContext
@@ -43,10 +43,10 @@ class DetailDeckViewController: UIViewController, UITableViewDataSource, UITable
         
         
         liquidButtonSetup()
-
+        
         // Do any additional setup after loading the view.
     }
-
+    
     
     func setupDeck() {
         deck.createFlashCards()
@@ -54,8 +54,8 @@ class DetailDeckViewController: UIViewController, UITableViewDataSource, UITable
             flashCards = useableFlashCards
         }
     }
-
-
+    
+    
 }
 
 // MARK: - UITableView methods
@@ -89,7 +89,7 @@ extension DetailDeckViewController {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return flashCards.count
     }
-
+    
     @objc(tableView:cellForRowAtIndexPath:) func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         // Setup cell view
@@ -287,7 +287,7 @@ extension DetailDeckViewController : AddCardViewControllerDelegate {
 }
 
 extension DetailDeckViewController : DetailCardViewDelegate {
-
+    
     func handleDeleteAction(_ detailCardView: DetailCardView) {
         print("pressed delete")
         let indexPath = tableView.indexPath(for: detailCardView.getParentTableViewCell())
@@ -310,6 +310,6 @@ extension DetailDeckViewController : DetailCardViewDelegate {
             sharedContext.delete(flashCard)
             CoreDataStackManager.sharedInstance().saveContext()
         }
-       
+        
     }
 }

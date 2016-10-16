@@ -17,6 +17,7 @@ class PearsonData : NSObject {
         self.pronunciation = ""
         self.definition = definition
     }
+    
 }
     
     
