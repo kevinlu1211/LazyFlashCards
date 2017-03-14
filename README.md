@@ -23,7 +23,7 @@
   * ~~Edit~~ 17/9/16 
   * ~~Search vocabulary~~19/9/16
   * ~~Add card after search~~ 22/9/16
-  * ~~Fix auto layout 
+  * ~~Fix auto layout~~ 
 
 
 * Create TestViewController the users in NestedCardView branch
