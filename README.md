@@ -1,5 +1,5 @@
 # LazyFlashCards
-
+## Note as this app is no longer being maintained it has to be compiled in Swift 3, therefore I have added some videos of the app in its former glory
 ----
 ## What is it?
 
@@ -14,7 +14,8 @@
 
 > High priority
 ---
-
+* If I ever come back to the app
+  * Use the indirection design pattern to decouple the view controller with the network layer
 * Create custom button and icons in AddCardsViewController
   * ~~Deck~~ 10/9/16 
   * ~~Test~~ 10/9/16
@@ -22,7 +23,7 @@
   * ~~Edit~~ 17/9/16 
   * ~~Search vocabulary~~19/9/16
   * ~~Add card after search~~ 22/9/16
-  * Fix auto layout
+  * ~~Fix auto layout 
 
 
 * Create TestViewController the users in NestedCardView branch
