@@ -16,11 +16,11 @@ class ThemeStrategyBlue : NSObject, ThemeStrategy {
     fileprivate let DARK_COLOR : UIColor = UIColor(red: 0/255, green: 31/255, blue: 63/255, alpha: 1)
     fileprivate let MEDIUM_COLOR : UIColor = UIColor(red: 8/255, green: 51/255, blue: 88/255, alpha: 1)
     fileprivate let LIGHT_COLOR : UIColor = UIColor.flatSkyBlue()
-    fileprivate let CONTRAST_COLOR : UIColor = UIColor.flatYellow()
+    fileprivate let CONTRAST_COLOR : UIColor = UIColor.flatGreen()
     fileprivate let CORNER_RADIUS_VIEW : CGFloat = 10.0
     fileprivate let CORNER_RADIUS_BUTTON : CGFloat = 5.0
     fileprivate let TEXT_COLOR : UIColor = UIColor.white
-    fileprivate let CARD_COLOR : UIColor = UIColor.flatYellow()
+    fileprivate let CARD_COLOR : UIColor = UIColor.flatGreen()
     
     
     func getDarkColor() -> UIColor {

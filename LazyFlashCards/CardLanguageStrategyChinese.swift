@@ -13,6 +13,7 @@ class CardLanguageStrategyChinese : NSObject, CardLanguageStrategy {
 
     func searchPhrase(_ addCardViewController : AddCardViewController) -> Void {
         DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.high).async {
+            print(addCardViewController.phraseTextField.text!)
             MDBGScraper.sharedInstance().retrieveData(addCardViewController.phraseTextField.text!) {
                 success, MDBGResults, errorString in
                 
